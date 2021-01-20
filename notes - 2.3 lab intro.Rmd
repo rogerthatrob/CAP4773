@@ -1,0 +1,33 @@
+---
+title: "2.3 lab intro notes"
+output: html_notebook
+---
+
+To run a function called `funcname`, we type `funcname(input1, input2)`, where the inputs (or arguments) `input1` and `input2` tell `R` how to run the function. 
+
+```{r}
+x <- c(1,2,3,5)
+x
+
+```
+dont need to use <- can use equal sign instead
+```{r}
+x = c(1,6,2)
+x
+y= c(1,4,3)
+y
+```
+add two sets of numbers together
+x = (x1,x2,x2, ...,xn)
+y = (y1,y2,y3, ..., yn)
+
+x + y = (x1+y1, x2+y2, x3+y3, ..., xn+yn)
+```{r}
+length(x) # displays length of x
+length(y) # displays length of y
+x+y # adds each together via their position
+```
+```{r}
+
+```
+
