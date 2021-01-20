@@ -27,7 +27,99 @@ length(x) # displays length of x
 length(y) # displays length of y
 x+y # adds each together via their position
 ```
+The `ls()` functions allows us to look at a *list* of all the objects, such as data functions, that we have saved so far. 
+The `rm()` function can be used to *delete* any that we don't want. 
 ```{r}
-
+ls()
 ```
 
+```{r}
+rm(x,y)
+ls()
+```
+interesting to see that `z` is still there, never did delete it. still kept in memory, lets try to remove it...
+```{r}
+rm(z)
+ls()
+```
+not it says `0`, need to keep in mind when doing large sets of data to remove any unneeded variable to not slow down the compile
+
+can also *remove all* objects at once:
+```{r}
+rm(list=ls())
+```
+
+The `matrix()` function can be used to create a matrix of numbers
+```{r}
+?matrix() # calls help function
+```
+
+*Usage*
+matrix(data = NA, nrow = 1, ncol = 1, byrow = FALSE,
+       dimnames = NULL)
+
+as.matrix(x, ...)
+## S3 method for class 'data.frame'
+as.matrix(x, rownames.force = NA, ...)
+
+is.matrix(x)
+
+*Arguments*
+data	
+an optional data vector (including a list or expression vector). Non-atomic classed R objects are coerced by as.vector and all attributes discarded.
+
+nrow	
+the desired number of rows.
+
+ncol	
+the desired number of columns.
+
+byrow	
+logical. If FALSE (the default) the matrix is filled by columns, otherwise the matrix is filled by rows.
+
+dimnames	
+A dimnames attribute for the matrix: NULL or a list of length 2 giving the row and column names respectively. An empty list is treated as NULL, and a list of length one as row names. The list can be named, and the list names will be used as names for the dimensions.
+
+x	
+an R object.
+
+...	
+additional arguments to be passed to or from methods.
+
+rownames.force	
+logical indicating if the resulting matrix should have character (rather than NULL) rownames. The default, NA, uses NULL rownames if the data frame has ‘automatic’ row.names or for a zero-row data frame.
+
+```{r}
+x = matrix(data=c(1,2,3,4), nrow=2, ncol=2)
+x
+```
+We can omit typing `data=`, `nrow=`, and `ncol=` in the `matrix()` and just type
+```{r}
+x=matrix(c(1,2,3,4),2,2)
+x
+```
+
+By default, `R` populates matrices by column first but this can be adjusted by setting `byrow=TRUE` 
+```{r}
+matrix(c(1,2,3,4),2,2,byrow=TRUE)
+```
+
+`sqrt()` returns square root of each element of a vector or matrix.
+`x^2` raises each element of `x` to the power of `2`
+```{r}
+sqrt(x)
+x^2
+```
+
+The `rnorm()` function generates a *vector of random normal variables* with the first argument `n` the sample size. 
+`cor()` calculates the relationship between each column and row
+`sd=` standard deviation
+```{r}
+x=rnorm(50)
+y=x+rnorm(50, mean=50, sd=.1)
+cor(x,y)
+```
+
+`set.seed()`
+
+rotissier chicken, salad american, chicken waffles? 

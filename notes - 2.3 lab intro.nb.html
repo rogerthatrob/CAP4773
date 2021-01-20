@@ -291,12 +291,155 @@ y</code></pre>
 <pre><code>[1]  2 10  5</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>The <code>ls()</code> functions allows us to look at a <em>list</em> of all the objects, such as data functions, that we have saved so far. The <code>rm()</code> function can be used to <em>delete</em> any that we don’t want.</p>
+<!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubHMoKVxuYGBgIn0= -->
+<pre class="r"><code>ls()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwieFwiIFwieVwiIFwielwiXG4ifQ== -->
+<pre><code>[1] &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm0oeCx5KVxubHMoKVxuYGBgIn0= -->
+<pre class="r"><code>rm(x,y)
+ls()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwielwiXG4ifQ== -->
+<pre><code>[1] &quot;z&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>interesting to see that <code>z</code> is still there, never did delete it. still kept in memory, lets try to remove it…</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm0oeilcbmxzKClcbmBgYCJ9 -->
+<pre class="r"><code>rm(z)
+ls()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiY2hhcmFjdGVyKDApXG4ifQ== -->
+<pre><code>character(0)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>not it says <code>0</code>, need to keep in mind when doing large sets of data to remove any unneeded variable to not slow down the compile</p>
+<p>can also <em>remove all</em> objects at once:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm0obGlzdD1scygpKVxuYGBgIn0= -->
+<pre class="r"><code>rm(list=ls())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>The <code>matrix()</code> function can be used to create a matrix of numbers</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuP21hdHJpeCgpXG5gYGAifQ== -->
+<pre class="r"><code>?matrix()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><em>Usage</em> matrix(data = NA, nrow = 1, ncol = 1, byrow = FALSE, dimnames = NULL)</p>
+<p>as.matrix(x, …) ## S3 method for class ‘data.frame’ as.matrix(x, rownames.force = NA, …)</p>
+<p>is.matrix(x)</p>
+<p><em>Arguments</em> data<br />
+an optional data vector (including a list or expression vector). Non-atomic classed R objects are coerced by as.vector and all attributes discarded.</p>
+<p>nrow<br />
+the desired number of rows.</p>
+<p>ncol<br />
+the desired number of columns.</p>
+<p>byrow<br />
+logical. If FALSE (the default) the matrix is filled by columns, otherwise the matrix is filled by rows.</p>
+<p>dimnames<br />
+A dimnames attribute for the matrix: NULL or a list of length 2 giving the row and column names respectively. An empty list is treated as NULL, and a list of length one as row names. The list can be named, and the list names will be used as names for the dimensions.</p>
+<p>x<br />
+an R object.</p>
+<p>… additional arguments to be passed to or from methods.</p>
+<p>rownames.force<br />
+logical indicating if the resulting matrix should have character (rather than NULL) rownames. The default, NA, uses NULL rownames if the data frame has ‘automatic’ row.names or for a zero-row data frame.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA9IG1hdHJpeChkYXRhPWMoMSwyLDMsNCksIG5yb3c9MiwgbmNvbD0yKVxueFxuYGBgIn0= -->
+<pre class="r"><code>x = matrix(data=c(1,2,3,4), nrow=2, ncol=2)
+x</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl1cblsxLF0gICAgMSAgICAzXG5bMixdICAgIDIgICAgNFxuIn0= -->
+<pre><code>     [,1] [,2]
+[1,]    1    3
+[2,]    2    4</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>We can omit typing <code>data=</code>, <code>nrow=</code>, and <code>ncol=</code> in the <code>matrix()</code> and just type</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueD1tYXRyaXgoYygxLDIsMyw0KSwyLDIpXG54XG5gYGAifQ== -->
+<pre class="r"><code>x=matrix(c(1,2,3,4),2,2)
+x</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl1cblsxLF0gICAgMSAgICAzXG5bMixdICAgIDIgICAgNFxuIn0= -->
+<pre><code>     [,1] [,2]
+[1,]    1    3
+[2,]    2    4</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>By default, <code>R</code> populates matrices by column first but this can be adjusted by setting <code>byrow=TRUE</code></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWF0cml4KGMoMSwyLDMsNCksMiwyLGJ5cm93PVRSVUUpXG5gYGAifQ== -->
+<pre class="r"><code>matrix(c(1,2,3,4),2,2,byrow=TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl1cblsxLF0gICAgMSAgICAyXG5bMixdICAgIDMgICAgNFxuIn0= -->
+<pre><code>     [,1] [,2]
+[1,]    1    2
+[2,]    3    4</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><code>sqrt()</code> returns square root of each element of a vector or matrix. <code>x^2</code> raises each element of <code>x</code> to the power of <code>2</code></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3FydCh4KVxuYGBgIn0= -->
+<pre class="r"><code>sqrt(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgWywxXSAgICAgWywyXVxuWzEsXSAxLjAwMDAwMCAxLjczMjA1MVxuWzIsXSAxLjQxNDIxNCAyLjAwMDAwMFxuIn0= -->
+<pre><code>         [,1]     [,2]
+[1,] 1.000000 1.732051
+[2,] 1.414214 2.000000</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueF4yXG5gYGAifQ== -->
+<pre class="r"><code>x^2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl1cblsxLF0gICAgMSAgICA5XG5bMixdICAgIDQgICAxNlxuIn0= -->
+<pre><code>     [,1] [,2]
+[1,]    1    9
+[2,]    4   16</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>The <code>rnorm()</code> function generates a <em>vector of random normal variables</em> with the first argument <code>n</code> the sample size. <code>cor()</code> calculates the relationship between each column and row <code>sd=</code> standard deviation</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueD1ybm9ybSg1MClcbnk9eCtybm9ybSg1MCwgbWVhbj01MCwgc2Q9LjEpXG5jb3IoeCx5KVxuYGBgIn0= -->
+<pre class="r"><code>x=rnorm(50)
+y=x+rnorm(50, mean=50, sd=.1)
+cor(x,y)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuOTkzOTk4NVxuIn0= -->
+<pre><code>[1] 0.9939985</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><code>set.seed()</code></p>
+<p>rotissier chicken, salad american, chicken waffles?</p>
+<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMi4zIGxhYiBpbnRybyBub3RlcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVG8gcnVuIGEgZnVuY3Rpb24gY2FsbGVkIGBmdW5jbmFtZWAsIHdlIHR5cGUgYGZ1bmNuYW1lKGlucHV0MSwgaW5wdXQyKWAsIHdoZXJlIHRoZSBpbnB1dHMgKG9yIGFyZ3VtZW50cykgYGlucHV0MWAgYW5kIGBpbnB1dDJgIHRlbGwgYFJgIGhvdyB0byBydW4gdGhlIGZ1bmN0aW9uLiAKCmBgYHtyfQp4IDwtIGMoMSwyLDMsNSkKeAoKYGBgCmRvbnQgbmVlZCB0byB1c2UgPC0gY2FuIHVzZSBlcXVhbCBzaWduIGluc3RlYWQKYGBge3J9CnggPSBjKDEsNiwyKQp4Cnk9IGMoMSw0LDMpCnkKYGBgCmFkZCB0d28gc2V0cyBvZiBudW1iZXJzIHRvZ2V0aGVyCnggPSAoeDEseDIseDIsIC4uLix4bikKeSA9ICh5MSx5Mix5MywgLi4uLCB5bikKCnggKyB5ID0gKHgxK3kxLCB4Mit5MiwgeDMreTMsIC4uLiwgeG4reW4pCmBgYHtyfQpsZW5ndGgoeCkgIyBkaXNwbGF5cyBsZW5ndGggb2YgeApsZW5ndGgoeSkgIyBkaXNwbGF5cyBsZW5ndGggb2YgeQp4K3kgIyBhZGRzIGVhY2ggdG9nZXRoZXIgdmlhIHRoZWlyIHBvc2l0aW9uCmBgYApgYGB7cn0KCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMi4zIGxhYiBpbnRybyBub3RlcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVG8gcnVuIGEgZnVuY3Rpb24gY2FsbGVkIGBmdW5jbmFtZWAsIHdlIHR5cGUgYGZ1bmNuYW1lKGlucHV0MSwgaW5wdXQyKWAsIHdoZXJlIHRoZSBpbnB1dHMgKG9yIGFyZ3VtZW50cykgYGlucHV0MWAgYW5kIGBpbnB1dDJgIHRlbGwgYFJgIGhvdyB0byBydW4gdGhlIGZ1bmN0aW9uLiAKCmBgYHtyfQp4IDwtIGMoMSwyLDMsNSkKeAoKYGBgCmRvbnQgbmVlZCB0byB1c2UgPC0gY2FuIHVzZSBlcXVhbCBzaWduIGluc3RlYWQKYGBge3J9CnggPSBjKDEsNiwyKQp4Cnk9IGMoMSw0LDMpCnkKYGBgCmFkZCB0d28gc2V0cyBvZiBudW1iZXJzIHRvZ2V0aGVyCnggPSAoeDEseDIseDIsIC4uLix4bikKeSA9ICh5MSx5Mix5MywgLi4uLCB5bikKCnggKyB5ID0gKHgxK3kxLCB4Mit5MiwgeDMreTMsIC4uLiwgeG4reW4pCmBgYHtyfQpsZW5ndGgoeCkgIyBkaXNwbGF5cyBsZW5ndGggb2YgeApsZW5ndGgoeSkgIyBkaXNwbGF5cyBsZW5ndGggb2YgeQp4K3kgIyBhZGRzIGVhY2ggdG9nZXRoZXIgdmlhIHRoZWlyIHBvc2l0aW9uCmBgYApUaGUgYGxzKClgIGZ1bmN0aW9ucyBhbGxvd3MgdXMgdG8gbG9vayBhdCBhICpsaXN0KiBvZiBhbGwgdGhlIG9iamVjdHMsIHN1Y2ggYXMgZGF0YSBmdW5jdGlvbnMsIHRoYXQgd2UgaGF2ZSBzYXZlZCBzbyBmYXIuIApUaGUgYHJtKClgIGZ1bmN0aW9uIGNhbiBiZSB1c2VkIHRvICpkZWxldGUqIGFueSB0aGF0IHdlIGRvbid0IHdhbnQuIApgYGB7cn0KbHMoKQpgYGAKCmBgYHtyfQpybSh4LHkpCmxzKCkKYGBgCmludGVyZXN0aW5nIHRvIHNlZSB0aGF0IGB6YCBpcyBzdGlsbCB0aGVyZSwgbmV2ZXIgZGlkIGRlbGV0ZSBpdC4gc3RpbGwga2VwdCBpbiBtZW1vcnksIGxldHMgdHJ5IHRvIHJlbW92ZSBpdC4uLgpgYGB7cn0Kcm0oeikKbHMoKQpgYGAKbm90IGl0IHNheXMgYDBgLCBuZWVkIHRvIGtlZXAgaW4gbWluZCB3aGVuIGRvaW5nIGxhcmdlIHNldHMgb2YgZGF0YSB0byByZW1vdmUgYW55IHVubmVlZGVkIHZhcmlhYmxlIHRvIG5vdCBzbG93IGRvd24gdGhlIGNvbXBpbGUKCmNhbiBhbHNvICpyZW1vdmUgYWxsKiBvYmplY3RzIGF0IG9uY2U6CmBgYHtyfQpybShsaXN0PWxzKCkpCmBgYAoKVGhlIGBtYXRyaXgoKWAgZnVuY3Rpb24gY2FuIGJlIHVzZWQgdG8gY3JlYXRlIGEgbWF0cml4IG9mIG51bWJlcnMKYGBge3J9Cj9tYXRyaXgoKSAjIGNhbGxzIGhlbHAgZnVuY3Rpb24KYGBgCgoqVXNhZ2UqCm1hdHJpeChkYXRhID0gTkEsIG5yb3cgPSAxLCBuY29sID0gMSwgYnlyb3cgPSBGQUxTRSwKICAgICAgIGRpbW5hbWVzID0gTlVMTCkKCmFzLm1hdHJpeCh4LCAuLi4pCiMjIFMzIG1ldGhvZCBmb3IgY2xhc3MgJ2RhdGEuZnJhbWUnCmFzLm1hdHJpeCh4LCByb3duYW1lcy5mb3JjZSA9IE5BLCAuLi4pCgppcy5tYXRyaXgoeCkKCipBcmd1bWVudHMqCmRhdGEJCmFuIG9wdGlvbmFsIGRhdGEgdmVjdG9yIChpbmNsdWRpbmcgYSBsaXN0IG9yIGV4cHJlc3Npb24gdmVjdG9yKS4gTm9uLWF0b21pYyBjbGFzc2VkIFIgb2JqZWN0cyBhcmUgY29lcmNlZCBieSBhcy52ZWN0b3IgYW5kIGFsbCBhdHRyaWJ1dGVzIGRpc2NhcmRlZC4KCm5yb3cJCnRoZSBkZXNpcmVkIG51bWJlciBvZiByb3dzLgoKbmNvbAkKdGhlIGRlc2lyZWQgbnVtYmVyIG9mIGNvbHVtbnMuCgpieXJvdwkKbG9naWNhbC4gSWYgRkFMU0UgKHRoZSBkZWZhdWx0KSB0aGUgbWF0cml4IGlzIGZpbGxlZCBieSBjb2x1bW5zLCBvdGhlcndpc2UgdGhlIG1hdHJpeCBpcyBmaWxsZWQgYnkgcm93cy4KCmRpbW5hbWVzCQpBIGRpbW5hbWVzIGF0dHJpYnV0ZSBmb3IgdGhlIG1hdHJpeDogTlVMTCBvciBhIGxpc3Qgb2YgbGVuZ3RoIDIgZ2l2aW5nIHRoZSByb3cgYW5kIGNvbHVtbiBuYW1lcyByZXNwZWN0aXZlbHkuIEFuIGVtcHR5IGxpc3QgaXMgdHJlYXRlZCBhcyBOVUxMLCBhbmQgYSBsaXN0IG9mIGxlbmd0aCBvbmUgYXMgcm93IG5hbWVzLiBUaGUgbGlzdCBjYW4gYmUgbmFtZWQsIGFuZCB0aGUgbGlzdCBuYW1lcyB3aWxsIGJlIHVzZWQgYXMgbmFtZXMgZm9yIHRoZSBkaW1lbnNpb25zLgoKeAkKYW4gUiBvYmplY3QuCgouLi4JCmFkZGl0aW9uYWwgYXJndW1lbnRzIHRvIGJlIHBhc3NlZCB0byBvciBmcm9tIG1ldGhvZHMuCgpyb3duYW1lcy5mb3JjZQkKbG9naWNhbCBpbmRpY2F0aW5nIGlmIHRoZSByZXN1bHRpbmcgbWF0cml4IHNob3VsZCBoYXZlIGNoYXJhY3RlciAocmF0aGVyIHRoYW4gTlVMTCkgcm93bmFtZXMuIFRoZSBkZWZhdWx0LCBOQSwgdXNlcyBOVUxMIHJvd25hbWVzIGlmIHRoZSBkYXRhIGZyYW1lIGhhcyDigJhhdXRvbWF0aWPigJkgcm93Lm5hbWVzIG9yIGZvciBhIHplcm8tcm93IGRhdGEgZnJhbWUuCgpgYGB7cn0KeCA9IG1hdHJpeChkYXRhPWMoMSwyLDMsNCksIG5yb3c9MiwgbmNvbD0yKQp4CmBgYApXZSBjYW4gb21pdCB0eXBpbmcgYGRhdGE9YCwgYG5yb3c9YCwgYW5kIGBuY29sPWAgaW4gdGhlIGBtYXRyaXgoKWAgYW5kIGp1c3QgdHlwZQpgYGB7cn0KeD1tYXRyaXgoYygxLDIsMyw0KSwyLDIpCngKYGBgCgpCeSBkZWZhdWx0LCBgUmAgcG9wdWxhdGVzIG1hdHJpY2VzIGJ5IGNvbHVtbiBmaXJzdCBidXQgdGhpcyBjYW4gYmUgYWRqdXN0ZWQgYnkgc2V0dGluZyBgYnlyb3c9VFJVRWAgCmBgYHtyfQptYXRyaXgoYygxLDIsMyw0KSwyLDIsYnlyb3c9VFJVRSkKYGBgCgpgc3FydCgpYCByZXR1cm5zIHNxdWFyZSByb290IG9mIGVhY2ggZWxlbWVudCBvZiBhIHZlY3RvciBvciBtYXRyaXguCmB4XjJgIHJhaXNlcyBlYWNoIGVsZW1lbnQgb2YgYHhgIHRvIHRoZSBwb3dlciBvZiBgMmAKYGBge3J9CnNxcnQoeCkKeF4yCmBgYAoKVGhlIGBybm9ybSgpYCBmdW5jdGlvbiBnZW5lcmF0ZXMgYSAqdmVjdG9yIG9mIHJhbmRvbSBub3JtYWwgdmFyaWFibGVzKiB3aXRoIHRoZSBmaXJzdCBhcmd1bWVudCBgbmAgdGhlIHNhbXBsZSBzaXplLiAKYGNvcigpYCBjYWxjdWxhdGVzIHRoZSByZWxhdGlvbnNoaXAgYmV0d2VlbiBlYWNoIGNvbHVtbiBhbmQgcm93CmBzZD1gIHN0YW5kYXJkIGRldmlhdGlvbgpgYGB7cn0KeD1ybm9ybSg1MCkKeT14K3Jub3JtKDUwLCBtZWFuPTUwLCBzZD0uMSkKY29yKHgseSkKYGBgCgpgc2V0LnNlZWQoKWAKCnJvdGlzc2llciBjaGlja2VuLCBzYWxhZCBhbWVyaWNhbiwgY2hpY2tlbiB3YWZmbGVzPyA=</div>
 
 
 
