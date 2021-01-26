@@ -1,0 +1,148 @@
+---
+title: "1-21-21_ClassNotes"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+
+<h1>An Introduction to `R`</h3>
+```{r}
+seq(1,10)
+
+seq(6,15)
+
+seq(-10,-1)
+
+seq(5,-4)
+
+seq(1.5, 10.5)
+```
+the sequence can print out the numbers up to 10 if it is incremented by 1 from 1.5 to 10 ie:
+```{r}
+seq(1.5, 10)
+```
+<h3>help</h3>
+```{r}
+help(seq)
+```
+can specify the value of each by typing the name or you can type it in the same order
+```{r}
+seq(from=1, to =1, by ((to -from) / (lenth.out -1)), length.out = NULL, along.with = NULL)
+
+seq(1,10,2)
+# is the same as
+seq(from=1, to=10, by=2)
+```
+<h2>Vector `c()`</h2>
+`c()` will concatenate a list of values into a vector
+```{r}
+x = c(1,2,3,4,5,6)
+x
+
+x = c(1,4,3)
+x = c("blue", "red", "yellow")
+
+```
+indexing a vector starts at 1 in `R`
+```{r}
+# not zero based indexing
+x = c(1,2,3,4,5,6,7,8,9,10)
+x1 = x[1]
+x2 = x[3:5]
+x1
+x2
+
+```
+getting the length, min or max of a vector
+```{r}
+length(x)
+min(x)
+max(x)
+```
+calculating central tendency of values in a vector, ie. mean and median
+```{r}
+mean(x)
+median(x)
+```
+calculating spread of values of a vector using the standard deviating or the variance 
+```{r}
+#standard deviating
+sd(x)
+
+# variance
+var(x)
+```
+<h2>Creating a *Matrix*</h2> 
+the function `matrix()` creates a two-dimensional data structure
+
+the following would set `A` as a two by two matrix
+```{r}
+A = matrix(data=c(1,2,3,4), nrow=2, ncol=2)
+A
+```
+<h3> indexing data in a matrix</h3>
+suppose we have the following matrix:
+```{r}
+A = matrix(seq(1,16), 4,4)
+A
+```
+we can select the element in the second row and the fourth column:
+```{r}
+A[2,4] # A[row,column]
+```
+you can also select multiple rows and columns in a matrix. it will create a new matrix as it's output
+```{r}
+A
+b = A[c(1,3), c(2,4)] # A[row, column]
+b
+```
+can get all rows or columns by leaving the space blank
+```{r}
+A[1:2, ]
+```
+*remove* a row or column with a negative sign
+```{r}
+A
+A[-c(1,3),]
+```
+`dim()` will return he matrix's dimensions
+```{r}
+dim(A)
+```
+also: min, max, median, and sd are also available
+```{r}
+min(A)
+max(A)
+median(A)
+sd(A)
+```
+<h3>Manipulating all values of a Vector or Matrix</h3>
+suppose we have a vector: `x = c(1,2,3,4,5,6,7,8,9,10)`. We can manipulate all of its values at once. ex:
+```{r}
+x = c(1,2,3,4,5,6,7,8,9,10)
+
+# Divide all of its values by two
+x/2
+```
+vector arithmetic
+```{r}
+x = c(1,2,3,4,5,6,7,8,9,10)
+y = c(10,9,8,7,6,5,4,3,2,1)
+
+x+y
+```
+can also be done with matrices, but must be careful to make sure they are the same dimensions or else it will loop around and continue the arithmetic
+
+<h2>Installing Packages</h2>
+will be using the CRAN packages, will be working with `tidyverse` package in this lecture
+```{r}
+install.packages("tidyverse")
+```
+
+
