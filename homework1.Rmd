@@ -1,0 +1,13 @@
+---
+title: "Homwork 1"
+output: html_notebook
+---
+
+```{r}
+install.packages("ISLR")
+```
+1.a) how many colleges are in the dataset?
+```{r}
+c(College)
+```
+
