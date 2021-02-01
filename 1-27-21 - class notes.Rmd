@@ -1,0 +1,136 @@
+---
+title: "1-27-21 - Class Notes"
+output: html_notebook
+---
+
+## Generating a sequence of numbers
+```{r}
+seq(from=1, to=1, by=((to-from) / (length.out-1)), length.out=NULL, along.with=NUL)
+
+```
+
+| argument | value |
+| ---------| ------|
+| `from`   | 1     |
+| `to`     | 1     |
+| `by`     | `(to-from) / (length.out-1)` 
+
+```{r}
+x = c(1,4,3)
+x
+```
+```{r}
+x = c("blue", "red", 'green')
+x
+```
+```{r}
+x[1]
+```
+
+```{r}
+x = c(1,2,3,4,5,6,7,8,9,10)
+x[1]
+```
+```{r}
+median(x)
+```
+## manipulating matries or vectors
+```{r}
+help(matrix)
+# outputs documentation in side window
+```
+
+```{r}
+x = c(1,2,3,4,5,6,7,8,9,10)
+y = c(10,9,8,7,6,5,4,3,2,1)
+x+y
+```
+## Installing Packages
+```{r}
+install.packages("tidyverse")
+```
+
+```{r}
+library(tidyverse)
+```
+- the packages are typically "tidy data" meaning they are already in a data from, wont have to clean it up
+
+```{r}
+help(read.table)
+```
+
+## Importing Data
+### Tidying Data
+```{r}
+help(read.table)
+```
+
+will be working with the `mpg` data frame today that contains 234 observations (rows) on 11 features (columns) for 38 models of cars:
+```{r}
+mpg 
+```
+to get description of the features in `mpg`, use the help function: 
+```{r}
+help(mpg)
+```
+
+to get numerical summaries of the features in `mpg`, use the `summary()` function:
+```{r}
+summary(mpg)
+```
+
+to access a feature in `mpg`, for example `cyl`, ype:
+```{r}
+mpg$cyl
+```
+alternately, we cn place the features in `mpg` into out environment by using `attach()`:
+```{r}
+attach(mpg)
+cyl
+```
+
+##Basic Plotting
+The `plot()` function is the primary way to plot data in `R`
+- ex: we can plot a scatterplot showing highway miles per gallon as a function of engine displacement:
+```{r}
+plot(displ, hwy)
+```
+- an observation is they are the inverse of each other. The plot allows us the more easily pick out the patterns such as the more displacement of the engine the worse miles per gallon the car tends to get.
+### Creating and customizing beautiful plots
+will be using `ggplot()`
+- allows more control and a nicer view of the plots
+```{r}
+ggplot(data = mpg) + geom_point(mapping=aes(x=displ, y=hwy))
+```
+### Breaking down `ggplot()`
+from the `mpg` data, we again examine the relationship between highway miles per gallon as a function of engine displacement:
+`ggplot(data = mpg) + geom_point(mapping=aes(x=displ, y=hwy))`
+the `ggplot()` function creates a coordinate system that we can add layers to, and we have told it to use `mpg` to make subsequent layers. 
+we can add scatterplot layer using `geom_point()` function, which takes the `mapping` argument.
+the `mapping` argument defines how variables are mapped to visual properties.
+```{r}
+ggplot(data = mpg) + geom_point(mapping=aes(x=displ, y=hwy, size=class))
+```
+why are we getting the warning `Using size for a discrete variable is not advised.
+`?
+<p>the reasons why are:
+<ol>
+1. size implies a quantity of some sort
+2. data could be hidden behind some of the larger data points
+</ol>
+the next example shows using a grayscale 
+```{r}
+ggplot(data = mpg) + geom_point(mapping=aes(x=displ, y=hwy, alpha=class))
+```
+notice the warning... using alpha is not ideal for this type of discrete data
+
+```{r}
+ggplot(data = mpg) + geom_point(mapping=aes(x=displ, y=hwy, shape=class))
+```
+there are only 6 different shapes, not a good idea for large amounts of different data
+
+lets change the color of the points, must take out of `aes` section because it is not longer an aesthetic. the color blue is set as an argument of the `greom_point()` function, and not the `aes()` function.
+```{r}
+ggplot(data = mpg) + geom_point(mapping=aes(x=displ, y=hwy), color="blue") #the color blue is an argument of `geom_point()`
+```
+
