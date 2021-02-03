@@ -11,42 +11,6 @@ output:
 ```{r}
 install.packages("ISLR")
 ```
-<ul>
-  <li>1.a) How many colleges are in the dataset?</li>
-    <ul>
-      There are 777 different universities in this dataset
-    </ul>
-  <li>1.b) How many features are there for each college?
-    <ul>
-      There are 18 different features for each college.
-    </ul>
-  </li>
-  <li>1.c) Which features is(are) categorical?
-    <ul>
-      
-    </ul>
-  </li>
-  <li>1.d) Which feature(s) is(are) numerical?
-    <ul>
-    #answer
-    </ul>
-  </li>
-  <li>1.e) How many colleges are private?
-    <ul>
-    #answer
-    </ul>
-  </li>
-  <li>1.f) What is the mean graduation rate across colleges?
-    <ul>
-    #answer
-    </ul>
-  </li>
-  <li>1.g) What is the maximum number of undergraduate students at a college? <br>Hint: Make sure that you include both full-time and part-time students in your calculation. 
-    <ul>
-    #answer
-    </ul>
-  </li>
-</ul>
 
 ```{r}
 read.csv(college)
