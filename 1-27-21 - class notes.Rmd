@@ -133,4 +133,118 @@ lets change the color of the points, must take out of `aes` section because it i
 ```{r}
 ggplot(data = mpg) + geom_point(mapping=aes(x=displ, y=hwy), color="blue") #the color blue is an argument of `geom_point()`
 ```
+the aesthetic, `aes()`, can be used to set colors of different classes.
+
+### example of complicated manual aesthetic settings
+```{r}
+ggplot(data=mpg) + geom_point(mapping=aes(x=displ, y=hwy), shape=24, size=8, aplha=0.5, color='red', fill='white')
+```
+### example: mapping multiple aesthetics (fuel type and car type)
+```{r}
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y=hwy, color=class, shape=fl))
+```
+## overlapping points in plots
+*overplotting* occurs because values of `displ` are rounded to one decimal place and values of `hwy` are rounded to the nearest integer.
+## using `jitter` to deal with overlapping points
+```{r}
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y=hwy), position = 'jitter')
+```
+### Automatic jittering with `geom_jitter()`
+```{r}
+ggplot(data = mpg) + geom_jitter(mapping = aes(x = displ, y=hwy))
+```
+## Facets
+- Aesthetics are useful for visualizing differences among subsets of data.
+- Another way to extract such patterns is to use *facets*, which create subplots for different subsets of the data.
+- Facets are particularly useful for categorical data, in which each subplot represents a sensible subdivision of the data.
+- To facet a pot by a single variable (e.g., car type), we can use the `facet_wrap()` function where the first argument is a formula created using the tilde (~) character.
+```{r}
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y=hwy)) + facet_wrap(~ class, nrow = 2)
+```
+cases with fewer data points makes it hard to see a trend, so might want to remove them
+### Faceting data based on car type across two columns
+by inceasing the number of columns, can allow us to see the data better
+```{r}
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y=hwy)) + facet_wrap(~ class, ncol=2)
+```
+### Faceting data across a combination of two features
+- so far we have considered facet_wrap(), which allows us to split data based on a single feature.
+- However, it can sometimes be useful to examine two features at once.
+- The facet_grid() function allows data to be plotted in subplots, with one feature representing subplot rows and another feature representing subplot columns.
+- The first argument of facet_grid() is a *formula of the form*: `row_feature ~ column_feature`
+```{r}
+ggplot(data = mpg) +
+geom_point(mapping = aes(x = displ, y = hwy)) + facet_grid(drv ~ cyl)
+```
+### Different types of geoms use by plotting type
+| Graph type | Geom Type |
+|------------|-----------|
+| bar        | `bar`     |
+| line       | `line  `  |
+| boxplot    | `boxplot` |
+| ...        | ...       |
+| scatter    | `point`   |
+- Scatterplots break the pattern, such that their geometric object is not “scatter”, but instead “point”.
+We have already made scatterplots with the function geom_point().
+### Plotting a smoothed line fitted with a confidence interval
+- will show the 95% confidence interval around the smooth line
+```{r}
+ggplot(data=mpg) + geom_smooth(mapping = aes(x=displ, y=hwy))
+```
+### What geom_smooth() is plotting
+- In the command `geom_smooth(mapping = aes(x = displ, y = hwy))` we told R to plot a smoothed line and to display 95% confidence bands by default around the smoothed line.
+- Recall that there is a 95% percent chance that this confidence interval contains the true population mean.
+- There are a number of arguments for the geom_smooth() function that permit flexibility, such as changing the type of confidence interval, not including the confidence interval, or even creating separate smoothing lines and confidence intervals for subsets of data.
+#### Changing the confidence level to 99%
+```{r}
+ggplot(data = mpg) + geom_smooth(mapping = aes(x=displ, y=hwy), level = 0.99)
+```
+#### can also add both `geom_point()` and `geom_smooth()` to same plot
+```{r}
+ggplot(data=mpg, mapping = aes(x=displ, y=hwy)) + geom_point() + geom_smooth()
+```
+### Adding color to scatterplot based on car type
+- this will only add color to the point, will not change the color of smooth
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + geom_point(mapping = aes(color = class)) + geom_smooth()
+```
+### Adding color based on drive in scatter and smoothed plots
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
+    geom_point() +
+    geom_smooth()
+```
+## Bar plots
+- Bar plots display frequencies of classes of categorical data.
+- To explore the use of bar plots, we will examine a new dataset called diamonds, which comes tidied in a data frame in `tidyverse`.
+- This data frame has 53,940 rows (observations) with 10 columns (features) containing attributes of `diamonds`.
+```{r}
+diamonds
+```
+- don't always know what everything in the data set means, so we can use the `help()` function to display more information on the data
+```{r}
+help(diamonds)
+```
+### Bar plot showing distribution of diamond quality
+We can create a bar plot to display diamond quality (cut) on the 𝑥 axis, and the count for a diamond of that quality on the 𝑦 axis:
+```{r}
+ggplot(data = diamonds) + geom_bar(mapping = aes(x = cut))
+```
+### Statistical transformation in geom_bar()
+- The geom_bar() function first transforms data into counts, which are then returned for each cut.
+- That is, five counts are returned, each summarizing how often a cut appears in the dataset.
+- These transformed data (counts) are then displayed on the 𝑦 axis as a function of cut on the 𝑥 axis using the geom_bar() function.
+## Histograms
+- Histograms display distributions for continuous numerical variables. For example, we can create a histogram showing the distribution of
+highway miles per gallon in the mpg data frame:
+```{r}
+ggplot(data = mpg, mapping = aes(x = hwy)) +
+geom_histogram()
+```
+#### changing the size of the bins
+```{r}
+ggplot(data = mpg, mapping = aes(x = hwy)) +
+geom_histogram(bins=10)
+```
+## starts explaining homework 1
 
