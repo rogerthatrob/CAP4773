@@ -1,5 +1,5 @@
 ---
-title: "1-27-21 - Class Notes"
+title: "Lecuture 4: 1-27-21 and 2-4-21 - Class Notes"
 output: html_notebook
 ---
 
@@ -246,5 +246,41 @@ geom_histogram()
 ggplot(data = mpg, mapping = aes(x = hwy)) +
 geom_histogram(bins=10)
 ```
-## starts explaining homework 1
+### starts explaining homework 1
 
+### starts going over quickly what we will be doing next week
+ - ends lecture
+
+# 2-3-21 - Continues Lecture 4
+- reviews what she went over last class
+
+## Bar Plots
+- Bar plots are nice ways in showing frequencies of classes of categorical data.
+
+```{r}
+library(tidyverse)
+diamonds
+help(diamonds)
+```
+### Bar plot showing distribution of diamond quality
+- We can create a bar plot to display diamond quality (cut) on the 𝑥 axis, and the count for a diamond of that quality on the 𝑦 axis:
+```{r}
+ggplot(data = diamonds) + geom_bar(mapping = aes(x = cut))
+```
+### Statistical transformation in geom_bar()
+- The geom_bar() function first transforms data into counts, which are then returned for each cut.
+- That is, five counts are returned, each summarizing how often a cut appears in the dataset.
+- These transformed data (counts) are then displayed on the 𝑦 axis as a function of cut on the 𝑥 axis using the geom_bar() function.
+### Histograms
+- Histograms display distributions for continuous numerical variables. - For example, we can create a histogram showing the distribution of
+highway miles per gallon in the mpg data frame:
+```{r}
+ggplot(data = mpg, mapping = aes(x = hwy)) +
+geom_histogram()
+```
+- can adjust the number of bins.
+### box plots
+```{r}
+ggplot(data = mpg, mapping = aes(x=class, h=hwy)) + geom_boxplot()
+```
+*stopped at 58:40*

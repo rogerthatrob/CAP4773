@@ -13,7 +13,7 @@ install.packages("ISLR")
 ```
 
 ```{r}
-read.csv(college)
+help("ISLR")
 ```
 
 
