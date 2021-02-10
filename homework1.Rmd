@@ -38,6 +38,10 @@ maxUnderGrad
 ```
 # 2
 Second, we will examine the relationship between the percentage of students from the top 10% of their high school class and the out-of-state tuition at a college. 
+```{r}
+library(ggplot2)
+```
+
 ## 2.a 
 Create a scatterplot with the percentage of students from the top 10% of their high school class on the x axis and the out-of-state tuition on the y axis. Overlay the points with a smoothed line and 95% confidence bands. Remember to avoid overplotting. 
 
@@ -49,12 +53,17 @@ ggplot(data = College) + geom_point(mapping = aes(x = Top10perc, y = Outstate)) 
 ## 3.a
 [10 points] Using different colored points for public and private colleges, create a scatterplot with the percentage of students from the top 10% of their high school class on the x axis and the out-of-state tuition on the y axis. Overlay each set of points with a smoothed line of the same color with 95% confidence bands. Remember to avoid overplotting. 
 ```{r}
-ggplot(data = College, mapping = aes(x = Top10perc, y = Outstate)) + geom_point(mapping = aes(color = class)) + geom_smooth()
+ggplot(data = College, mapping = aes(x = Top10perc, y = Outstate)) + geom_point(mapping = aes(color = Private)) + geom_smooth()
 ```
 
 ```{r}
-ggplot(data = College, mapping = aes(x = Top10perc, y = Outstate, color = class)) + geom_point() + geom_smooth()
+ggplot(data = College, mapping = aes(x = Top10perc, y = Outstate, color = Private)) + geom_point(position = 'jitter') + geom_smooth(level = 0.95)
 ```
 
+## 3.b
+Using faceting, create side-by-side scatterplots for public and private schools, with the number of students from the top 10% of their high school class on each x axis and the out-of-state tuition on each y axis. Overlay each scatterplot with a smoothed line with 95% confidence bands. Remember to avoid overplotting. 
 
+```{r}
+ggplot(data = College, mapping = aes(x=Top10perc, y=Outstate)) + geom_jitter() + facet_wrap(~ Private, ncol = 2) + geom_smooth()
+```
 
