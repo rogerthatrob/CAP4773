@@ -1,7 +1,64 @@
 ---
-title: "Lecutere 5, 2-3-21"
+title: "Lecutere 5: 2-3-21"
 output: html_notebook
 ---
+1:25:00 in lecture 2-3-21
+# Linear Regression (part 1)
 
+## Lecture 5
+- the meat of this course is the modeling
 
-*stopped at 1:19:00*
+### Terminology in statistical learning
+- Notation: 
+-- input X: often multidimensional, in which each dimension is referred to as a **feature**, predictor, or independent variable.
+-- output Y: the **response** or dependent variable
+
+- Categorization: 
+-- **Supervised** vs **Unsupervised** learning. Is Y available in the training data?
+-- **Regression** vs **Classification** (supervised). is Y quantitative or qualitative? 
+
+### How to make predictinos with supervised learning?
+- We assume that there is some relationship between a response Y and features X = (X1, X2,..., Xp), which can be written in the general form:
+$Y = f(X) + epsilon$ the 'epsilon' is a random error term.
+
+### How do we estimate $f$?
+- we use **training data** to teach a method how to estimate $f$
+- suppose we have a set of n training observations, such that every training observation $i=1,2, ..., n$ has both a feature measurement $x_i$ and response measurement $y_i$.
+- then out training data consist of tuples $(x_i,y_i)$ for $i=1,2,...,n$
+- we apply a statistical learning method to the training data to estimate $f$
+
+### Two major classes of statistical learning methods
+- A **parametric** method is a model-based approach that makes an explicit assumption about the shape of 𝑓.
+- In contrast, a **non-parametric** method does not make any assumption about the shape of 𝑓, but rather seeks an estimate of 𝑓 that gets as close to the data points as possible without being too rough or wiggly.
+- **Linear regression** is parametric because it assumes that a response 𝑌 can be estimated by a linear combination of features 𝑋 ... 𝑋 :
+$𝑌=𝛽_0+𝛽_1𝑋_1+𝛽_2𝑋_2+⋯+𝛽_p𝑋 _𝑝$
+𝛽 ... 𝛽 are **coefficients**, or **parameters**, of the regression function.
+
+### Non-parametric methods
+- Because there is no constraint on the shape of 𝑓, there are many possible approaches.
+- However, the basic idea of all of these approaches is to produce an estimate of 𝑓 that is as close as possible to the observed training data without **overfitting**.
+- To achieve this goal, we need to determine an appropriate amount of **smoothness** for 𝑓.
+- We will discuss this issue later in the course when we cover non- parametric methods.
+
+### terminology
+- supervised learning is regression
+- linear regression will go over today
+- will go over unsupervised learning at end of course
+- will go over topics in same order as book, but not follow it exactly
+
+# Simple Linear Regresssion
+- **simple linear regression** is used to predict a response Y from a single feature X:
+$Y = 𝛽_0+𝛽_1𝑋$ 
+- is similar to the slope of the line $Y = mx+b$
+- 𝛽 is the 𝑦 intercept(value of𝑌when𝑋=0)
+- 𝛽 is the slope (rate of change in𝑌as a function of𝑋)
+
+### Obtaining the closest linear regression line
+- Residual sum of squares (𝐑𝐒𝐒) quantifies the sum of squared residuals: 
+$RSS = 𝑒_1^2 + 𝑒_2^2 + ⋯ + 𝑒_n^2$
+- Therefore, the goal is to obtain a line that minimizes RSS, which is referred to as the least squares regression line.
+### Slope and intercept of the least squares regression line
+- The slope of the least-squares regression line is on slide 59 in lecture 5, wont need to code this
+- slope intercept is also on slide 59 and will not need to code this.
+
+**ends lecture from 2-3-21, slide 60 **
