@@ -62,3 +62,54 @@ $RSS = 𝑒_1^2 + 𝑒_2^2 + ⋯ + 𝑒_n^2$
 - slope intercept is also on slide 59 and will not need to code this.
 
 **ends lecture from 2-3-21, slide 60 **
+
+- announces **homework 2** will be posted, will be able to do the assignment by end of the next lecture. most of the assignment topics will be covered in this lecture.
+
+- this lecture will be conceptual, in part 2, she will go through the code. 
+- most of course will be in supervised learning, only briefly going over unsupervised learning.
+- goes over what she went over last class.
+
+### How do we estimate $f$?
+- we use the **training data** to teach a method how to estimate $f$.
+
+#### Non-parametric methods will go over later in course
+
+## Simple Linear Regression
+- **Simple Linear Regression** is used to predict a response $Y$ from a single feature $X$:
+$𝑌=𝛽_0+𝛽_1𝑋$
+- $𝛽_0$ "beta-not" does not really matter
+
+### Obtaining the closest linear regression line
+- we want to minimize deviations between observations and predictions. 
+- let y hat equals b hat null plus b hat one times x_i be the prediction for Y based on the ith value of X.
+- Then, e_i = y_i - y_i hat 
+- want to minimize the $RSS$
+
+## General Linear Regression
+- similar to simple linear regression, just adding on more features...
+$𝑌=𝛽_0+𝛽_1𝑋_1+𝛽_2X_2+⋯+𝛽_pX_p$
+- the beta null and beta_1 X_1 are the same then add additional features to the equation to to $𝛽_pX_p$
+
+### two goals of statistics
+- **estimation** putting bounds on the value of a parameter in a population.
+- **hypothesis testing** evaluating claims about a parameter in a population.
+
+## Null hypothesis
+<ul>
+<li>null hypothesis 𝐇𝟎 is a specific statement about a population parameter that is made for the purposes of argument.</li>
+<li>
+A good null hypothesis is something that would be interesting to reject, and thus is uninteresting.</li>
+</ul>
+
+## alternative hypothesis
+<ul><li>
+The alternative hypothesis 𝐇𝐀 includes all possible values for the population parameter aside from the one stated by the null hypothesis.</li>
+<li> The alternative hypothesis is what the researcher hopes is true, and thus is interesting. <li>
+</ul>
+
+## The $P$ value in linear regression
+- the **$P$ value** is the probability of obtaining a test statistic (data) at lease as extreme as your test statistic given the num distribution:
+*see slides
+- the $p$ probability is close to zero.
+
+

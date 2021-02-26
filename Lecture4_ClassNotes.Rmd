@@ -306,5 +306,5 @@ bar + coord_polar() + theme_bw() #changes the background to white
 ## Goes over `ggplot()` cheat sheet
 ## lecture summary
 - discussed the first few steps of data science in R
-- next will begin about how to design *models* so that we can learn and make preditction from data.
+- next will begin about how to design *models* so that we can learn and make prediction from data.
 - *linear regression*, a type of supervised learning in  which we fit a linear model to data so that we can make predictions about a response variable from one or more features.  
