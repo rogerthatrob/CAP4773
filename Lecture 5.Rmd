@@ -111,5 +111,5 @@ The alternative hypothesis 𝐇𝐀 includes all possible values for the populat
 - the **$P$ value** is the probability of obtaining a test statistic (data) at lease as extreme as your test statistic given the num distribution:
 *see slides
 - the $p$ probability is close to zero.
-
+- **dont except the null hypothesis $H_0$**
 
