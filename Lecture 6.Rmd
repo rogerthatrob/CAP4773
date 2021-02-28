@@ -3,4 +3,26 @@ title: "Lecture 6"
 output: html_notebook
 ---
 
+# Linear Regression part 2
 
+- residual standard error (RSE)
+
+### R^2 statistic
+
+- Residual standard error (RSE) is the standard deviation of residuals or spread of residuals
+
+- $R^2$ statistic is the proportion of variance in Y explained from X.
+
+## Using R for simple linear regresssion
+- the function `lm()` fits a simple linear regression model:
+`lm(formula, data, ...)`
+- The only required argument is formula, which takes the value of an object of class “formula” that looks like:
+𝑌 ~ 𝑋
+
+# Lecture from 10-17-21 is week 6
+
+## goes over Homework 2
+- **will be able to do all of hw2 after linear regression part 2 lecture is done**
+- Input 𝑋: Often multidimensional, in which each dimension is referred to as a feature, predictor, or independent variable
+Output 𝑌: The response or dependent variable
+- will go over simple linear regression again during this lecture
