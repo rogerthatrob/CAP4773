@@ -1,0 +1,115 @@
+---
+title: "Lecutere 5: 2-3-21"
+output: html_notebook
+---
+1:25:00 in lecture 2-3-21
+# Linear Regression (part 1)
+
+## Lecture 5
+- the meat of this course is the modeling
+
+### Terminology in statistical learning
+- Notation: 
+-- input X: often multidimensional, in which each dimension is referred to as a **feature**, predictor, or independent variable.
+-- output Y: the **response** or dependent variable
+
+- Categorization: 
+-- **Supervised** vs **Unsupervised** learning. Is Y available in the training data?
+-- **Regression** vs **Classification** (supervised). is Y quantitative or qualitative? 
+
+### How to make predictinos with supervised learning?
+- We assume that there is some relationship between a response Y and features X = (X1, X2,..., Xp), which can be written in the general form:
+$Y = f(X) + epsilon$ the 'epsilon' is a random error term.
+
+### How do we estimate $f$?
+- we use **training data** to teach a method how to estimate $f$
+- suppose we have a set of n training observations, such that every training observation $i=1,2, ..., n$ has both a feature measurement $x_i$ and response measurement $y_i$.
+- then out training data consist of tuples $(x_i,y_i)$ for $i=1,2,...,n$
+- we apply a statistical learning method to the training data to estimate $f$
+
+### Two major classes of statistical learning methods
+- A **parametric** method is a model-based approach that makes an explicit assumption about the shape of 𝑓.
+- In contrast, a **non-parametric** method does not make any assumption about the shape of 𝑓, but rather seeks an estimate of 𝑓 that gets as close to the data points as possible without being too rough or wiggly.
+- **Linear regression** is parametric because it assumes that a response 𝑌 can be estimated by a linear combination of features 𝑋 ... 𝑋 :
+$𝑌=𝛽_0+𝛽_1𝑋_1+𝛽_2𝑋_2+⋯+𝛽_p𝑋 _𝑝$
+𝛽 ... 𝛽 are **coefficients**, or **parameters**, of the regression function.
+
+### Non-parametric methods
+- Because there is no constraint on the shape of 𝑓, there are many possible approaches.
+- However, the basic idea of all of these approaches is to produce an estimate of 𝑓 that is as close as possible to the observed training data without **overfitting**.
+- To achieve this goal, we need to determine an appropriate amount of **smoothness** for 𝑓.
+- We will discuss this issue later in the course when we cover non- parametric methods.
+
+### terminology
+- supervised learning is regression
+- linear regression will go over today
+- will go over unsupervised learning at end of course
+- will go over topics in same order as book, but not follow it exactly
+
+# Simple Linear Regresssion
+- **simple linear regression** is used to predict a response Y from a single feature X:
+$Y = 𝛽_0+𝛽_1𝑋$ 
+- is similar to the slope of the line $Y = mx+b$
+- 𝛽 is the 𝑦 intercept(value of𝑌when𝑋=0)
+- 𝛽 is the slope (rate of change in𝑌as a function of𝑋)
+
+### Obtaining the closest linear regression line
+- Residual sum of squares (𝐑𝐒𝐒) quantifies the sum of squared residuals: 
+$RSS = 𝑒_1^2 + 𝑒_2^2 + ⋯ + 𝑒_n^2$
+- Therefore, the goal is to obtain a line that minimizes RSS, which is referred to as the least squares regression line.
+### Slope and intercept of the least squares regression line
+- The slope of the least-squares regression line is on slide 59 in lecture 5, wont need to code this
+- slope intercept is also on slide 59 and will not need to code this.
+
+**ends lecture from 2-3-21, slide 60 **
+
+- announces **homework 2** will be posted, will be able to do the assignment by end of the next lecture. most of the assignment topics will be covered in this lecture.
+
+- this lecture will be conceptual, in part 2, she will go through the code. 
+- most of course will be in supervised learning, only briefly going over unsupervised learning.
+- goes over what she went over last class.
+
+### How do we estimate $f$?
+- we use the **training data** to teach a method how to estimate $f$.
+
+#### Non-parametric methods will go over later in course
+
+## Simple Linear Regression
+- **Simple Linear Regression** is used to predict a response $Y$ from a single feature $X$:
+$𝑌=𝛽_0+𝛽_1𝑋$
+- $𝛽_0$ "beta-not" does not really matter
+
+### Obtaining the closest linear regression line
+- we want to minimize deviations between observations and predictions. 
+- let y hat equals b hat null plus b hat one times x_i be the prediction for Y based on the ith value of X.
+- Then, e_i = y_i - y_i hat 
+- want to minimize the $RSS$
+
+## General Linear Regression
+- similar to simple linear regression, just adding on more features...
+$𝑌=𝛽_0+𝛽_1𝑋_1+𝛽_2X_2+⋯+𝛽_pX_p$
+- the beta null and beta_1 X_1 are the same then add additional features to the equation to to $𝛽_pX_p$
+
+### two goals of statistics
+- **estimation** putting bounds on the value of a parameter in a population.
+- **hypothesis testing** evaluating claims about a parameter in a population.
+
+## Null hypothesis
+<ul>
+<li>null hypothesis 𝐇𝟎 is a specific statement about a population parameter that is made for the purposes of argument.</li>
+<li>
+A good null hypothesis is something that would be interesting to reject, and thus is uninteresting.</li>
+</ul>
+
+## alternative hypothesis
+<ul><li>
+The alternative hypothesis 𝐇𝐀 includes all possible values for the population parameter aside from the one stated by the null hypothesis.</li>
+<li> The alternative hypothesis is what the researcher hopes is true, and thus is interesting. <li>
+</ul>
+
+## The $P$ value in linear regression
+- the **$P$ value** is the probability of obtaining a test statistic (data) at lease as extreme as your test statistic given the num distribution:
+*see slides
+- the $p$ probability is close to zero.
+- **dont except the null hypothesis $H_0$**
+

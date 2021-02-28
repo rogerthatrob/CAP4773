@@ -1,11 +1,11 @@
 ---
-title: "Lecuture 4: 1-27-21 and 2-4-21 - Class Notes"
+title: "Lecuture 4: 1-27-21 and 2-3-21 - Class Notes"
 output: html_notebook
 ---
 
 ## Generating a sequence of numbers
 ```{r}
-seq(from=1, to=1, by=((to-from) / (length.out-1)), length.out=NULL, along.with=NUL)
+# seq(from=1, to=1, by=((to-from) / (length.out-1)), length.out=NULL, along.with=NUL)
 
 ```
 
@@ -67,7 +67,7 @@ help(read.table)
 
 will be working with the `mpg` data frame today that contains 234 observations (rows) on 11 features (columns) for 38 models of cars:
 ```{r}
-mpg 
+mpg  
 ```
 to get description of the features in `mpg`, use the help function: 
 ```{r}
@@ -283,4 +283,28 @@ geom_histogram()
 ```{r}
 ggplot(data = mpg, mapping = aes(x=class, h=hwy)) + geom_boxplot()
 ```
-*stopped at 58:40*
+## Plotting objects can be assigned to a variable
+```{r}
+bar = ggplot(data = diamonds) + geom_bar(mapping = aes(x=cut, fill=cut), show.legend = FALSE, width = 1) + theme(aspect.ratio = 1) + labs(x=NULL, y=NULL)
+bar # all of above is saved into the variable
+```
+### flipping the corrdinates by adding that layer
+```{r}
+bar + coord_flip()
+```
+
+### Coxcomb Chart
+- **Coxcomb Chart** is similar to pie chart
+- may not be the best way to present this information
+```{r}
+bar + coord_polar()
+```
+- can change the theme of the graph 
+```{r}
+bar + coord_polar() + theme_bw() #changes the background to white
+```
+## Goes over `ggplot()` cheat sheet
+## lecture summary
+- discussed the first few steps of data science in R
+- next will begin about how to design *models* so that we can learn and make prediction from data.
+- *linear regression*, a type of supervised learning in  which we fit a linear model to data so that we can make predictions about a response variable from one or more features.  
