@@ -26,3 +26,42 @@ output: html_notebook
 - Input 𝑋: Often multidimensional, in which each dimension is referred to as a feature, predictor, or independent variable
 Output 𝑌: The response or dependent variable
 - will go over simple linear regression again during this lecture
+- will go through most of this today with the advertising data set
+
+### What we have done so far with the Advertising dataset
+##### discussed this process conceptually in part one now want to do it in R
+- Goal was to predict sales (𝑌) from TV (𝑋)
+- Fit simple linear model $𝑌 = 𝛽_0 + 𝛽_1𝑋$ to training data
+- Obtained  $𝛽(hat)_0 $and$𝛽(hat)_1$ that minimize RSS (least squares regression line)
+- Made predictions from least squares regression line  
+- Obtained 95% confidence intervals for$𝛽_0$ and$𝛽_1$
+- Tested null hypothesis $H_0:𝛽_1 = 0$ (*can do the same for $𝛽_0$ ) 
+- Used RSE and 𝑅2 to assess the fit of our least squares regression line
+
+```{r}
+Advertising
+lm(fomrula = sales ~ TV, data = Advertising)
+```
+```{r}
+lm(sales ~ TV)
+```
+
+```{r}
+Advertising_1 = read.csv("/Users/roberthaire/Google Drive/Spring 2021/CAP4773 - Data Science/Advertising.csv")
+Advertising_1
+```
+```{r}
+lm(formula = sales ~ TV, data = Advertising)
+```
+
+- Alternatively, remember that we can drop the `data` argument by first placing the features in `Advertising` into our environment:
+```{r}
+attach(Advertising_1)
+lm.fit = lm(formula = sales~TV)
+ 
+```
+
+```{r}
+predict(lm.fit, data.frame(TV = c(1000)))
+```
+

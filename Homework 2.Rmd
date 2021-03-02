@@ -15,9 +15,41 @@ output: html_notebook
 library(ISLR)
 help(College)
 College
+library(tidyverse)
+library(ggplot2)
 ```
+## 1
+
+#### A
+- Input 𝑋: Often multidimensional, in which each dimension is referred to as a feature, predictor, or independent variable
+- Output 𝑌: The response or dependent variable
+
+#### B
+- use `lm()` to find the simple linear regression model?
+- `lm(formula, data, ...)` where the formula looks like Y~X, data is an optional argument
+- $β_0$ and $β_1$ are two unknown constants that represent the intercept and slope terms in the linear model. Together, β0 and β1 are known as the model coefficients or parameters.
+- These $𝛽_0$ (Intercept) and $𝛽_1$ (Top10perc) are those that minimize RSS and
+yield the **least squares regression line**.
 
 ```{r}
+lm.fit = lm(formula = Outstate ~ Top10perc, data = College)
+lm.fit
+```
 
+- plotting lm.fit using geom_jitter
+```{r}
+ggplot(data = lm.fit) + geom_jitter(mapping = aes(x=Top10perc, y=Outstate))
+```
+
+#### D
+- confidence intervals for $B_0$ and $B_1$
+```{r}
+confint(lm.fit, level = 0.95)
+```
+
+#### E
+- point estimate
+```{r}
+predict(lm.fit, data.frame(Top10perc = c(1000)))
 ```
 

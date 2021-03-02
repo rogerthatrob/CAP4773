@@ -13,3 +13,6 @@ maxUnderGrad
 library(ggplot2)
 
 ggplot(data = College) + geom_point(mapping = aes(x = Top10perc, y = Outstate)) + geom_smooth(mapping = aes(x = Top10perc, y = Outstate), level = 0.95)
+
+ggplot(data = College) + goem_jitter(mapping = aes(x=Top10perc, y=Outstate))
+                                     
