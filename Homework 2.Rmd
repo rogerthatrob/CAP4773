@@ -36,10 +36,6 @@ lm.fit = lm(formula = Outstate ~ Top10perc, data = College)
 lm.fit
 ```
 
-- plotting lm.fit using geom_jitter
-```{r}
-ggplot(data = lm.fit) + geom_jitter(mapping = aes(x=Top10perc, y=Outstate))
-```
 
 #### D
 - confidence intervals for $B_0$ and $B_1$
@@ -50,6 +46,26 @@ confint(lm.fit, level = 0.95)
 #### E
 - point estimate
 ```{r}
-predict(lm.fit, data.frame(Top10perc = c(1000)))
+lm.pointEst = predict(lm.fit, data.frame(Top10perc = c(1000,2000)))
+lm.pointEst
 ```
+- confidence interval
+```{r}
+confint(lm.pointEst, level = 0.95)
+```
+
+#### F
+- plotting lm.fit using geom_jitter() and geom_smooth()
+```{r}
+ggplot(data = lm.fit, mapping = aes(x=Top10perc, y=Outstate)) + geom_jitter() + geom_smooth() + theme_bw()
+```
+
+## 2
+
+#### A
+- The null hypothesis 𝐇𝟎 is a specific statement about a population parameter that is made for the purposes of argument.
+A good null hypothesis is something that would be interesting to reject, and thus is uninteresting. (slide 102 in LR p1)
+- The alternative hypothesis 𝐇𝐀 includes all possible values for the population parameter aside from the one stated by the null hypothesis.
+The alternative hypothesis is what the researcher hopes is true, and thus is interesting. (slide 103 in LR p1)
+
 
