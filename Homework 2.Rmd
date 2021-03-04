@@ -12,6 +12,8 @@ output: html_notebook
 - loading the raw data set inline
 ```{r}
 # install.packages("ISLR")
+install.packages("tidyverse")
+install.packages("ggplot")
 library(ISLR)
 help(College)
 College
