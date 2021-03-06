@@ -1,6 +1,8 @@
 ---
 title: "Homework 2"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 
 # Homework 2
@@ -45,19 +47,20 @@ confint(lm.fit, level = 0.95)
 
 #### E
 - point estimate
+- the `c()` is "combine," it is creating a list of the x values
 ```{r}
-lm.pointEst = predict(lm.fit, data.frame(Top10perc = c(1000,2000)))
+lm.pointEst = predict(lm.fit, data.frame(Top10perc = c(0.33)))
 lm.pointEst
 ```
 - confidence interval
 ```{r}
-confint(lm.pointEst, level = 0.95)
+# confint(lm.pointEst, level = 0.95)
 ```
 
 #### F
 - plotting lm.fit using geom_jitter() and geom_smooth()
 ```{r}
-ggplot(data = lm.fit, mapping = aes(x=Top10perc, y=Outstate)) + geom_jitter() + geom_smooth() + theme_bw()
+ggplot(data = lm.fit, mapping = aes(x=Top10perc, y=Outstate)) + geom_jitter() + geom_smooth(method='lm', formula= y~x) + theme_bw()
 ```
 
 ## 2
@@ -68,4 +71,22 @@ A good null hypothesis is something that would be interesting to reject, and thu
 - The alternative hypothesis 𝐇𝐀 includes all possible values for the population parameter aside from the one stated by the null hypothesis.
 The alternative hypothesis is what the researcher hopes is true, and thus is interesting. (slide 103 in LR p1)
 
+#### B
+- We can view all of the output of lm() with the summary() function using `summary()`
+- test statistic
+```{r}
+summary(lm.fit)
+```
 
+- p value: < 2.2e-16
+
+## 3
+
+#### A
+
+```{r}
+ggplot(data = lm.fit,, mapping = aes(x=Top10perc, y=Outstate)) + geom_jitter(color = "red") + geom_smooth(method='lm', formula= y~x, level = 0) + geom_segment(mapping = aes(xend=Top10perc, yend=.fitted)) + theme_minimal()
+```
+
+
+  
