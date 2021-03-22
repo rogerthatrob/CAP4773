@@ -66,3 +66,9 @@ predict(lm.fit, data.frame(TV = c(1000)))
 ```
 ## Multiple Linear Regression 
 
+```{r}
+library(ISLR)
+attach(Auto)
+names(Auto)
+```
+
