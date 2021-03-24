@@ -4,6 +4,76 @@ output: html_notebook
 ---
 
 # Linear Regression part 2
+<<<<<<< HEAD
+=======
+
+- residual standard error (RSE)
+
+### R^2 statistic
+
+- Residual standard error (RSE) is the standard deviation of residuals or spread of residuals
+
+- $R^2$ statistic is the proportion of variance in Y explained from X.
+
+## Using R for simple linear regresssion
+- the function `lm()` fits a simple linear regression model:
+`lm(formula, data, ...)`
+- The only required argument is formula, which takes the value of an object of class “formula” that looks like:
+𝑌 ~ 𝑋
+
+# Lecture from 10-17-21 is week 6
+
+## goes over Homework 2
+- **will be able to do all of hw2 after linear regression part 2 lecture is done**
+- Input 𝑋: Often multidimensional, in which each dimension is referred to as a feature, predictor, or independent variable
+Output 𝑌: The response or dependent variable
+- will go over simple linear regression again during this lecture
+- will go through most of this today with the advertising data set
+
+### What we have done so far with the Advertising dataset
+##### discussed this process conceptually in part one now want to do it in R
+- Goal was to predict sales (𝑌) from TV (𝑋)
+- Fit simple linear model $𝑌 = 𝛽_0 + 𝛽_1𝑋$ to training data
+- Obtained  $𝛽(hat)_0 $and$𝛽(hat)_1$ that minimize RSS (least squares regression line)
+- Made predictions from least squares regression line  
+- Obtained 95% confidence intervals for$𝛽_0$ and$𝛽_1$
+- Tested null hypothesis $H_0:𝛽_1 = 0$ (*can do the same for $𝛽_0$ ) 
+- Used RSE and 𝑅2 to assess the fit of our least squares regression line
+
+```{r}
+Advertising
+lm(fomrula = sales ~ TV, data = Advertising)
+```
+```{r}
+lm(sales ~ TV)
+```
+
+```{r}
+Advertising_1 = read.csv("/Users/roberthaire/Google Drive/Spring 2021/CAP4773 - Data Science/Advertising.csv")
+Advertising_1
+```
+```{r}
+lm(formula = sales ~ TV, data = Advertising)
+```
+
+- Alternatively, remember that we can drop the `data` argument by first placing the features in `Advertising` into our environment:
+```{r}
+attach(Advertising_1)
+lm.fit = lm(formula = sales~TV)
+ 
+```
+
+```{r}
+predict(lm.fit, data.frame(TV = c(1000)))
+```
+## Multiple Linear Regression 
+
+```{r}
+library(ISLR)
+attach(Auto)
+names(Auto)
+```
+>>>>>>> 5586fd519be3e4db99d3d65c1283b244b2ef582b
 
 - residual standard error (RSE)
 

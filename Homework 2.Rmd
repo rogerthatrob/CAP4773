@@ -1,6 +1,12 @@
 ---
 title: "Homework 2"
+<<<<<<< HEAD
 output: html_notebook
+=======
+output:
+  pdf_document: default
+  html_notebook: default
+>>>>>>> 5586fd519be3e4db99d3d65c1283b244b2ef582b
 ---
 
 # Homework 2
@@ -12,6 +18,7 @@ output: html_notebook
 - loading the raw data set inline
 ```{r}
 # install.packages("ISLR")
+<<<<<<< HEAD
 library(ISLR)
 help(College)
 College
@@ -21,3 +28,83 @@ College
 
 ```
 
+=======
+install.packages("tidyverse")
+install.packages("ggplot")
+library(ISLR)
+help(College)
+College
+library(tidyverse)
+library(ggplot2)
+```
+## 1
+
+#### A
+- Input 𝑋: Often multidimensional, in which each dimension is referred to as a feature, predictor, or independent variable
+- Output 𝑌: The response or dependent variable
+
+#### B
+- use `lm()` to find the simple linear regression model?
+- `lm(formula, data, ...)` where the formula looks like Y~X, data is an optional argument
+- $β_0$ and $β_1$ are two unknown constants that represent the intercept and slope terms in the linear model. Together, β0 and β1 are known as the model coefficients or parameters.
+- These $𝛽_0$ (Intercept) and $𝛽_1$ (Top10perc) are those that minimize RSS and
+yield the **least squares regression line**.
+
+```{r}
+lm.fit = lm(formula = Outstate ~ Top10perc, data = College)
+lm.fit
+```
+
+
+#### D
+- confidence intervals for $B_0$ and $B_1$
+```{r}
+confint(lm.fit, level = 0.95)
+```
+
+#### E
+- point estimate
+- the `c()` is "combine," it is creating a list of the x values
+```{r}
+lm.pointEst = predict(lm.fit, data.frame(Top10perc = c(0.33)))
+lm.pointEst
+```
+- confidence interval
+```{r}
+# confint(lm.pointEst, level = 0.95)
+```
+
+#### F
+- plotting lm.fit using geom_jitter() and geom_smooth()
+```{r}
+ggplot(data = lm.fit, mapping = aes(x=Top10perc, y=Outstate)) + geom_jitter() + geom_smooth(method='lm', formula= y~x) + theme_bw()
+```
+
+## 2
+
+#### A
+- The null hypothesis 𝐇𝟎 is a specific statement about a population parameter that is made for the purposes of argument.
+A good null hypothesis is something that would be interesting to reject, and thus is uninteresting. (slide 102 in LR p1)
+- The alternative hypothesis 𝐇𝐀 includes all possible values for the population parameter aside from the one stated by the null hypothesis.
+The alternative hypothesis is what the researcher hopes is true, and thus is interesting. (slide 103 in LR p1)
+
+#### B
+- We can view all of the output of lm() with the summary() function using `summary()`
+- test statistic
+```{r}
+summary(lm.fit)
+```
+
+- p value: < 2.2e-16
+
+## 3
+
+#### A
+
+```{r}
+ggplot(data = lm.fit,, mapping = aes(x=Top10perc, y=Outstate)) + geom_jitter(color = "red") + geom_smooth(method='lm', formula= y~x, level = 0) + geom_segment(mapping = aes(xend=Top10perc, yend=.fitted)) + theme_minimal()
+```
+
+
+  
+>>>>>>> 5586fd519be3e4db99d3d65c1283b244b2ef582b
