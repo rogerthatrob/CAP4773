@@ -39,6 +39,10 @@ maxUnderGrad
 # 2
 Second, we will examine the relationship between the percentage of students from the top 10% of their high school class and the out-of-state tuition at a college. 
 ```{r}
+```
+
+
+```{r}
 library(ggplot2)
 ```
 
