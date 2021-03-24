@@ -82,5 +82,5 @@ mean(knn.pred == test.y)
 - Simple logistic regression models the probability that 𝑌 belongs to a particular class 𝑗 given a single feature 𝑋 with the logistic function
 - see slide 106 in lecture 8, classification, to see the formula 
 
-## stopped at 2:36:25
+#### ends lecture
 

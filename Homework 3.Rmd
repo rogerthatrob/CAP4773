@@ -1,0 +1,12 @@
+---
+title: "Homework 3"
+output: html_notebook
+---
+
+## will be using the College dataset in the ISLR package
+- loading the package and dataset in 
+```{r}
+library(ISLR)
+summary(College)
+```
+
