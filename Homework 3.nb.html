@@ -315,10 +315,80 @@ summary(College)</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="make-predictions-about-a-colleges-out-of-state-tuition-from-all-other-variables-in-college" class="section level2">
+<h2>make predictions about a college’s out-of-state tuition from all other variables in College</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG0uZml0ID0gbG0oZm9ybXVsYSA9IE91dHN0YXRlIH4gQXBwcyArIEFjY2VwdCArIEVucm9sbCArIFRvcDEwcGVyYyArIFRvcDI1cGVyYyArIEYuVW5kZXJncmFkICsgUC5VbmRlcmdyYWQgKyBSb29tLkJvYXJkICsgQm9va3MgKyBQZXJzb25hbCArIFBoRCArIFRlcm1pbmFsICsgUy5GLlJhdGlvICsgcGVyYy5hbHVtbmkgKyBFeHBlbmQgKyBHcmFkLlJhdGUsIGRhdGEgPSBDb2xsZWdlKVxuI2xtLmZpdFxuXG5zdW1tYXJ5KGxtLmZpdClcbmBgYCJ9 -->
+<pre class="r"><code>lm.fit = lm(formula = Outstate ~ Apps + Accept + Enroll + Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + Grad.Rate, data = College)
+#lm.fit
+
+summary(lm.fit)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IE91dHN0YXRlIH4gQXBwcyArIEFjY2VwdCArIEVucm9sbCArIFRvcDEwcGVyYyArIFxuICAgIFRvcDI1cGVyYyArIEYuVW5kZXJncmFkICsgUC5VbmRlcmdyYWQgKyBSb29tLkJvYXJkICsgQm9va3MgKyBcbiAgICBQZXJzb25hbCArIFBoRCArIFRlcm1pbmFsICsgUy5GLlJhdGlvICsgcGVyYy5hbHVtbmkgKyBFeHBlbmQgKyBcbiAgICBHcmFkLlJhdGUsIGRhdGEgPSBDb2xsZWdlKVxuXG5SZXNpZHVhbHM6XG4gICAgTWluICAgICAgMVEgIE1lZGlhbiAgICAgIDNRICAgICBNYXggXG4tNzQzNy42IC0xMzQ0LjMgICAgMTMuNyAgMTQ1MC4wICA5NTQzLjUgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgICAgICBFc3RpbWF0ZSBTdGQuIEVycm9yIHQgdmFsdWVcbihJbnRlcmNlcHQpIDQ0OS4wNTQ5NCAgNzcxLjUwMTM1ICAgMC41ODJcbkFwcHMgICAgICAgICAtMC40MjE0NSAgICAwLjA2OTU3ICAtNi4wNThcbkFjY2VwdCAgICAgICAgMS4wMDg1NiAgICAwLjEzNDE3ICAgNy41MTdcbkVucm9sbCAgICAgICAtMC42MzYxMiAgICAwLjM3MjcwICAtMS43MDdcblRvcDEwcGVyYyAgICAzNi45MjQyOSAgIDExLjUxNDQzICAgMy4yMDdcblRvcDI1cGVyYyAgICAtNC42OTcwMSAgICA4LjkyMTQwICAtMC41MjZcbkYuVW5kZXJncmFkICAtMC4xNzk1MCAgICAwLjA2NDA1ICAtMi44MDNcblAuVW5kZXJncmFkICAtMC4wMTA1MyAgICAwLjA2MzY0ICAtMC4xNjZcblJvb20uQm9hcmQgICAgMS4wNzA3OSAgICAwLjA4NzQxICAxMi4yNTBcbkJvb2tzICAgICAgICAtMC4zNTc1MiAgICAwLjQ3MTM1ICAtMC43NTlcblBlcnNvbmFsICAgICAtMC4yNTM4NCAgICAwLjEyNDUxICAtMi4wMzlcblBoRCAgICAgICAgICAgMi4yOTUxOCAgICA5LjEzMjA5ICAgMC4yNTFcblRlcm1pbmFsICAgICAxNy4zMDIyMyAgIDEwLjAwNTc0ICAgMS43MjlcblMuRi5SYXRpbyAgIC04OC41MTY4OSAgIDI1LjI0MDEzICAtMy41MDdcbnBlcmMuYWx1bW5pICA1My4xNDM2MyAgICA3Ljg1MTcwICAgNi43NjhcbkV4cGVuZCAgICAgICAgMC4yMDcxMiAgICAwLjAyMzg3ICAgOC42NzZcbkdyYWQuUmF0ZSAgICAzMC41MDUwOCAgICA1Ljc0ODM0ICAgNS4zMDdcbiAgICAgICAgICAgIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgIDAuNTYwNzAgICAgXG5BcHBzICAgICAgICAyLjE3ZS0wOSAqKipcbkFjY2VwdCAgICAgIDEuNThlLTEzICoqKlxuRW5yb2xsICAgICAgIDAuMDg4MjcgLiAgXG5Ub3AxMHBlcmMgICAgMC4wMDE0MCAqKiBcblRvcDI1cGVyYyAgICAwLjU5ODcwICAgIFxuRi5VbmRlcmdyYWQgIDAuMDA1MjAgKiogXG5QLlVuZGVyZ3JhZCAgMC44Njg1NSAgICBcblJvb20uQm9hcmQgICA8IDJlLTE2ICoqKlxuQm9va3MgICAgICAgIDAuNDQ4MzggICAgXG5QZXJzb25hbCAgICAgMC4wNDE4MyAqICBcblBoRCAgICAgICAgICAwLjgwMTYzICAgIFxuVGVybWluYWwgICAgIDAuMDg0MTcgLiAgXG5TLkYuUmF0aW8gICAgMC4wMDA0OCAqKipcbnBlcmMuYWx1bW5pIDIuNjBlLTExICoqKlxuRXhwZW5kICAgICAgIDwgMmUtMTYgKioqXG5HcmFkLlJhdGUgICAxLjQ3ZS0wNyAqKipcbi0tLVxuU2lnbmlmLiBjb2RlczogIFxuMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cblJlc2lkdWFsIHN0YW5kYXJkIGVycm9yOiAyMDYxIG9uIDc2MCBkZWdyZWVzIG9mIGZyZWVkb21cbk11bHRpcGxlIFItc3F1YXJlZDogIDAuNzQzLFx0QWRqdXN0ZWQgUi1zcXVhcmVkOiAgMC43Mzc2IFxuRi1zdGF0aXN0aWM6IDEzNy4zIG9uIDE2IGFuZCA3NjAgREYsICBwLXZhbHVlOiA8IDIuMmUtMTZcbiJ9 -->
+<pre><code>
+Call:
+lm(formula = Outstate ~ Apps + Accept + Enroll + Top10perc + 
+    Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + 
+    Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + 
+    Grad.Rate, data = College)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-7437.6 -1344.3    13.7  1450.0  9543.5 
+
+Coefficients:
+             Estimate Std. Error t value
+(Intercept) 449.05494  771.50135   0.582
+Apps         -0.42145    0.06957  -6.058
+Accept        1.00856    0.13417   7.517
+Enroll       -0.63612    0.37270  -1.707
+Top10perc    36.92429   11.51443   3.207
+Top25perc    -4.69701    8.92140  -0.526
+F.Undergrad  -0.17950    0.06405  -2.803
+P.Undergrad  -0.01053    0.06364  -0.166
+Room.Board    1.07079    0.08741  12.250
+Books        -0.35752    0.47135  -0.759
+Personal     -0.25384    0.12451  -2.039
+PhD           2.29518    9.13209   0.251
+Terminal     17.30223   10.00574   1.729
+S.F.Ratio   -88.51689   25.24013  -3.507
+perc.alumni  53.14363    7.85170   6.768
+Expend        0.20712    0.02387   8.676
+Grad.Rate    30.50508    5.74834   5.307
+            Pr(&gt;|t|)    
+(Intercept)  0.56070    
+Apps        2.17e-09 ***
+Accept      1.58e-13 ***
+Enroll       0.08827 .  
+Top10perc    0.00140 ** 
+Top25perc    0.59870    
+F.Undergrad  0.00520 ** 
+P.Undergrad  0.86855    
+Room.Board   &lt; 2e-16 ***
+Books        0.44838    
+Personal     0.04183 *  
+PhD          0.80163    
+Terminal     0.08417 .  
+S.F.Ratio    0.00048 ***
+perc.alumni 2.60e-11 ***
+Expend       &lt; 2e-16 ***
+Grad.Rate   1.47e-07 ***
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2061 on 760 degrees of freedom
+Multiple R-squared:  0.743, Adjusted R-squared:  0.7376 
+F-statistic: 137.3 on 16 and 760 DF,  p-value: &lt; 2.2e-16</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSG9tZXdvcmsgMyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMgd2lsbCBiZSB1c2luZyB0aGUgQ29sbGVnZSBkYXRhc2V0IGluIHRoZSBJU0xSIHBhY2thZ2UKLSBsb2FkaW5nIHRoZSBwYWNrYWdlIGFuZCBkYXRhc2V0IGluIApgYGB7cn0KbGlicmFyeShJU0xSKQpzdW1tYXJ5KENvbGxlZ2UpCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiSG9tZXdvcmsgMyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMgd2lsbCBiZSB1c2luZyB0aGUgQ29sbGVnZSBkYXRhc2V0IGluIHRoZSBJU0xSIHBhY2thZ2UKLSBsb2FkaW5nIHRoZSBwYWNrYWdlIGFuZCBkYXRhc2V0IGluIApgYGB7cn0KbGlicmFyeShJU0xSKQpzdW1tYXJ5KENvbGxlZ2UpCmBgYAoKIyMgbWFrZSBwcmVkaWN0aW9ucyBhYm91dCBhIGNvbGxlZ2XigJlzIG91dC1vZi1zdGF0ZSB0dWl0aW9uIGZyb20gYWxsIG90aGVyIHZhcmlhYmxlcyBpbiBDb2xsZWdlCgpgYGB7cn0KbG0uZml0ID0gbG0oZm9ybXVsYSA9IE91dHN0YXRlIH4gQXBwcyArIEFjY2VwdCArIEVucm9sbCArIFRvcDEwcGVyYyArIFRvcDI1cGVyYyArIEYuVW5kZXJncmFkICsgUC5VbmRlcmdyYWQgKyBSb29tLkJvYXJkICsgQm9va3MgKyBQZXJzb25hbCArIFBoRCArIFRlcm1pbmFsICsgUy5GLlJhdGlvICsgcGVyYy5hbHVtbmkgKyBFeHBlbmQgKyBHcmFkLlJhdGUsIGRhdGEgPSBDb2xsZWdlKQojbG0uZml0CgpzdW1tYXJ5KGxtLmZpdCkKYGBgCgo=</div>
 
 
 

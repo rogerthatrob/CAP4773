@@ -10,3 +10,12 @@ library(ISLR)
 summary(College)
 ```
 
+## make predictions about a college’s out-of-state tuition from all other variables in College
+
+```{r}
+lm.fit = lm(formula = Outstate ~ Apps + Accept + Enroll + Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + Grad.Rate, data = College)
+#lm.fit
+
+summary(lm.fit)
+```
+
