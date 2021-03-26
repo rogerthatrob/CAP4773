@@ -1,5 +1,5 @@
 ---
-title: "Classification 2"
+title: "Classification"
 output: html_notebook
 ---
 
