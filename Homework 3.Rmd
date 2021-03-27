@@ -19,3 +19,7 @@ lm.fit = lm(formula = Outstate ~ Apps + Accept + Enroll + Top10perc + Top25perc 
 summary(lm.fit)
 ```
 
+```{r}
+ggplot(lm.fit)
+```
+

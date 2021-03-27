@@ -1,12 +1,12 @@
 ---
 title: "Homework 2"
-<<<<<<< HEAD
+# <<<<<<< HEAD
 output: html_notebook
 =======
 output:
   pdf_document: default
   html_notebook: default
->>>>>>> 5586fd519be3e4db99d3d65c1283b244b2ef582b
+# >>>>>>> 5586fd519be3e4db99d3d65c1283b244b2ef582b
 ---
 
 # Homework 2
@@ -18,25 +18,24 @@ output:
 - loading the raw data set inline
 ```{r}
 # install.packages("ISLR")
-<<<<<<< HEAD
+
 library(ISLR)
 help(College)
 College
 ```
 
 ```{r}
-
-```
-
-=======
-install.packages("tidyverse")
-install.packages("ggplot")
+# install.packages("tidyverse")
+# install.packages("ggplot")
 library(ISLR)
 help(College)
 College
 library(tidyverse)
 library(ggplot2)
 ```
+
+
+
 ## 1
 
 #### A
