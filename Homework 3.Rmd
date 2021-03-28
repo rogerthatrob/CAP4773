@@ -1,6 +1,8 @@
 ---
 title: "Homework 3"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 ## will be using the College dataset in the ISLR package
@@ -8,18 +10,45 @@ output: html_notebook
 ```{r}
 library(ISLR)
 summary(College)
+library(ggplot2)
+library(tidyverse)
+# install.packages("class")
+set.seed(1) 
+library(class)
+attach(College)
 ```
 
 ## make predictions about a college’s out-of-state tuition from all other variables in College
 
 ```{r}
-lm.fit = lm(formula = Outstate ~ Apps + Accept + Enroll + Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + Grad.Rate, data = College)
+lm.fit = lm(formula = Outstate ~ Private + Apps + Accept + Enroll + Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + Grad.Rate, data = College)
 #lm.fit
 
 summary(lm.fit)
 ```
 
 ```{r}
-ggplot(lm.fit)
+ggplot(data = lm.fit, mapping = aes(x=(Apps + Accept + Enroll + Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + Grad.Rate), y=Outstate)) + geom_jitter() + geom_smooth(method='lm', formula= y~x) + theme_bw()
 ```
+
+## 2
+- need to break observations that are tied as nearest neighbors in a reproducible way. 
+```{r}
+
+```
+ 
+
+#### a
+
+- slide 81 of classification lecture. 
+- about 34 min of march 17th lecture she goes over it. 
+```{r}
+train <- seq(1,500)
+train.x <- cbind(Apps, Accept, Enroll, Top10perc, Top25perc, F.Undergrad, P.Undergrad,Room.Board, Books, Personal, PhD, Terminal, S.F.Ratio, perc.alumni, Expend, Grad.Rate)[train,]
+
+test <- seq(501,777)
+test.x <- cbind(Apps, Accept, Enroll, Top10perc, Top25perc, F.Undergrad, P.Undergrad,Room.Board, Books, Personal, PhD, Terminal, S.F.Ratio, perc.alumni, Expend, Grad.Rate)[train,]
+```
+
+
 
