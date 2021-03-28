@@ -13,9 +13,10 @@ summary(College)
 library(ggplot2)
 library(tidyverse)
 # install.packages("class")
-set.seed(1) 
+# set.seed(1) 
 library(class)
 attach(College)
+attach(Default)
 ```
 
 ## make predictions about a college’s out-of-state tuition from all other variables in College
@@ -34,7 +35,7 @@ ggplot(data = lm.fit, mapping = aes(x=(Apps + Accept + Enroll + Top10perc + Top2
 ## 2
 - need to break observations that are tied as nearest neighbors in a reproducible way. 
 ```{r}
-
+summary(default)
 ```
  
 
@@ -45,10 +46,71 @@ ggplot(data = lm.fit, mapping = aes(x=(Apps + Accept + Enroll + Top10perc + Top2
 ```{r}
 train <- seq(1,500)
 train.x <- cbind(Apps, Accept, Enroll, Top10perc, Top25perc, F.Undergrad, P.Undergrad,Room.Board, Books, Personal, PhD, Terminal, S.F.Ratio, perc.alumni, Expend, Grad.Rate)[train,]
+#train.x
 
 test <- seq(501,777)
 test.x <- cbind(Apps, Accept, Enroll, Top10perc, Top25perc, F.Undergrad, P.Undergrad,Room.Board, Books, Personal, PhD, Terminal, S.F.Ratio, perc.alumni, Expend, Grad.Rate)[train,]
+# test.x
 ```
 
+- need to create a vector class of labels for these features.
+```{r}
+train.y <- default[train]
+train.y
+```
 
+#### b
+
+```{r}
+set.seed(1) 
+# k=1
+knn.pred = knn(train.x, test.x, train.y, k=1)
+summary(knn.pred)
+set.seed(1) 
+# k=10
+knn.pred_ten = knn(train.x, test.x, train.y, k=10)
+summary(knn.pred_ten)
+set.seed(1) 
+# k=100
+knn.pred_oneHundred = knn(train.x, test.x, train.y, k=100)
+summary(knn.pred_oneHundred)
+```
+
+#### c
+- The goal is to compare these predicted classes to their true classes.
+- To make comparisons easier, let’s create a vector of true test classes
+- table, predication in rows and observations in the columns
+```{r}
+knn.pred <- knn(train.x, test.x, train.y, k = 1)
+test.y = default[test]
+table(knn.pred, test.y)
+```
+
+#### d
+ - using the mean function to provide the test accuracy
+- *table size is still off, gave me an answer though.... 
+```{r}
+mean(knn.pred == test.y)
+mean(knn.pred_ten == test.y)
+mean(knn.pred_oneHundred == test.y)
+```
+ 
+#### e
+- Provide test error rates for your KNN classifier when K=1, 10, and 100
+```{r}
+# k=1
+meanPred = mean(knn.pred == test.y)
+testErrorRate = 1 - meanPred
+testErrorRate
+
+# k=10
+meanPred_ten = mean(knn.pred_ten == test.y)
+testErrorRate_ten = 1 - meanPred_ten
+testErrorRate_ten
+
+# k=100
+meanPred_oneHundred = mean(knn.pred_oneHundred == test.y)
+testErrorRate_oneHundred = 1 - meanPred_oneHundred
+testErrorRate_oneHundred
+```
 
