@@ -46,11 +46,11 @@ summary(default)
 ```{r}
 train <- seq(1,500)
 train.x <- cbind(Apps, Accept, Enroll, Top10perc, Top25perc, F.Undergrad, P.Undergrad,Room.Board, Books, Personal, PhD, Terminal, S.F.Ratio, perc.alumni, Expend, Grad.Rate)[train,]
-#train.x
+train.x
 
 test <- seq(501,777)
-test.x <- cbind(Apps, Accept, Enroll, Top10perc, Top25perc, F.Undergrad, P.Undergrad,Room.Board, Books, Personal, PhD, Terminal, S.F.Ratio, perc.alumni, Expend, Grad.Rate)[train,]
-# test.x
+test.x <- cbind(Apps, Accept, Enroll, Top10perc, Top25perc, F.Undergrad, P.Undergrad,Room.Board, Books, Personal, PhD, Terminal, S.F.Ratio, perc.alumni, Expend, Grad.Rate)[test,]
+test.x
 ```
 
 - need to create a vector class of labels for these features.
