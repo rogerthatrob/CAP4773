@@ -279,10 +279,10 @@ Content type &#39;application/x-gzip&#39; length 95879 bytes (93 KB)
 ==================================================
 downloaded 93 KB</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5UaGUgZG93bmxvYWRlZCBiaW5hcnkgcGFja2FnZXMgYXJlIGluXG5cdC92YXIvZm9sZGVycy9oei9zaGNkbDl2czZ3emR5N2YxejY5bjV5Zm0wMDAwZ24vVC8vUnRtcG9zTDVnZy9kb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5UaGUgZG93bmxvYWRlZCBiaW5hcnkgcGFja2FnZXMgYXJlIGluXG5cdC92YXIvZm9sZGVycy9oei9zaGNkbDl2czZ3emR5N2YxejY5bjV5Zm0wMDAwZ24vVC8vUnRtcDd4aUh2Ti9kb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/hz/shcdl9vs6wzdy7f1z69n5yfm0000gn/T//RtmposL5gg/downloaded_packages</code></pre>
+    /var/folders/hz/shcdl9vs6wzdy7f1z69n5yfm0000gn/T//Rtmp7xiHvN/downloaded_packages</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShjbGFzcylcbmBgYCJ9 -->
 <pre class="r"><code>library(class)</code></pre>
@@ -320,122 +320,113 @@ The downloaded binary packages are in
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJhaW4gPSBzZXEoMSw5MDAwKVxudHJhaW4ueCA9IGNiaW5kKHN0dWRlbnQsIGJhbGFuY2UsIGluY29tZSlbdHJhaW4sXVxudGVzdCA9IHNlcSg5MDAxLCAxMDAwMClcbnRlc3QueCA9IGNiaW5kKHN0dWRlbnQsIGJhbGFuY2UsIGluY29tZSlbdGVzdCxdXG50cmFpbi55ID0gZGVmYXVsdFt0cmFpbl1cbmtubi5wcmVkID0ga25uKHRyYWluLngsIHRlc3QueCwgdHJhaW4ueSwgaz0xKVxuc3VtbWFyeShrbm4ucHJlZClcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJhaW4gPSBzZXEoMSw5MDAwKVxudHJhaW4ueCA9IGNiaW5kKHN0dWRlbnQsIGJhbGFuY2UsIGluY29tZSlbdHJhaW4sXVxudGVzdCA9IHNlcSg5MDAxLCAxMDAwMClcbnRlc3QueCA9IGNiaW5kKHN0dWRlbnQsIGJhbGFuY2UsIGluY29tZSlbdGVzdCxdXG50cmFpbi55ID0gZGVmYXVsdFt0cmFpbl1cbmtubi5wcmVkID0ga25uKHRyYWluLngsIHRlc3QueCwgdHJhaW4ueSwgaz0xKVxuc3VtbWFyeShrbm4ucHJlZCkgI3N1bW1hcnlcbmBgYCJ9 -->
 <pre class="r"><code>train = seq(1,9000)
 train.x = cbind(student, balance, income)[train,]
 test = seq(9001, 10000)
 test.x = cbind(student, balance, income)[test,]
 train.y = default[train]
 knn.pred = knn(train.x, test.x, train.y, k=1)
-summary(knn.pred)</code></pre>
+summary(knn.pred) #summary</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiIE5vIFllcyBcbjk2OSAgMzEgXG4ifQ== -->
 <pre><code> No Yes 
 969  31 </code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua25uLnByZWRcbmBgYCJ9 -->
-<pre class="r"><code>knn.pred</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua25uLnByZWQgI2Z1bGwgb3V0cHV0XG5gYGAifQ== -->
+<pre class="r"><code>knn.pred #full output</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgWzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgWWVzIE5vIFxuICBbMTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuICBbMjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuICBbMzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuICBbNDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuICBbNTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuICBbNjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuICBbNzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIFllc1xuICBbODFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuICBbOTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsxMDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsxMTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgWWVzIE5vIFxuIFsxMjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsxMzFdIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsxNDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsxNTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsxNjFdIE5vICBObyAgTm8gIE5vICBZZXMgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsxNzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsxODFdIE5vICBObyAgWWVzIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vIFxuIFsxOTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsyMDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsyMTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsyMjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsyMzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsyNDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsyNTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsyNjFdIE5vICBObyAgTm8gIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vIFxuIFsyNzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsyODFdIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsyOTFdIE5vICBObyAgTm8gIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vIFxuIFszMDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFszMTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFszMjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFszMzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFszNDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFszNTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFszNjFdIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFszNzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFszODFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFszOTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs0MDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs0MTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs0MjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs0MzFdIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs0NDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs0NTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgWWVzIE5vIFxuIFs0NjFdIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs0NzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIFllcyBObyAgTm8gIE5vIFxuIFs0ODFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs0OTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1MDFdIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1MTFdIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1MjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1MzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1NDFdIE5vICBObyAgTm8gIE5vICBZZXMgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1NTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1NjFdIE5vICBObyAgWWVzIE5vICBObyAgTm8gIFllcyBObyAgTm8gIE5vIFxuIFs1NzFdIE5vICBObyAgWWVzIE5vICBZZXMgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1ODFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1OTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2MDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2MTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2MjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2MzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2NDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2NTFdIE5vICBObyAgTm8gIE5vICBZZXMgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2NjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2NzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2ODFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2OTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3MDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3MTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3MjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgWWVzIE5vIFxuIFs3MzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3NDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3NTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3NjFdIE5vICBZZXMgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3NzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3ODFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3OTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4MDFdIE5vICBObyAgTm8gIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vIFxuIFs4MTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4MjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4MzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4NDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4NTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4NjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4NzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4ODFdIE5vICBObyAgTm8gIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4OTFdIE5vICBObyAgTm8gIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5MDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5MTFdIE5vICBObyAgWWVzIE5vICBZZXMgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5MjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5MzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBZZXMgTm8gIE5vIFxuIFs5NDFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5NTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5NjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5NzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5ODFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5OTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuTGV2ZWxzOiBObyBZZXNcbiJ9 -->
-<pre><code>   [1] No  No  No  No  No  No  No  No  Yes No 
-  [11] No  No  No  No  No  No  No  No  No  No 
-  [21] No  No  No  No  No  No  No  No  No  No 
-  [31] No  No  No  No  No  No  No  No  No  No 
-  [41] No  No  No  No  No  No  No  No  No  No 
-  [51] No  No  No  No  No  No  No  No  No  No 
-  [61] No  No  No  No  No  No  No  No  No  No 
-  [71] No  No  No  No  No  No  No  No  No  Yes
-  [81] No  No  No  No  No  No  No  No  No  No 
-  [91] No  No  No  No  No  No  No  No  No  No 
- [101] No  No  No  No  No  No  No  No  No  No 
- [111] No  No  No  No  No  No  No  No  Yes No 
- [121] No  No  No  No  No  No  No  No  No  No 
- [131] No  No  Yes No  No  No  No  No  No  No 
- [141] No  No  No  No  No  No  No  No  No  No 
- [151] No  No  No  No  No  No  No  No  No  No 
- [161] No  No  No  No  Yes No  No  No  No  No 
- [171] No  No  No  No  No  No  No  No  No  No 
- [181] No  No  Yes No  No  Yes No  No  No  No 
- [191] No  No  No  No  No  No  No  No  No  No 
- [201] No  No  No  No  No  No  No  No  No  No 
- [211] No  No  No  No  No  No  No  No  No  No 
- [221] No  No  No  No  No  No  No  No  No  No 
- [231] No  No  No  No  No  No  No  No  No  No 
- [241] No  No  No  No  No  No  No  No  No  No 
- [251] No  No  No  No  No  No  No  No  No  No 
- [261] No  No  No  No  No  Yes No  No  No  No 
- [271] No  No  No  No  No  No  No  No  No  No 
- [281] Yes No  No  No  No  No  No  No  No  No 
- [291] No  No  No  No  No  Yes No  No  No  No 
- [301] No  No  No  No  No  No  No  No  No  No 
- [311] No  No  No  No  No  No  No  No  No  No 
- [321] No  No  No  No  No  No  No  No  No  No 
- [331] No  No  No  No  No  No  No  No  No  No 
- [341] No  No  No  No  No  No  No  No  No  No 
- [351] No  No  No  No  No  No  No  No  No  No 
- [361] Yes No  No  No  No  No  No  No  No  No 
- [371] No  No  No  No  No  No  No  No  No  No 
- [381] No  No  No  No  No  No  No  No  No  No 
- [391] No  No  No  No  No  No  No  No  No  No 
- [401] No  No  No  No  No  No  No  No  No  No 
- [411] No  No  No  No  No  No  No  No  No  No 
- [421] No  No  No  No  No  No  No  No  No  No 
- [431] No  No  Yes No  No  No  No  No  No  No 
- [441] No  No  No  No  No  No  No  No  No  No 
- [451] No  No  No  No  No  No  No  No  Yes No 
- [461] No  No  Yes No  No  No  No  No  No  No 
- [471] No  No  No  No  No  No  Yes No  No  No 
- [481] No  No  No  No  No  No  No  No  No  No 
- [491] No  No  No  No  No  No  No  No  No  No 
- [501] Yes No  No  No  No  No  No  No  No  No 
- [511] Yes No  No  No  No  No  No  No  No  No 
- [521] No  No  No  No  No  No  No  No  No  No 
- [531] No  No  No  No  No  No  No  No  No  No 
- [541] No  No  No  No  Yes No  No  No  No  No 
- [551] No  No  No  No  No  No  No  No  No  No 
- [561] No  No  Yes No  No  No  Yes No  No  No 
- [571] No  No  Yes No  Yes No  No  No  No  No 
- [581] No  No  No  No  No  No  No  No  No  No 
- [591] No  No  No  No  No  No  No  No  No  No 
- [601] No  No  No  No  No  No  No  No  No  No 
- [611] No  No  No  No  No  No  No  No  No  No 
- [621] No  No  No  No  No  No  No  No  No  No 
- [631] No  No  No  No  No  No  No  No  No  No 
- [641] No  No  No  No  No  No  No  No  No  No 
- [651] No  No  No  No  Yes No  No  No  No  No 
- [661] No  No  No  No  No  No  No  No  No  No 
- [671] No  No  No  No  No  No  No  No  No  No 
- [681] No  No  No  No  No  No  No  No  No  No 
- [691] No  No  No  No  No  No  No  No  No  No 
- [701] No  No  No  No  No  No  No  No  No  No 
- [711] No  No  No  No  No  No  No  No  No  No 
- [721] No  No  No  No  No  No  No  No  Yes No 
- [731] No  No  No  No  No  No  No  No  No  No 
- [741] No  No  No  No  No  No  No  No  No  No 
- [751] No  No  No  No  No  No  No  No  No  No 
- [761] No  Yes No  No  No  No  No  No  No  No 
- [771] No  No  No  No  No  No  No  No  No  No 
- [781] No  No  No  No  No  No  No  No  No  No 
- [791] No  No  No  No  No  No  No  No  No  No 
- [801] No  No  No  No  No  Yes No  No  No  No 
- [811] No  No  No  No  No  No  No  No  No  No 
- [821] No  No  No  No  No  No  No  No  No  No 
- [831] No  No  No  No  No  No  No  No  No  No 
- [841] No  No  No  No  No  No  No  No  No  No 
- [851] No  No  No  No  No  No  No  No  No  No 
- [861] No  No  No  No  No  No  No  No  No  No 
- [871] No  No  No  No  No  No  No  No  No  No 
- [881] No  No  No  Yes No  No  No  No  No  No 
- [891] No  No  No  Yes No  No  No  No  No  No 
- [901] No  No  No  No  No  No  No  No  No  No 
- [911] No  No  Yes No  Yes No  No  No  No  No 
- [921] No  No  No  No  No  No  No  No  No  No 
- [931] No  No  No  No  No  No  No  Yes No  No 
- [941] No  No  No  No  No  No  No  No  No  No 
- [951] No  No  No  No  No  No  No  No  No  No 
- [961] No  No  No  No  No  No  No  No  No  No 
- [971] No  No  No  No  No  No  No  No  No  No 
- [981] No  No  No  No  No  No  No  No  No  No 
+<!-- rnb-output-begin eyJkYXRhIjoiICAgWzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgWWVzIE5vICBObyBcbiAgWzEyXSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gIFsyM10gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuICBbMzRdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiAgWzQ1XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gIFs1Nl0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuICBbNjddIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiAgWzc4XSBObyAgTm8gIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gIFs4OV0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsxMDBdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbMTExXSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIFllcyBObyAgTm8gXG4gWzEyMl0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsxMzNdIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbMTQ0XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzE1NV0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIFllc1xuIFsxNjZdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbMTc3XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBZZXMgTm8gIE5vICBZZXMgTm8gXG4gWzE4OF0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsxOTldIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbMjEwXSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzIyMV0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsyMzJdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbMjQzXSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzI1NF0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFsyNjVdIE5vICBZZXMgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbMjc2XSBObyAgTm8gIE5vICBObyAgTm8gIFllcyBObyAgTm8gIE5vICBObyAgTm8gXG4gWzI4N10gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgWWVzIE5vIFxuIFsyOThdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbMzA5XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzMyMF0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFszMzFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbMzQyXSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzM1M10gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBZZXMgTm8gIE5vIFxuIFszNjRdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbMzc1XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzM4Nl0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFszOTddIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbNDA4XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzQxOV0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs0MzBdIE5vICBObyAgTm8gIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbNDQxXSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzQ1Ml0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIFllcyBObyAgTm8gIE5vIFxuIFs0NjNdIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbNDc0XSBObyAgTm8gIE5vICBZZXMgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzQ4NV0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs0OTZdIE5vICBObyAgTm8gIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vICBObyBcbiBbNTA3XSBObyAgTm8gIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzUxOF0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1MjldIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbNTQwXSBObyAgTm8gIE5vICBObyAgTm8gIFllcyBObyAgTm8gIE5vICBObyAgTm8gXG4gWzU1MV0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1NjJdIE5vICBZZXMgTm8gIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vICBObyBcbiBbNTczXSBZZXMgTm8gIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzU4NF0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs1OTVdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbNjA2XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzYxN10gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2MjhdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbNjM5XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzY1MF0gTm8gIE5vICBObyAgTm8gIE5vICBZZXMgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2NjFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbNjcyXSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzY4M10gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs2OTRdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbNzA1XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzcxNl0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3MjddIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbNzM4XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzc0OV0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3NjBdIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbNzcxXSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzc4Ml0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs3OTNdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbODA0XSBObyAgTm8gIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzgxNV0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4MjZdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbODM3XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzg0OF0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4NTldIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbODcwXSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzg4MV0gTm8gIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs4OTJdIE5vICBObyAgWWVzIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbOTAzXSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgWWVzXG4gWzkxNF0gTm8gIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5MjVdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbOTM2XSBObyAgTm8gIFllcyBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzk0N10gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5NThdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyBcbiBbOTY5XSBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gXG4gWzk4MF0gTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuIFs5OTFdIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vICBObyAgTm8gIE5vIFxuTGV2ZWxzOiBObyBZZXNcbiJ9 -->
+<pre><code>   [1] No  No  No  No  No  No  No  No  Yes No  No 
+  [12] No  No  No  No  No  No  No  No  No  No  No 
+  [23] No  No  No  No  No  No  No  No  No  No  No 
+  [34] No  No  No  No  No  No  No  No  No  No  No 
+  [45] No  No  No  No  No  No  No  No  No  No  No 
+  [56] No  No  No  No  No  No  No  No  No  No  No 
+  [67] No  No  No  No  No  No  No  No  No  No  No 
+  [78] No  No  Yes No  No  No  No  No  No  No  No 
+  [89] No  No  No  No  No  No  No  No  No  No  No 
+ [100] No  No  No  No  No  No  No  No  No  No  No 
+ [111] No  No  No  No  No  No  No  No  Yes No  No 
+ [122] No  No  No  No  No  No  No  No  No  No  No 
+ [133] Yes No  No  No  No  No  No  No  No  No  No 
+ [144] No  No  No  No  No  No  No  No  No  No  No 
+ [155] No  No  No  No  No  No  No  No  No  No  Yes
+ [166] No  No  No  No  No  No  No  No  No  No  No 
+ [177] No  No  No  No  No  No  Yes No  No  Yes No 
+ [188] No  No  No  No  No  No  No  No  No  No  No 
+ [199] No  No  No  No  No  No  No  No  No  No  No 
+ [210] No  No  No  No  No  No  No  No  No  No  No 
+ [221] No  No  No  No  No  No  No  No  No  No  No 
+ [232] No  No  No  No  No  No  No  No  No  No  No 
+ [243] No  No  No  No  No  No  No  No  No  No  No 
+ [254] No  No  No  No  No  No  No  No  No  No  No 
+ [265] No  Yes No  No  No  No  No  No  No  No  No 
+ [276] No  No  No  No  No  Yes No  No  No  No  No 
+ [287] No  No  No  No  No  No  No  No  No  Yes No 
+ [298] No  No  No  No  No  No  No  No  No  No  No 
+ [309] No  No  No  No  No  No  No  No  No  No  No 
+ [320] No  No  No  No  No  No  No  No  No  No  No 
+ [331] No  No  No  No  No  No  No  No  No  No  No 
+ [342] No  No  No  No  No  No  No  No  No  No  No 
+ [353] No  No  No  No  No  No  No  No  Yes No  No 
+ [364] No  No  No  No  No  No  No  No  No  No  No 
+ [375] No  No  No  No  No  No  No  No  No  No  No 
+ [386] No  No  No  No  No  No  No  No  No  No  No 
+ [397] No  No  No  No  No  No  No  No  No  No  No 
+ [408] No  No  No  No  No  No  No  No  No  No  No 
+ [419] No  No  No  No  No  No  No  No  No  No  No 
+ [430] No  No  No  Yes No  No  No  No  No  No  No 
+ [441] No  No  No  No  No  No  No  No  No  No  No 
+ [452] No  No  No  No  No  No  No  Yes No  No  No 
+ [463] Yes No  No  No  No  No  No  No  No  No  No 
+ [474] No  No  No  Yes No  No  No  No  No  No  No 
+ [485] No  No  No  No  No  No  No  No  No  No  No 
+ [496] No  No  No  No  No  Yes No  No  No  No  No 
+ [507] No  No  No  No  Yes No  No  No  No  No  No 
+ [518] No  No  No  No  No  No  No  No  No  No  No 
+ [529] No  No  No  No  No  No  No  No  No  No  No 
+ [540] No  No  No  No  No  Yes No  No  No  No  No 
+ [551] No  No  No  No  No  No  No  No  No  No  No 
+ [562] No  Yes No  No  No  Yes No  No  No  No  No 
+ [573] Yes No  Yes No  No  No  No  No  No  No  No 
+ [584] No  No  No  No  No  No  No  No  No  No  No 
+ [595] No  No  No  No  No  No  No  No  No  No  No 
+ [606] No  No  No  No  No  No  No  No  No  No  No 
+ [617] No  No  No  No  No  No  No  No  No  No  No 
+ [628] No  No  No  No  No  No  No  No  No  No  No 
+ [639] No  No  No  No  No  No  No  No  No  No  No 
+ [650] No  No  No  No  No  Yes No  No  No  No  No 
+ [661] No  No  No  No  No  No  No  No  No  No  No 
+ [672] No  No  No  No  No  No  No  No  No  No  No 
+ [683] No  No  No  No  No  No  No  No  No  No  No 
+ [694] No  No  No  No  No  No  No  No  No  No  No 
+ [705] No  No  No  No  No  No  No  No  No  No  No 
+ [716] No  No  No  No  No  No  No  No  No  No  No 
+ [727] No  No  Yes No  No  No  No  No  No  No  No 
+ [738] No  No  No  No  No  No  No  No  No  No  No 
+ [749] No  No  No  No  No  No  No  No  No  No  No 
+ [760] No  No  Yes No  No  No  No  No  No  No  No 
+ [771] No  No  No  No  No  No  No  No  No  No  No 
+ [782] No  No  No  No  No  No  No  No  No  No  No 
+ [793] No  No  No  No  No  No  No  No  No  No  No 
+ [804] No  No  Yes No  No  No  No  No  No  No  No 
+ [815] No  No  No  No  No  No  No  No  No  No  No 
+ [826] No  No  No  No  No  No  No  No  No  No  No 
+ [837] No  No  No  No  No  No  No  No  No  No  No 
+ [848] No  No  No  No  No  No  No  No  No  No  No 
+ [859] No  No  No  No  No  No  No  No  No  No  No 
+ [870] No  No  No  No  No  No  No  No  No  No  No 
+ [881] No  No  No  Yes No  No  No  No  No  No  No 
+ [892] No  No  Yes No  No  No  No  No  No  No  No 
+ [903] No  No  No  No  No  No  No  No  No  No  Yes
+ [914] No  Yes No  No  No  No  No  No  No  No  No 
+ [925] No  No  No  No  No  No  No  No  No  No  No 
+ [936] No  No  Yes No  No  No  No  No  No  No  No 
+ [947] No  No  No  No  No  No  No  No  No  No  No 
+ [958] No  No  No  No  No  No  No  No  No  No  No 
+ [969] No  No  No  No  No  No  No  No  No  No  No 
+ [980] No  No  No  No  No  No  No  No  No  No  No 
  [991] No  No  No  No  No  No  No  No  No  No 
 Levels: No Yes</code></pre>
 <!-- rnb-output-end -->
@@ -506,14 +497,1008 @@ mean(knn.pred == test.y)</code></pre>
 <li>Simple logistic regression models the probability that 𝑌 belongs to a particular class 𝑗 given a single feature 𝑋 with the logistic function</li>
 <li>see slide 106 in lecture 8, classification, to see the formula</li>
 </ul>
-<div id="ends-lecture" class="section level4">
-<h4>ends lecture</h4>
+</div>
+</div>
+<div id="generalized-linear-models" class="section level1">
+<h1>Generalized Linear Models</h1>
+<div id="the-glm-function" class="section level2">
+<h2>The <code>glm()</code> function</h2>
+<ul>
+<li>The <code>glm()</code> function fits generalized linear models, a class of models that includes logistic regression.</li>
+<li>syntax: <code>glm(formula, data, family, ...)</code></li>
+<li>supports <code>attach()</code></li>
+<li><code>family</code> tells <code>glm()</code> which model to use, ie: <code>family = binomial</code></li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2xtLmZpdCA9IGdsbShmb3JtdWxhID0gZGVmYXVsdCB+IGJhbGFuY2UsIGZhbWlseSA9IGJpbm9taWFsKVxuc3VtbWFyeShnbG0uZml0KVxuYGBgIn0= -->
+<pre class="r"><code>glm.fit = glm(formula = default ~ balance, family = binomial)
+summary(glm.fit)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSBkZWZhdWx0IH4gYmFsYW5jZSwgZmFtaWx5ID0gYmlub21pYWwpXG5cbkRldmlhbmNlIFJlc2lkdWFsczogXG4gICAgTWluICAgICAgIDFRICAgTWVkaWFuICAgICAgIDNRICAgICAgTWF4ICBcbi0yLjI2OTcgIC0wLjE0NjUgIC0wLjA1ODkgIC0wLjAyMjEgICAzLjc1ODkgIFxuXG5Db2VmZmljaWVudHM6XG4gICAgICAgICAgICAgIEVzdGltYXRlIFN0ZC4gRXJyb3IgeiB2YWx1ZSBQcig+fHp8KVxuKEludGVyY2VwdCkgLTEuMDY1ZSswMSAgMy42MTJlLTAxICAtMjkuNDkgICA8MmUtMTZcbmJhbGFuY2UgICAgICA1LjQ5OWUtMDMgIDIuMjA0ZS0wNCAgIDI0Ljk1ICAgPDJlLTE2XG4gICAgICAgICAgICAgICBcbihJbnRlcmNlcHQpICoqKlxuYmFsYW5jZSAgICAgKioqXG4tLS1cblNpZ25pZi4gY29kZXM6ICBcbjAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG4oRGlzcGVyc2lvbiBwYXJhbWV0ZXIgZm9yIGJpbm9taWFsIGZhbWlseSB0YWtlbiB0byBiZSAxKVxuXG4gICAgTnVsbCBkZXZpYW5jZTogMjkyMC42ICBvbiA5OTk5ICBkZWdyZWVzIG9mIGZyZWVkb21cblJlc2lkdWFsIGRldmlhbmNlOiAxNTk2LjUgIG9uIDk5OTggIGRlZ3JlZXMgb2YgZnJlZWRvbVxuQUlDOiAxNjAwLjVcblxuTnVtYmVyIG9mIEZpc2hlciBTY29yaW5nIGl0ZXJhdGlvbnM6IDhcbiJ9 -->
+<pre><code>
+Call:
+glm(formula = default ~ balance, family = binomial)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.2697  -0.1465  -0.0589  -0.0221   3.7589  
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)
+(Intercept) -1.065e+01  3.612e-01  -29.49   &lt;2e-16
+balance      5.499e-03  2.204e-04   24.95   &lt;2e-16
+               
+(Intercept) ***
+balance     ***
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 2920.6  on 9999  degrees of freedom
+Residual deviance: 1596.5  on 9998  degrees of freedom
+AIC: 1600.5
+
+Number of Fisher Scoring iterations: 8</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>Estimate is beta. The intercept is Beta_not_hat and the balance (or the first feature) is Beta_one_hat – in this case Beta_not_hat = -10.65 and Beta_one_hat = 0.0055</li>
+<li>Std. Error is again the average distance between Beta_hat and Beta. There is a small difference between Beta_hat and Beta meaning our estimation is pretty good.</li>
+<li>z value is our test statistic for gml(). test statistic z to evaluate H_not: Beta_i = 0. – will tell us how far away our estimate is from what we expect from the null hypothesis.</li>
+<li>P value for H_not: B_i = 0, want small to reject the null hypothesis</li>
+<li>Null deviance and the Residual deviance measure the fit of the model. are the predicted vs the observation without null and with B_1 (residual).</li>
+<li><strong>Deviance</strong> is analogous to RSE in linear regression - it measures lack of fit of model (predictions) to data (observations)</li>
+<li><strong>Null deviance</strong> is lack of fit of the null model (B_not only)</li>
+<li><strong>Residual Deviance</strong> is lack of fit of the alternative model (B_not and B_1)</li>
+<li>in the above example the null deviance = 2920.6 and residual deviance = 1596.5</li>
+<li><strong>Akaike Information Criterion</strong> (AIC) is analogous to the adjusted R^2 in linear regression - it measures goodness of fit adjusted for model complexity.</li>
+<li>AIC rewards goodness of fit (likelihood to parameters), but penalized as function of number of estimated parameters in the model.</li>
+<li>The smaller the AIC, the better the model fits the data.</li>
+<li>But in contrast to R^2, the value of AIC itself is not meaningful, only its comparison to those of other models. It is a measure of fit like the null and residual deviance.</li>
+<li>from the above example, AIC = 1600.5</li>
+<li>Number of Fisher Scoring Iterations, less than 20 is good.</li>
+</ul>
+</div>
+<div id="obtaining-confidence-intervals-for-b_0-and-b_1-in-r" class="section level2">
+<h2>Obtaining confidence intervals for B_0 and B_1 in R</h2>
+<ul>
+<li>can us the <code>confit()</code> function to obtain confidence intervals for parameters of out logistic regression function.</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZmludChnbG0uZml0KVxuYGBgIn0= -->
+<pre class="r"><code>confint(glm.fit)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FpdGluZyBmb3IgcHJvZmlsaW5nIHRvIGJlIGRvbmUuLi5cbiJ9 -->
+<pre><code>Waiting for profiling to be done...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAyLjUgJSAgICAgICA5Ny41ICVcbihJbnRlcmNlcHQpIC0xMS4zODMyODg5MzYgLTkuOTY2NTY1MDY0XG5iYWxhbmNlICAgICAgIDAuMDA1MDc4OTI2ICAwLjAwNTk0MzM2NVxuIn0= -->
+<pre><code>                    2.5 %       97.5 %
+(Intercept) -11.383288936 -9.966565064
+balance       0.005078926  0.005943365</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="making-predictins-about-default-and-balance-in-r" class="section level2">
+<h2>Making predictins about <code>default</code> and <code>balance</code> in R</h2>
+<ul>
+<li>As in linear regression, we can use the <code>predict()</code> function to make predictions from our logistics regression function.</li>
+<li>the only difference is that we need to set the argument <code>type = &quot;response&quot;</code> to output a probability rather than the <em>logit</em>.</li>
+<li>to predict the probability of <code>default</code> given a <code>balance</code> of 1000 dollars or 2000 dollars:</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJlZGljdChnbG0uZml0LCBkYXRhLmZyYW1lKGJhbGFuY2UgPSBjKDEwMDAsIDIwMDApKSwgdHlwZSA9IFwicmVzcG9uc2VcIilcbmBgYCJ9 -->
+<pre class="r"><code>predict(glm.fit, data.frame(balance = c(1000, 2000)), type = &quot;response&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgIDEgICAgICAgICAgIDIgXG4wLjAwNTc1MjE0NSAwLjU4NTc2OTM3MCBcbiJ9 -->
+<pre><code>          1           2 
+0.005752145 0.585769370 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="getting-class-labels-from-logistic-regression-in-r" class="section level2">
+<h2>Getting class labels from logistic regression in R</h2>
+<ul>
+<li>first, need to obtain each probability <span class="math inline">\(\hat{P}(default = Yes|balance)\)</span></li>
+<li>to do this, we need the <code>predict()</code> function:</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2xtLnByb2JzID0gcHJlZGljdChnbG0uZml0LCB0eXBlID0gXCJyZXNwb25zZVwiKVxuZ2xtLnByb2JzXG5gYGAifQ== -->
+<pre class="r"><code>glm.probs = predict(glm.fit, type = &quot;response&quot;)
+glm.probs</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAxICAgICAgICAgICAgMiAgICAgICAgICAgIDMgXG4xLjMwNTY4MGUtMDMgMi4xMTI1OTVlLTAzIDguNTk0NzQxZS0wMyBcbiAgICAgICAgICAgNCAgICAgICAgICAgIDUgICAgICAgICAgICA2IFxuNC4zNDQzNjhlLTA0IDEuNzc2OTU3ZS0wMyAzLjcwNDE1M2UtMDMgXG4gICAgICAgICAgIDcgICAgICAgICAgICA4ICAgICAgICAgICAgOSBcbjIuMjExNDMxZS0wMyAyLjAxNjE3NGUtMDMgMS4zODMyOThlLTAyIFxuICAgICAgICAgIDEwICAgICAgICAgICAxMSAgICAgICAgICAgMTIgXG4yLjM2Njg3N2UtMDUgMi4zNjY4NzdlLTA1IDEuOTA4NzY0ZS0wMiBcbiAgICAgICAgICAxMyAgICAgICAgICAgMTQgICAgICAgICAgIDE1IFxuOC43MTQ1OTRlLTA1IDYuNjUxMDIwZS0wNCAxLjA2NTI5M2UtMDIgXG4gICAgICAgICAgMTYgICAgICAgICAgIDE3ICAgICAgICAgICAxOCBcbjEuMTQyMDk1ZS0wNCAyLjM2Njg3N2UtMDUgNC4zMDM3MTZlLTA0IFxuICAgICAgICAgIDE5ICAgICAgICAgICAyMCAgICAgICAgICAgMjEgXG4zLjQyMzk0NmUtMDQgOS42NjQxOTJlLTAzIDguMzM1MzI1ZS0wNSBcbiAgICAgICAgICAyMiAgICAgICAgICAgMjMgICAgICAgICAgIDI0IFxuNC40Nzg3NDJlLTAzIDcuODA4NDI1ZS0wMyA4LjA3MjE1OWUtMDQgXG4gICAgICAgICAgMjUgICAgICAgICAgIDI2ICAgICAgICAgICAyNyBcbjEuNjU5NjIzZS0wMyAyLjU5OTgyMGUtMDMgOC4xMTczMThlLTA0IFxuICAgICAgICAgIDI4ICAgICAgICAgICAyOSAgICAgICAgICAgMzAgXG42LjU5MTc2NWUtMDIgNi45ODY3NjRlLTA0IDEuMTA0MjM3ZS0wMiBcbiAgICAgICAgICAzMSAgICAgICAgICAgMzIgICAgICAgICAgIDMzIFxuMy41OTUyMTRlLTA0IDIuNzkyOTIxZS0wNCA1Ljg5ODg4NGUtMDQgXG4gICAgICAgICAgMzQgICAgICAgICAgIDM1ICAgICAgICAgICAzNiBcbjMuNTg0MzM4ZS0wMyA1LjYxODg3OWUtMDIgOC4yODMyNTJlLTAyIFxuICAgICAgICAgIDM3ICAgICAgICAgICAzOCAgICAgICAgICAgMzkgXG4xLjA2MjY4NmUtMDMgMS42MzQ3MDFlLTA0IDEuNDAzMDc4ZS0wMyBcbiAgICAgICAgICA0MCAgICAgICAgICAgNDEgICAgICAgICAgIDQyIFxuOC41ODEzODNlLTA0IDIuODU1ODg4ZS0wMyAyLjM1ODY3N2UtMDMgXG4gICAgICAgICAgNDMgICAgICAgICAgIDQ0ICAgICAgICAgICA0NSBcbjEuMzE0MzM0ZS0wMiA3Ljk1OTIzMGUtMDUgMi4wNDc0OTJlLTAxIFxuICAgICAgICAgIDQ2ICAgICAgICAgICA0NyAgICAgICAgICAgNDggXG4yLjI0MDI2NWUtMDQgMi4xMDM0ODVlLTAyIDEuOTg5OTQxZS0wMiBcbiAgICAgICAgICA0OSAgICAgICAgICAgNTAgICAgICAgICAgIDUxIFxuMi4xNTYzODNlLTAzIDIuNjM1Mzc0ZS0wMyA1LjI0NzYxOWUtMDQgXG4gICAgICAgICAgNTIgICAgICAgICAgIDUzICAgICAgICAgICA1NCBcbjIuNjY5MTEwZS0wMiA4LjUzOTg3NWUtMDIgMy40MDE2NDZlLTAzIFxuICAgICAgICAgIDU1ICAgICAgICAgICA1NiAgICAgICAgICAgNTcgXG4yLjM2Njg3N2UtMDUgMi44Mzg3ODBlLTAyIDIuNTY1MTA4ZS0wMiBcbiAgICAgICAgICA1OCAgICAgICAgICAgNTkgICAgICAgICAgIDYwIFxuOS45NTk1NzNlLTAyIDMuNDc2MDM0ZS0wMiAzLjU0MTUzOWUtMDQgXG4gICAgICAgICAgNjEgICAgICAgICAgIDYyICAgICAgICAgICA2MyBcbjEuNTk3MjUzZS0wMyAxLjA1MTYxM2UtMDMgMi4zNjY4NzdlLTA1IFxuICAgICAgICAgIDY0ICAgICAgICAgICA2NSAgICAgICAgICAgNjYgXG43LjUyMDY2OWUtMDIgNS40MTc5OTllLTAzIDIuOTYwMjEwZS0wMiBcbiAgICAgICAgICA2NyAgICAgICAgICAgNjggICAgICAgICAgIDY5IFxuNy4zMzcyNzFlLTAzIDIuMzY2ODc3ZS0wNSAyLjc2MTc4NmUtMDMgXG4gICAgICAgICAgNzAgICAgICAgICAgIDcxICAgICAgICAgICA3MiBcbjEuMDU1NTExZS0wMyA2LjMzMDU5MGUtMDQgMi41MTA0NTNlLTA0IFxuICAgICAgICAgIDczICAgICAgICAgICA3NCAgICAgICAgICAgNzUgXG40LjkxMjYzNGUtMDIgMS4yMTk5MzRlLTAxIDIuNjI5MzY4ZS0wMyBcbiAgICAgICAgICA3NiAgICAgICAgICAgNzcgICAgICAgICAgIDc4IFxuMS40ODA5MTFlLTAzIDEuNjczNTkyZS0wMyAxLjI5NzQzNmUtMDMgXG4gICAgICAgICAgNzkgICAgICAgICAgIDgwICAgICAgICAgICA4MSBcbjMuNjE0NDA2ZS0wNSA2Ljk3MTQ2NWUtMDUgNC4zNDU1NjRlLTAzIFxuICAgICAgICAgIDgyICAgICAgICAgICA4MyAgICAgICAgICAgODQgXG4yLjU0NDI5MmUtMDQgMi45OTU4MjZlLTA0IDUuNDk1NDg3ZS0wNCBcbiAgICAgICAgICA4NSAgICAgICAgICAgODYgICAgICAgICAgIDg3IFxuMS40OTc5ODZlLTA0IDMuOTEzMjY3ZS0wNCA1LjkxNjc1OWUtMDMgXG4gICAgICAgICAgODggICAgICAgICAgIDg5ICAgICAgICAgICA5MCBcbjUuNzgyNjQxZS0wNSAzLjk3NjM0NGUtMDMgMy4yMDc3MjVlLTAzIFxuICAgICAgICAgIDkxICAgICAgICAgICA5MiAgICAgICAgICAgOTMgXG4zLjQ4MDgzM2UtMDIgNS4wNzUwNzZlLTAyIDEuMjk1NDU4ZS0wMiBcbiAgICAgICAgICA5NCAgICAgICAgICAgOTUgICAgICAgICAgIDk2IFxuMS43OTI1ODhlLTA0IDIuODAxOTMyZS0wNCAyLjE0NTczNmUtMDMgXG4gICAgICAgICAgOTcgICAgICAgICAgIDk4ICAgICAgICAgICA5OSBcbjcuMTQzOTAyZS0wNCA3LjQ2NTE1N2UtMDMgOS4wNDY0MDZlLTA1IFxuICAgICAgICAgMTAwICAgICAgICAgIDEwMSAgICAgICAgICAxMDIgXG42LjYwMDA2MmUtMDUgNS41NjMxMzhlLTAyIDEuOTUyODUzZS0wNCBcbiAgICAgICAgIDEwMyAgICAgICAgICAxMDQgICAgICAgICAgMTA1IFxuMS4zNzExNzhlLTAyIDMuMDMwOTg3ZS0wMyA2Ljg4MDg3MGUtMDIgXG4gICAgICAgICAxMDYgICAgICAgICAgMTA3ICAgICAgICAgIDEwOCBcbjIuMzUwMDkyZS0wMSAxLjY2NjEwNmUtMDMgNC41NzU1NzZlLTAzIFxuICAgICAgICAgMTA5ICAgICAgICAgIDExMCAgICAgICAgICAxMTEgXG4xLjc3ODkzMGUtMDIgNy44MzYzNDZlLTAzIDQuNTE5NzQ2ZS0wNSBcbiAgICAgICAgIDExMiAgICAgICAgICAxMTMgICAgICAgICAgMTE0IFxuNi4zMDMwNjFlLTA0IDIuMzY2ODc3ZS0wNSA0LjY1MTA5N2UtMDQgXG4gICAgICAgICAxMTUgICAgICAgICAgMTE2ICAgICAgICAgIDExNyBcbjEuMTAxODkxZS0wMiAyLjAzNDU1MmUtMDMgMS4wNTM1MjdlLTA0IFxuICAgICAgICAgMTE4ICAgICAgICAgIDExOSAgICAgICAgICAxMjAgXG4xLjA3MzY0MWUtMDIgMi43NzcwMDllLTAzIDEuNTA2NDA4ZS0wMiBcbiAgICAgICAgIDEyMSAgICAgICAgICAxMjIgICAgICAgICAgMTIzIFxuNi43Nzk2MzhlLTA0IDEuMDU5NzA5ZS0wNCAyLjgwNjA3MGUtMDQgXG4gICAgICAgICAxMjQgICAgICAgICAgMTI1ICAgICAgICAgIDEyNiBcbjIuMjM4OTQ4ZS0wMyAyLjUxNzU2N2UtMDQgMi4zNjY4NzdlLTA1IFxuICAgICAgICAgMTI3ICAgICAgICAgIDEyOCAgICAgICAgICAxMjkgXG4xLjEwMzA1N2UtMDEgMy44ODM4NjdlLTAzIDQuMzE1NTA0ZS0wMiBcbiAgICAgICAgIDEzMCAgICAgICAgICAxMzEgICAgICAgICAgMTMyIFxuNC40MDEyMzNlLTAzIDIuODA0MzA2ZS0wMiA1LjgxMTQ4M2UtMDQgXG4gICAgICAgICAxMzMgICAgICAgICAgMTM0ICAgICAgICAgIDEzNSBcbjEuNTMwMDg3ZS0wNCAyLjI1NTIxMGUtMDQgMS44NjY2ODFlLTAyIFxuICAgICAgICAgMTM2ICAgICAgICAgIDEzNyAgICAgICAgICAxMzggXG42LjM1NTEzN2UtMDQgNy43NjY4NzVlLTAyIDQuMjI5MzMyZS0wMyBcbiAgICAgICAgIDEzOSAgICAgICAgICAxNDAgICAgICAgICAgMTQxIFxuMi4zNjY4NzdlLTA1IDUuNjM2MjExZS0wMyAxLjQ0NzQ3OGUtMDMgXG4gICAgICAgICAxNDIgICAgICAgICAgMTQzICAgICAgICAgIDE0NCBcbjEuNDExMzkxZS0wNCA1LjU5ODEwN2UtMDQgMi42ODUzODNlLTA0IFxuICAgICAgICAgMTQ1ICAgICAgICAgIDE0NiAgICAgICAgICAxNDcgXG4xLjYwNjIzM2UtMDIgMy45OTM4ODRlLTA1IDYuMjY0NjQ1ZS0wMyBcbiAgICAgICAgIDE0OCAgICAgICAgICAxNDkgICAgICAgICAgMTUwIFxuMi4zNDE3NTZlLTAyIDEuNTE4MzI1ZS0wMiAxLjMyMDE0NGUtMDMgXG4gICAgICAgICAxNTEgICAgICAgICAgMTUyICAgICAgICAgIDE1MyBcbjEuNjIyNDgxZS0wNCAyLjM2Nzg1N2UtMDQgNC40NDA0MjVlLTA0IFxuICAgICAgICAgMTU0ICAgICAgICAgIDE1NSAgICAgICAgICAxNTYgXG4zLjk5NzE2NGUtMDUgNi41MjkxNTdlLTAyIDEuNjQ1NDQwZS0wNCBcbiAgICAgICAgIDE1NyAgICAgICAgICAxNTggICAgICAgICAgMTU5IFxuMS4zNTQ3MDhlLTAzIDMuMDI2MzU1ZS0wMiAxLjI5NjcyOGUtMDIgXG4gICAgICAgICAxNjAgICAgICAgICAgMTYxICAgICAgICAgIDE2MiBcbjEuMTMwMDcxZS0wMyA0LjAzNzIyOGUtMDIgMi44MTM2NDRlLTA1IFxuICAgICAgICAgMTYzICAgICAgICAgIDE2NCAgICAgICAgICAxNjUgXG41LjM5MzEzMWUtMDMgMS43MTM1MjZlLTA0IDguMzE5Nzc4ZS0wNCBcbiAgICAgICAgIDE2NiAgICAgICAgICAxNjcgICAgICAgICAgMTY4IFxuMi4zNjY4NzdlLTA1IDIuNzM3NjA2ZS0wNCAyLjk1NzkzN2UtMDMgXG4gICAgICAgICAxNjkgICAgICAgICAgMTcwICAgICAgICAgIDE3MSBcbjEuNTAwMTc4ZS0wNCA5LjI0MTU3MmUtMDQgMi4wNzQ2NDFlLTAzIFxuICAgICAgICAgMTcyICAgICAgICAgIDE3MyAgICAgICAgICAxNzQgXG4yLjM0NjI1NWUtMDMgNC44MTQ4NTFlLTAzIDguMTQyOTcyZS0wMSBcbiAgICAgICAgIDE3NSAgICAgICAgICAxNzYgICAgICAgICAgMTc3IFxuMi4zMzY5NTVlLTAyIDIuMTE3MDE4ZS0wMiAyLjM2Njg3N2UtMDUgXG4gICAgICAgICAxNzggICAgICAgICAgMTc5ICAgICAgICAgIDE4MCBcbjMuODc2NDQ0ZS0wMyA0LjcwODA3MWUtMDIgMi4yNjE2MDllLTA0IFxuICAgICAgICAgMTgxICAgICAgICAgIDE4MiAgICAgICAgICAxODMgXG4zLjUzNzQzM2UtMDUgMS44MjU4MTllLTAzIDEuODE0ODAyZS0wMyBcbiAgICAgICAgIDE4NCAgICAgICAgICAxODUgICAgICAgICAgMTg2IFxuMS44MzM0NzhlLTAzIDMuMjk2NjA5ZS0wNCAzLjEyNTg0NWUtMDMgXG4gICAgICAgICAxODcgICAgICAgICAgMTg4ICAgICAgICAgIDE4OSBcbjIuNjg5MzgyZS0wMiAxLjE4NzY2MGUtMDMgMi43ODA1NjJlLTAyIFxuICAgICAgICAgMTkwICAgICAgICAgIDE5MSAgICAgICAgICAxOTIgXG40Ljc0MTc0NmUtMDUgMS43MTY3NDhlLTAzIDEuMDk1MDIxZS0wMyBcbiAgICAgICAgIDE5MyAgICAgICAgICAxOTQgICAgICAgICAgMTk1IFxuNi42NTk1MTRlLTA0IDMuMjM1OTE2ZS0wMSAzLjMyODcxMGUtMDMgXG4gICAgICAgICAxOTYgICAgICAgICAgMTk3ICAgICAgICAgIDE5OCBcbjQuNzgzMjczZS0wMyA5LjQ3MDQxN2UtMDQgNi4wNzk1MDZlLTA1IFxuICAgICAgICAgMTk5ICAgICAgICAgIDIwMCAgICAgICAgICAyMDEgXG43LjU5MDc2NWUtMDIgOC4wMTM3NTRlLTA0IDEuMTQ4NDMxZS0wMyBcbiAgICAgICAgIDIwMiAgICAgICAgICAyMDMgICAgICAgICAgMjA0IFxuMi45MDYwNzdlLTAxIDMuNjQxOTg4ZS0wMyAyLjUwNjk0MWUtMDIgXG4gICAgICAgICAyMDUgICAgICAgICAgMjA2ICAgICAgICAgIDIwNyBcbjQuMzQ3NDIwZS0wNSAyLjYwNTEzOWUtMDEgNC4zNTIyMDdlLTAxIFxuICAgICAgICAgMjA4ICAgICAgICAgIDIwOSAgICAgICAgICAyMTAgXG4yLjc0ODc0OGUtMDUgMS40MzExMDdlLTAzIDQuNDg0OTg1ZS0wMSBcbiAgICAgICAgIDIxMSAgICAgICAgICAyMTIgICAgICAgICAgMjEzIFxuMi4wNzU5ODRlLTAzIDMuNjg4MTI0ZS0wNCAyLjU3MzYxNGUtMDMgXG4gICAgICAgICAyMTQgICAgICAgICAgMjE1ICAgICAgICAgIDIxNiBcbjMuMjE5MzMyZS0wNCAyLjA3Mjc0NmUtMDIgNy4xODAyMzhlLTA0IFxuICAgICAgICAgMjE3ICAgICAgICAgIDIxOCAgICAgICAgICAyMTkgXG43LjkzNjE5OGUtMDUgMy4wMDExMTZlLTAyIDEuNDA4NTE4ZS0wMSBcbiAgICAgICAgIDIyMCAgICAgICAgICAyMjEgICAgICAgICAgMjIyIFxuOS42OTY5NTRlLTA1IDEuMzI4NDkxZS0wMiAxLjY0NzY3OGUtMDMgXG4gICAgICAgICAyMjMgICAgICAgICAgMjI0ICAgICAgICAgIDIyNSBcbjkuOTA3MDMwZS0wMyAxLjc1MDExNWUtMDMgMi43MjI5NDNlLTA0IFxuICAgICAgICAgMjI2ICAgICAgICAgIDIyNyAgICAgICAgICAyMjggXG4zLjc4MTk1N2UtMDQgMi43Njk4NDJlLTAxIDIuNTMwNzA3ZS0wMyBcbiAgICAgICAgIDIyOSAgICAgICAgICAyMzAgICAgICAgICAgMjMxIFxuNS4yODcyNjZlLTAyIDEuMjA4ODU0ZS0wMyA0LjA5NTc1MWUtMDIgXG4gICAgICAgICAyMzIgICAgICAgICAgMjMzICAgICAgICAgIDIzNCBcbjMuNTY0MjM1ZS0wNCAzLjkxMDMzNGUtMDIgNS40NzM3MjhlLTA0IFxuICAgICAgICAgMjM1ICAgICAgICAgIDIzNiAgICAgICAgICAyMzcgXG40LjUyNTMwOWUtMDMgNC43NDUyMDVlLTAzIDQuOTQwMjAxZS0wNCBcbiAgICAgICAgIDIzOCAgICAgICAgICAyMzkgICAgICAgICAgMjQwIFxuMS41MjAzNzNlLTA0IDEuMTY3MjY5ZS0wMyA1LjEyNzQyNmUtMDMgXG4gICAgICAgICAyNDEgICAgICAgICAgMjQyICAgICAgICAgIDI0MyBcbjEuODIwMjY0ZS0wNCAxLjE4OTU5MmUtMDEgMi4zNjY4NzdlLTA1IFxuICAgICAgICAgMjQ0ICAgICAgICAgIDI0NSAgICAgICAgICAyNDYgXG41LjM3NzE5M2UtMDEgNC44MTY5NTZlLTA0IDIuMzIyODE1ZS0wMiBcbiAgICAgICAgIDI0NyAgICAgICAgICAyNDggICAgICAgICAgMjQ5IFxuMS42MTczNTllLTAyIDEuMDM3NTkyZS0wMyAyLjQ3MDM5OWUtMDMgXG4gICAgICAgICAyNTAgICAgICAgICAgMjUxICAgICAgICAgIDI1MiBcbjQuNTYzNDU1ZS0wMyA4LjU0NzE2MGUtMDUgMS4xNDk0NDFlLTAyIFxuICAgICAgICAgMjUzICAgICAgICAgIDI1NCAgICAgICAgICAyNTUgXG4zLjQ3OTMxNmUtMDQgMS42MTE5NThlLTAzIDUuMTk5MDM1ZS0wNCBcbiAgICAgICAgIDI1NiAgICAgICAgICAyNTcgICAgICAgICAgMjU4IFxuOS41MTc3OTZlLTAzIDMuNTEyNDcxZS0wNSAzLjY4NjQ1NGUtMDEgXG4gICAgICAgICAyNTkgICAgICAgICAgMjYwICAgICAgICAgIDI2MSBcbjIuOTE3MDA5ZS0wMyA0Ljk4MDM3MWUtMDQgMy4xNzI1MzNlLTAzIFxuICAgICAgICAgMjYyICAgICAgICAgIDI2MyAgICAgICAgICAyNjQgXG4zLjA0ODk2MmUtMDQgNS4yNDU0NDFlLTA0IDkuNjU1OTk1ZS0wMiBcbiAgICAgICAgIDI2NSAgICAgICAgICAyNjYgICAgICAgICAgMjY3IFxuNS40NjI5NzBlLTAzIDYuMDc5NzM0ZS0wNCAxLjIwNjY0N2UtMDMgXG4gICAgICAgICAyNjggICAgICAgICAgMjY5ICAgICAgICAgIDI3MCBcbjEuMDE0NzY5ZS0wMSAyLjE1NzU1OGUtMDIgOC42MzI3MjdlLTA1IFxuICAgICAgICAgMjcxICAgICAgICAgIDI3MiAgICAgICAgICAyNzMgXG40LjMyMDY0M2UtMDQgNi4xNDIwMDBlLTA0IDEuMTQyNDE2ZS0wMyBcbiAgICAgICAgIDI3NCAgICAgICAgICAyNzUgICAgICAgICAgMjc2IFxuMi45MTI2NDBlLTA0IDMuMTQ5MTQ3ZS0wNCA4LjQyNDMwMmUtMDIgXG4gICAgICAgICAyNzcgICAgICAgICAgMjc4ICAgICAgICAgIDI3OSBcbjQuMDgzNjA4ZS0wMiAzLjQ5MDk5NmUtMDMgOS43NTY1OThlLTAzIFxuICAgICAgICAgMjgwICAgICAgICAgIDI4MSAgICAgICAgICAyODIgXG4xLjgwMjQ1NmUtMDQgOS41OTI4NzBlLTA0IDcuMDk4ODAwZS0wMyBcbiAgICAgICAgIDI4MyAgICAgICAgICAyODQgICAgICAgICAgMjg1IFxuMi4zNjY4NzdlLTA1IDQuMjk1NTM3ZS0wNCAyLjExNTk0N2UtMDMgXG4gICAgICAgICAyODYgICAgICAgICAgMjg3ICAgICAgICAgIDI4OCBcbjEuMDU5MDQ3ZS0wMSA1LjMzNzY2M2UtMDQgOC4xMzEyOTRlLTAyIFxuICAgICAgICAgMjg5ICAgICAgICAgIDI5MCAgICAgICAgICAyOTEgXG4yLjcxMTE4OGUtMDMgMi4zNDkwODZlLTAyIDYuNTk1NjUxZS0wMyBcbiAgICAgICAgIDI5MiAgICAgICAgICAyOTMgICAgICAgICAgMjk0IFxuMS4xMzAzODdlLTAzIDkuMDE5MTA5ZS0wMyAzLjUyMzIzMmUtMDMgXG4gICAgICAgICAyOTUgICAgICAgICAgMjk2ICAgICAgICAgIDI5NyBcbjUuNjQ0NDY5ZS0wMyAxLjY1NTcyOWUtMDQgMS43NDg0NjJlLTAzIFxuICAgICAgICAgMjk4ICAgICAgICAgIDI5OSAgICAgICAgICAzMDAgXG4yLjI5MzYyNGUtMDEgMy43NTg1NDRlLTA0IDYuOTA2NDIxZS0wMyBcbiAgICAgICAgIDMwMSAgICAgICAgICAzMDIgICAgICAgICAgMzAzIFxuMi4zNjY4NzdlLTA1IDkuMjUyNjU3ZS0wMyA3LjQ0NTg3NGUtMDMgXG4gICAgICAgICAzMDQgICAgICAgICAgMzA1ICAgICAgICAgIDMwNiBcbjcuODQ5ODkwZS0wMyA1LjEzNDMzOGUtMDMgMi40OTkyOTBlLTAzIFxuICAgICAgICAgMzA3ICAgICAgICAgIDMwOCAgICAgICAgICAzMDkgXG4xLjczOTQ2OGUtMDMgMi4xNjQxOTBlLTA0IDcuMjk2MzI3ZS0wNSBcbiAgICAgICAgIDMxMCAgICAgICAgICAzMTEgICAgICAgICAgMzEyIFxuNi4xNTY2NTJlLTAxIDEuNDUyNTQwZS0wMyAyLjM3MTgyMmUtMDMgXG4gICAgICAgICAzMTMgICAgICAgICAgMzE0ICAgICAgICAgIDMxNSBcbjEuOTc2ODA2ZS0wNCAyLjA1Nzg4OWUtMDMgMy4zMjEwMTdlLTAxIFxuICAgICAgICAgMzE2ICAgICAgICAgIDMxNyAgICAgICAgICAzMTggXG4yLjM2Njg3N2UtMDUgMy4zOTY4NjVlLTAyIDYuOTQxMTIyZS0wMiBcbiAgICAgICAgIDMxOSAgICAgICAgICAzMjAgICAgICAgICAgMzIxIFxuMS43MTMyMDdlLTAyIDUuNDM2NzIzZS0wMyAyLjgzMzk4NWUtMDMgXG4gICAgICAgICAzMjIgICAgICAgICAgMzIzICAgICAgICAgIDMyNCBcbjEuNzE1ODIyZS0wMiA1Ljc2MzI4N2UtMDIgMi4zNjY4NzdlLTA1IFxuICAgICAgICAgMzI1ICAgICAgICAgIDMyNiAgICAgICAgICAzMjcgXG4xLjcwODI1N2UtMDQgMS4wMjAwODFlLTA0IDYuNjk0ODA3ZS0wMyBcbiAgICAgICAgIDMyOCAgICAgICAgICAzMjkgICAgICAgICAgMzMwIFxuMS4zMDIyNDllLTAzIDcuMjY3NjE1ZS0wMyA4LjM5NDEwNmUtMDUgXG4gICAgICAgICAzMzEgICAgICAgICAgMzMyICAgICAgICAgIDMzMyBcbjEuNzg1MTM5ZS0wNCAxLjM2NTY2MWUtMDMgMi42MTY4ODhlLTA1IFxuICAgICAgICAgMzM0ICAgICAgICAgIDMzNSAgICAgICAgICAzMzYgXG4yLjMzMTYyNmUtMDIgMi44OTY3NjZlLTA0IDMuMjM3NTY4ZS0wNSBcbiAgICAgICAgIDMzNyAgICAgICAgICAzMzggICAgICAgICAgMzM5IFxuMS4yNjYxNzRlLTAzIDYuODYwNDEzZS0wNCAxLjkwNDU4N2UtMDIgXG4gICAgICAgICAzNDAgICAgICAgICAgMzQxICAgICAgICAgIDM0MiBcbjEuOTI3MDEwZS0wMiAxLjQxNjk1MWUtMDIgMS42NTUzNjFlLTAxIFxuICAgICAgICAgMzQzICAgICAgICAgIDM0NCAgICAgICAgICAzNDUgXG40LjIzODA3N2UtMDMgMS40NTc5MDFlLTAzIDEuODEzOTIxZS0wNCBcbiAgICAgICAgIDM0NiAgICAgICAgICAzNDcgICAgICAgICAgMzQ4IFxuNS43NDU4NDllLTAxIDEuNjY2MDQ1ZS0wMyAyLjExMzQwMGUtMDMgXG4gICAgICAgICAzNDkgICAgICAgICAgMzUwICAgICAgICAgIDM1MSBcbjguMDEzODMxZS0wMyAxLjA2NjM5MmUtMDEgMi44ODAwMjJlLTA0IFxuICAgICAgICAgMzUyICAgICAgICAgIDM1MyAgICAgICAgICAzNTQgXG4yLjMxMjY1N2UtMDIgNy42NjQ5NjVlLTAyIDcuNTc4NDIyZS0wMyBcbiAgICAgICAgIDM1NSAgICAgICAgICAzNTYgICAgICAgICAgMzU3IFxuNS4zMzk4OTNlLTAzIDEuMjIxMTY2ZS0wMyAxLjA2MzMyM2UtMDMgXG4gICAgICAgICAzNTggICAgICAgICAgMzU5ICAgICAgICAgIDM2MCBcbjMuNDA5NjgxZS0wMiA5LjU5NjQ3MGUtMDQgNy44NzU4MDVlLTA1IFxuICAgICAgICAgMzYxICAgICAgICAgIDM2MiAgICAgICAgICAzNjMgXG4xLjg4NDA0MGUtMDIgMi41NDk1MDBlLTA1IDQuMzk3OTAwZS0wNCBcbiAgICAgICAgIDM2NCAgICAgICAgICAzNjUgICAgICAgICAgMzY2IFxuNS44ODE1MjhlLTA1IDMuODUwNzk2ZS0wMiA0LjI2OTQ2MGUtMDUgXG4gICAgICAgICAzNjcgICAgICAgICAgMzY4ICAgICAgICAgIDM2OSBcbjQuMzA4NzM5ZS0wMyAyLjU4MTQ3OWUtMDQgNi40MTg5MjFlLTAzIFxuICAgICAgICAgMzcwICAgICAgICAgIDM3MSAgICAgICAgICAzNzIgXG45LjAyNTYzNGUtMDQgMS40OTY5NDBlLTAzIDEuMTYyNzMyZS0wNCBcbiAgICAgICAgIDM3MyAgICAgICAgICAzNzQgICAgICAgICAgMzc1IFxuNy4wMzIzNTJlLTA1IDQuMDQwNTQ0ZS0wNCAxLjA5NTQ2MGUtMDMgXG4gICAgICAgICAzNzYgICAgICAgICAgMzc3ICAgICAgICAgIDM3OCBcbjMuNzQ2NzA3ZS0wNCA2Ljc1Njk4NGUtMDIgMS4yMTg4NjdlLTAzIFxuICAgICAgICAgMzc5ICAgICAgICAgIDM4MCAgICAgICAgICAzODEgXG43LjA3ODM5MmUtMDMgOS41NzI2NjZlLTA0IDEuODI5NDExZS0wNCBcbiAgICAgICAgIDM4MiAgICAgICAgICAzODMgICAgICAgICAgMzg0IFxuMy44NjM5OTZlLTA1IDIuNTM0MDg5ZS0wMiA2LjQzNDYyNWUtMDQgXG4gICAgICAgICAzODUgICAgICAgICAgMzg2ICAgICAgICAgIDM4NyBcbjMuNDIwMzAwZS0wMyA4LjA0NTYwMWUtMDMgMS44OTQ0NDFlLTAxIFxuICAgICAgICAgMzg4ICAgICAgICAgIDM4OSAgICAgICAgICAzOTAgXG4zLjA0MjgyMGUtMDMgMS44NDgxOTllLTA0IDIuNzM4ODc2ZS0wMiBcbiAgICAgICAgIDM5MSAgICAgICAgICAzOTIgICAgICAgICAgMzkzIFxuMi4wMDUzODFlLTAyIDMuOTIxMzY4ZS0wNCAxLjY4MTgwNGUtMDMgXG4gICAgICAgICAzOTQgICAgICAgICAgMzk1ICAgICAgICAgIDM5NiBcbjEuMzI0MDE0ZS0wMiAyLjk4MTE0NGUtMDIgMS45MTY4MzBlLTAxIFxuICAgICAgICAgMzk3ICAgICAgICAgIDM5OCAgICAgICAgICAzOTkgXG4yLjExNDY2MWUtMDQgMS4zODIyMzJlLTAzIDguMjE5OTU1ZS0wNSBcbiAgICAgICAgIDQwMCAgICAgICAgICA0MDEgICAgICAgICAgNDAyIFxuMS44NzU0NjdlLTAyIDcuOTc2NzU2ZS0wNCAzLjAzMzg5N2UtMDMgXG4gICAgICAgICA0MDMgICAgICAgICAgNDA0ICAgICAgICAgIDQwNSBcbjIuMzk2ODM4ZS0wNSAyLjM3ODE1MGUtMDQgMS4wMzM3OTBlLTAxIFxuICAgICAgICAgNDA2ICAgICAgICAgIDQwNyAgICAgICAgICA0MDggXG45Ljk4MTk5MmUtMDMgMi4xNDE4NjRlLTAxIDEuMzE0NjU3ZS0wNCBcbiAgICAgICAgIDQwOSAgICAgICAgICA0MTAgICAgICAgICAgNDExIFxuMi43MDE1NTFlLTA0IDEuMzAwNTg4ZS0wMyAxLjA5NjgzM2UtMDQgXG4gICAgICAgICA0MTIgICAgICAgICAgNDEzICAgICAgICAgIDQxNCBcbjEuNTMyNTQ4ZS0wMyA3LjE2NzAxNGUtMDQgNC4zNTk4ODllLTAxIFxuICAgICAgICAgNDE1ICAgICAgICAgIDQxNiAgICAgICAgICA0MTcgXG4yLjM2Njg3N2UtMDUgMy40MTUyMjllLTAyIDguNzAzODc0ZS0wMyBcbiAgICAgICAgIDQxOCAgICAgICAgICA0MTkgICAgICAgICAgNDIwIFxuNy4wOTYwMDBlLTA0IDEuMDU0NDQyZS0wMiAyLjczMTgzMGUtMDMgXG4gICAgICAgICA0MjEgICAgICAgICAgNDIyICAgICAgICAgIDQyMyBcbjMuMjQxMjkzZS0wMyA0LjQ3MzA3M2UtMDMgNC4zMTkxNjRlLTAzIFxuICAgICAgICAgNDI0ICAgICAgICAgIDQyNSAgICAgICAgICA0MjYgXG4xLjAyOTIwNmUtMDQgNC4xNjcxMjZlLTAyIDcuMzQyMDkzZS0wNCBcbiAgICAgICAgIDQyNyAgICAgICAgICA0MjggICAgICAgICAgNDI5IFxuMi41NTE3ODBlLTA1IDEuNzc5MDEzZS0wMyAzLjg3NjIwNmUtMDIgXG4gICAgICAgICA0MzAgICAgICAgICAgNDMxICAgICAgICAgIDQzMiBcbjMuMzE5ODY2ZS0wNCAyLjM2Njg3N2UtMDUgMS45MjMxMDJlLTAyIFxuICAgICAgICAgNDMzICAgICAgICAgIDQzNCAgICAgICAgICA0MzUgXG4xLjU3NDM0NGUtMDIgMy4yODgwOTdlLTA0IDguMDA5MDUwZS0wNSBcbiAgICAgICAgIDQzNiAgICAgICAgICA0MzcgICAgICAgICAgNDM4IFxuNS42OTEzNDFlLTA0IDQuMDUxMjY5ZS0wMiA1LjA5NTgyM2UtMDMgXG4gICAgICAgICA0MzkgICAgICAgICAgNDQwICAgICAgICAgIDQ0MSBcbjEuNTY5OTkzZS0wMiAxLjA5OTAzNWUtMDIgMS4xMDE0MDZlLTAyIFxuICAgICAgICAgNDQyICAgICAgICAgIDQ0MyAgICAgICAgICA0NDQgXG4xLjY4ODQ2M2UtMDMgMy4yOTIyMzBlLTAyIDIuOTQ5NTg3ZS0wMyBcbiAgICAgICAgIDQ0NSAgICAgICAgICA0NDYgICAgICAgICAgNDQ3IFxuMi40NjgzNzRlLTAyIDIuMzY2ODc3ZS0wNSAyLjM2Njg3N2UtMDUgXG4gICAgICAgICA0NDggICAgICAgICAgNDQ5ICAgICAgICAgIDQ1MCBcbjEuNzc4NDg3ZS0wNCAxLjQ0MTYwNmUtMDMgMy4wNTA4NTJlLTAxIFxuICAgICAgICAgNDUxICAgICAgICAgIDQ1MiAgICAgICAgICA0NTMgXG40Ljg5NjM2MGUtMDEgNS4zNjE2MTZlLTAzIDIuNjE5MTI1ZS0wMyBcbiAgICAgICAgIDQ1NCAgICAgICAgICA0NTUgICAgICAgICAgNDU2IFxuOS45ODkzMTRlLTAzIDEuMTM2MDMwZS0wMyA1LjAyMjAzMmUtMDQgXG4gICAgICAgICA0NTcgICAgICAgICAgNDU4ICAgICAgICAgIDQ1OSBcbjguNTkyMzU2ZS0wMyAxLjE0NDkxNmUtMDIgOC40MjUxMDllLTA0IFxuICAgICAgICAgNDYwICAgICAgICAgIDQ2MSAgICAgICAgICA0NjIgXG41LjA5MDUxNmUtMDMgNy41NTQxNjhlLTAzIDQuNTUxMTM0ZS0wMiBcbiAgICAgICAgIDQ2MyAgICAgICAgICA0NjQgICAgICAgICAgNDY1IFxuOS42ODQ4OTdlLTAzIDkuMzY4NzIzZS0wMyA2LjU5NTY0NmUtMDQgXG4gICAgICAgICA0NjYgICAgICAgICAgNDY3ICAgICAgICAgIDQ2OCBcbjYuOTIyMTYzZS0wMyAxLjM4NTgzNGUtMDEgMi4yMjEzMjdlLTAzIFxuICAgICAgICAgNDY5ICAgICAgICAgIDQ3MCAgICAgICAgICA0NzEgXG4xLjUwMTE3NGUtMDIgMi41NTc4NzBlLTAyIDIuNzc1NTU3ZS0wMiBcbiAgICAgICAgIDQ3MiAgICAgICAgICA0NzMgICAgICAgICAgNDc0IFxuMS4xOTA5MzZlLTAyIDIuMzYwNjE4ZS0wMyAxLjkwMjg2NWUtMDQgXG4gICAgICAgICA0NzUgICAgICAgICAgNDc2ICAgICAgICAgIDQ3NyBcbjEuMTk1NDIyZS0wMiAyLjM2Njg3N2UtMDUgNy45MzMwMDhlLTAyIFxuICAgICAgICAgNDc4ICAgICAgICAgIDQ3OSAgICAgICAgICA0ODAgXG4yLjA5Mzc2M2UtMDEgMS4xNDQ3MzBlLTAzIDguODE4MTQxZS0wNSBcbiAgICAgICAgIDQ4MSAgICAgICAgICA0ODIgICAgICAgICAgNDgzIFxuMS41NjM5MzJlLTAyIDMuMzA0NjUyZS0wMyA5LjM2OTA0OGUtMDIgXG4gICAgICAgICA0ODQgICAgICAgICAgNDg1ICAgICAgICAgIDQ4NiBcbjEuNjk0NzIwZS0wMyA0LjgyNzAzMmUtMDIgMi4zNjY4NzdlLTA1IFxuICAgICAgICAgNDg3ICAgICAgICAgIDQ4OCAgICAgICAgICA0ODkgXG4zLjMzODg4NmUtMDUgNS42MDgyNDRlLTAxIDMuOTk2MjI2ZS0wNCBcbiAgICAgICAgIDQ5MCAgICAgICAgICA0OTEgICAgICAgICAgNDkyIFxuMS4yNTgyNDRlLTAzIDUuNDg1NjY5ZS0wNSAxLjE4NjU5N2UtMDQgXG4gICAgICAgICA0OTMgICAgICAgICAgNDk0ICAgICAgICAgIDQ5NSBcbjIuMzY2ODc3ZS0wNSA4LjIyMzU4MWUtMDQgOC45NTEwMTJlLTAyIFxuICAgICAgICAgNDk2ICAgICAgICAgIDQ5NyAgICAgICAgICA0OTggXG4xLjYwNzg1NmUtMDMgMy41Mzc2NDdlLTA0IDIuMzY2ODc3ZS0wNSBcbiAgICAgICAgIDQ5OSAgICAgICAgICA1MDAgICAgICAgICAgNTAxIFxuMi4zNjY4NzdlLTA1IDMuODkwMDUyZS0wNCA0Ljc2NTE2OGUtMDMgXG4gICAgICAgICA1MDIgICAgICAgICAgNTAzICAgICAgICAgIDUwNCBcbjQuMDY5OTkzZS0wMSAyLjE3NjIyMWUtMDQgNi4xNzIxMDVlLTA0IFxuICAgICAgICAgNTA1ICAgICAgICAgIDUwNiAgICAgICAgICA1MDcgXG4yLjM2Njg3N2UtMDUgMS40MDA0NzllLTAzIDEuMDQ4ODAwZS0wMiBcbiAgICAgICAgIDUwOCAgICAgICAgICA1MDkgICAgICAgICAgNTEwIFxuMS42NDQ1NjRlLTAzIDcuMzI2MjU2ZS0wNCAzLjY5ODI2M2UtMDQgXG4gICAgICAgICA1MTEgICAgICAgICAgNTEyICAgICAgICAgIDUxMyBcbjkuMzMxMzIzZS0wMyAxLjA5ODQ2NGUtMDEgMS44OTE5OTRlLTAzIFxuICAgICAgICAgNTE0ICAgICAgICAgIDUxNSAgICAgICAgICA1MTYgXG4yLjMzMDk3MWUtMDQgNC41NjQyMzFlLTA0IDEuNTQ4OTY5ZS0wMiBcbiAgICAgICAgIDUxNyAgICAgICAgICA1MTggICAgICAgICAgNTE5IFxuMi4zNDI2NjFlLTAzIDQuMjAzMzMxZS0wNSA1LjI2NDcwMGUtMDQgXG4gICAgICAgICA1MjAgICAgICAgICAgNTIxICAgICAgICAgIDUyMiBcbjEuOTcxMDEyZS0wMyA2LjczODIxMGUtMDMgMS40NTEwMjJlLTAzIFxuICAgICAgICAgNTIzICAgICAgICAgIDUyNCAgICAgICAgICA1MjUgXG4zLjQxNDI3NGUtMDUgMi44NTM3ODVlLTA0IDEuOTA2MzM5ZS0wMyBcbiAgICAgICAgIDUyNiAgICAgICAgICA1MjcgICAgICAgICAgNTI4IFxuNS4wNjc1NzdlLTAxIDYuMzAxMjI0ZS0wMiAxLjU1MjU1MWUtMDMgXG4gICAgICAgICA1MjkgICAgICAgICAgNTMwICAgICAgICAgIDUzMSBcbjMuODE2Nzk4ZS0wMiAxLjkyMjUwOWUtMDQgMS4zNzM1OThlLTAxIFxuICAgICAgICAgNTMyICAgICAgICAgIDUzMyAgICAgICAgICA1MzQgXG41LjMyOTM5M2UtMDUgMi4zNjY4NzdlLTA1IDEuMzMxMzU1ZS0wMyBcbiAgICAgICAgIDUzNSAgICAgICAgICA1MzYgICAgICAgICAgNTM3IFxuOS4wMzY2NDZlLTAzIDEuNzE5Mzk4ZS0wMyA1LjU3MTMzMWUtMDMgXG4gICAgICAgICA1MzggICAgICAgICAgNTM5ICAgICAgICAgIDU0MCBcbjEuNjIzMzA2ZS0wMyAxLjAxNzM1N2UtMDMgMi42OTc1OTBlLTA0IFxuICAgICAgICAgNTQxICAgICAgICAgIDU0MiAgICAgICAgICA1NDMgXG4yLjI5ODI1NWUtMDEgMi4zNjY4NzdlLTA1IDkuNTIxNzI5ZS0wMyBcbiAgICAgICAgIDU0NCAgICAgICAgICA1NDUgICAgICAgICAgNTQ2IFxuMy42NDUzMzdlLTA0IDEuMzAwNDk5ZS0wMiA2Ljk1MDg2NWUtMDIgXG4gICAgICAgICA1NDcgICAgICAgICAgNTQ4ICAgICAgICAgIDU0OSBcbjUuMjk2ODYyZS0wNCAzLjc1NjI1MGUtMDMgNi4yMTYwNzhlLTA1IFxuICAgICAgICAgNTUwICAgICAgICAgIDU1MSAgICAgICAgICA1NTIgXG42LjU5MjMzN2UtMDMgNi4zMDAzMzZlLTA0IDEuNDY0MzM5ZS0wMyBcbiAgICAgICAgIDU1MyAgICAgICAgICA1NTQgICAgICAgICAgNTU1IFxuMS44Mjg1NDllLTAzIDQuMzg5NTc2ZS0wNSAxLjM3MDgzOWUtMDMgXG4gICAgICAgICA1NTYgICAgICAgICAgNTU3ICAgICAgICAgIDU1OCBcbjEuMzU5NDgxZS0wMiAxLjgzNDYzNmUtMDIgMy42MDk1MDNlLTAyIFxuICAgICAgICAgNTU5ICAgICAgICAgIDU2MCAgICAgICAgICA1NjEgXG42LjAxMDM5MWUtMDQgMS4yNTE0OTFlLTAzIDkuOTkyMDE5ZS0wNCBcbiAgICAgICAgIDU2MiAgICAgICAgICA1NjMgICAgICAgICAgNTY0IFxuMi4wOTIxMzFlLTAzIDcuMjU1ODA5ZS0wMyA5LjA3MjU5MmUtMDQgXG4gICAgICAgICA1NjUgICAgICAgICAgNTY2ICAgICAgICAgIDU2NyBcbjcuNDQzMTQyZS0wMiAxLjUxNjEyMGUtMDQgMi41Mzc3NjVlLTAyIFxuICAgICAgICAgNTY4ICAgICAgICAgIDU2OSAgICAgICAgICA1NzAgXG40LjQzNDUwMmUtMDUgMi4zNjY4NzdlLTA1IDkuMDAzMzUzZS0wMiBcbiAgICAgICAgIDU3MSAgICAgICAgICA1NzIgICAgICAgICAgNTczIFxuMy4yOTI5NTFlLTAzIDEuODI1NzQ3ZS0wMyAyLjM2Njg3N2UtMDUgXG4gICAgICAgICA1NzQgICAgICAgICAgNTc1ICAgICAgICAgIDU3NiBcbjIuNTMzNjA4ZS0wMiAyLjYxNTc1MGUtMDIgMS4zMjg3NzZlLTAzIFxuICAgICAgICAgNTc3ICAgICAgICAgIDU3OCAgICAgICAgICA1NzkgXG4yLjc4MTcwM2UtMDEgMi42MzI4NjVlLTAyIDkuNjM2MDk4ZS0wMiBcbiAgICAgICAgIDU4MCAgICAgICAgICA1ODEgICAgICAgICAgNTgyIFxuMS41ODE3NzhlLTA0IDcuMDMwNDU4ZS0wNSAyLjg2NDAzM2UtMDEgXG4gICAgICAgICA1ODMgICAgICAgICAgNTg0ICAgICAgICAgIDU4NSBcbjcuOTU3MTE4ZS0wNCA4Ljc5OTc5OGUtMDUgMi4wMjY3NjZlLTA0IFxuICAgICAgICAgNTg2ICAgICAgICAgIDU4NyAgICAgICAgICA1ODggXG4yLjI2ODY3OWUtMDMgNC40NDA0MDBlLTAyIDguOTc1MTY3ZS0wNSBcbiAgICAgICAgIDU4OSAgICAgICAgICA1OTAgICAgICAgICAgNTkxIFxuMi4wODAyNTNlLTAyIDguMTQ4NjUzZS0wMyA0Ljc1NjM4MmUtMDUgXG4gICAgICAgICA1OTIgICAgICAgICAgNTkzICAgICAgICAgIDU5NCBcbjEuNTMwNTU3ZS0wMyAzLjQ5NDA1NWUtMDMgNS4xMDI1NzVlLTA0IFxuICAgICAgICAgNTk1ICAgICAgICAgIDU5NiAgICAgICAgICA1OTcgXG4zLjQzNTYwM2UtMDEgMS4wNTIxMjJlLTAyIDEuMjYxMzk0ZS0wMyBcbiAgICAgICAgIDU5OCAgICAgICAgICA1OTkgICAgICAgICAgNjAwIFxuNC45MzYyMTRlLTAzIDEuMDg2MTc2ZS0wMyAxLjUxODM2MmUtMDIgXG4gICAgICAgICA2MDEgICAgICAgICAgNjAyICAgICAgICAgIDYwMyBcbjEuNDQ5Mjk5ZS0wNCAxLjg0NTI3OGUtMDMgMi4xODkyNTZlLTAyIFxuICAgICAgICAgNjA0ICAgICAgICAgIDYwNSAgICAgICAgICA2MDYgXG42LjEyNTM3N2UtMDQgOS4wNTgzNDNlLTA1IDcuMTAwNjc1ZS0wMyBcbiAgICAgICAgIDYwNyAgICAgICAgICA2MDggICAgICAgICAgNjA5IFxuOS44OTY2MzFlLTA0IDguMDQ0NDcyZS0wMyAyLjQ2NjUzN2UtMDIgXG4gICAgICAgICA2MTAgICAgICAgICAgNjExICAgICAgICAgIDYxMiBcbjQuNTEwMDM0ZS0wMyAxLjA4MTk1MWUtMDIgNi40NTAyMDFlLTA0IFxuICAgICAgICAgNjEzICAgICAgICAgIDYxNCAgICAgICAgICA2MTUgXG45Ljc5ODExMmUtMDMgNy4yNjY3NDhlLTAzIDMuMjc3MzEwZS0wMiBcbiAgICAgICAgIDYxNiAgICAgICAgICA2MTcgICAgICAgICAgNjE4IFxuNy42NTgwNzJlLTAzIDEuMDM5MTIwZS0wMyA1LjMzMDIzOGUtMDQgXG4gICAgICAgICA2MTkgICAgICAgICAgNjIwICAgICAgICAgIDYyMSBcbjEuNjI1MzgyZS0wMyA0LjUwMDIxMWUtMDMgOC4xMzU2MTZlLTA0IFxuICAgICAgICAgNjIyICAgICAgICAgIDYyMyAgICAgICAgICA2MjQgXG4yLjM2Njg3N2UtMDUgMi42MjU1MDBlLTA0IDIuNjExMDY0ZS0wMiBcbiAgICAgICAgIDYyNSAgICAgICAgICA2MjYgICAgICAgICAgNjI3IFxuMS42Mjk0NzZlLTAxIDMuMTc4MjA0ZS0wMyAxLjM0ODU4NmUtMDQgXG4gICAgICAgICA2MjggICAgICAgICAgNjI5ICAgICAgICAgIDYzMCBcbjcuMjY5NzM3ZS0wNCA0LjI2OTM1M2UtMDUgNS40NjIyNThlLTAzIFxuICAgICAgICAgNjMxICAgICAgICAgIDYzMiAgICAgICAgICA2MzMgXG4yLjM2Njg3N2UtMDUgMi4zNjY4NzdlLTA1IDYuMTA3MTUwZS0wNCBcbiAgICAgICAgIDYzNCAgICAgICAgICA2MzUgICAgICAgICAgNjM2IFxuMy44ODAxMDVlLTAzIDEuMjYzNDU0ZS0wNCA4LjY2MTc3N2UtMDUgXG4gICAgICAgICA2MzcgICAgICAgICAgNjM4ICAgICAgICAgIDYzOSBcbjEuMDM3MTgyZS0wMiAxLjAzNTQ0M2UtMDMgMy4yOTUzNzVlLTA1IFxuICAgICAgICAgNjQwICAgICAgICAgIDY0MSAgICAgICAgICA2NDIgXG4yLjM2Njg3N2UtMDUgMS4wNjEzMjhlLTA0IDkuNzIxNTkxZS0wMiBcbiAgICAgICAgIDY0MyAgICAgICAgICA2NDQgICAgICAgICAgNjQ1IFxuNC4zNjYwOTFlLTAzIDUuMTk4NzYwZS0wNCAzLjEwNDcxMmUtMDQgXG4gICAgICAgICA2NDYgICAgICAgICAgNjQ3ICAgICAgICAgIDY0OCBcbjUuNTM5NDE3ZS0wMyAyLjM2Njg3N2UtMDUgMS41MzkwOTJlLTAzIFxuICAgICAgICAgNjQ5ICAgICAgICAgIDY1MCAgICAgICAgICA2NTEgXG4zLjYzMTc4MmUtMDIgOS4yMzc4NzhlLTAyIDQuOTM4MTQxZS0wNSBcbiAgICAgICAgIDY1MiAgICAgICAgICA2NTMgICAgICAgICAgNjU0IFxuMS43MjQyNjllLTAzIDIuMzkzMjU0ZS0wMyAzLjU4Mjc0MmUtMDMgXG4gICAgICAgICA2NTUgICAgICAgICAgNjU2ICAgICAgICAgIDY1NyBcbjMuODEzMTMwZS0wMyAxLjY4ODA3OGUtMDIgMy4xMDIzNjJlLTA1IFxuICAgICAgICAgNjU4ICAgICAgICAgIDY1OSAgICAgICAgICA2NjAgXG40LjkwMDgwM2UtMDMgMS43NTE3OTFlLTAzIDMuMDUyNzYyZS0wNCBcbiAgICAgICAgIDY2MSAgICAgICAgICA2NjIgICAgICAgICAgNjYzIFxuMi4zNjY4NzdlLTA1IDEuMzI1NDU5ZS0wMyA1LjYxOTk2NmUtMDQgXG4gICAgICAgICA2NjQgICAgICAgICAgNjY1ICAgICAgICAgIDY2NiBcbjYuMDMyODQ4ZS0wNCAyLjcxODM5NWUtMDMgMi42MzY2ODRlLTAzIFxuICAgICAgICAgNjY3ICAgICAgICAgIDY2OCAgICAgICAgICA2NjkgXG4xLjcyNzU1MWUtMDQgMy4xNjk3MDhlLTAzIDMuNjc0NTE1ZS0wMyBcbiAgICAgICAgIDY3MCAgICAgICAgICA2NzEgICAgICAgICAgNjcyIFxuMy41MjI1NTZlLTAyIDIuNDAxMzE4ZS0wNCAxLjQxMDg3MGUtMDMgXG4gICAgICAgICA2NzMgICAgICAgICAgNjc0ICAgICAgICAgIDY3NSBcbjEuNjY0NDQ3ZS0wMyAxLjMxOTEzNmUtMDMgNC43Mjg4MzhlLTAzIFxuICAgICAgICAgNjc2ICAgICAgICAgIDY3NyAgICAgICAgICA2NzggXG4xLjYyMTgyNWUtMDQgMS43NzA1NzhlLTAyIDcuNjM5NDcwZS0wMyBcbiAgICAgICAgIDY3OSAgICAgICAgICA2ODAgICAgICAgICAgNjgxIFxuMi44ODQ2NzFlLTA0IDMuOTc5MjIzZS0wMyA0LjUwMjI2OGUtMDQgXG4gICAgICAgICA2ODIgICAgICAgICAgNjgzICAgICAgICAgIDY4NCBcbjguOTQ1Njk1ZS0wNSA2LjY0ODc1MGUtMDMgNi42NDMwMDZlLTA1IFxuICAgICAgICAgNjg1ICAgICAgICAgIDY4NiAgICAgICAgICA2ODcgXG43LjAxMzA0MmUtMDUgNS45MjQ5NzllLTA0IDUuMTM3OTI1ZS0wMSBcbiAgICAgICAgIDY4OCAgICAgICAgICA2ODkgICAgICAgICAgNjkwIFxuMi4yNjA5MjZlLTAzIDYuOTg5OTQ4ZS0wNSA2LjEyODg0MGUtMDQgXG4gICAgICAgICA2OTEgICAgICAgICAgNjkyICAgICAgICAgIDY5MyBcbjIuMzY2ODc3ZS0wNSA2LjAxODg3MGUtMDMgNy42NTExNDdlLTAzIFxuICAgICAgICAgNjk0ICAgICAgICAgIDY5NSAgICAgICAgICA2OTYgXG4xLjQ2NjMwN2UtMDQgMy41NzQ5MjRlLTAzIDUuMTgzNzkzZS0wNCBcbiAgICAgICAgIDY5NyAgICAgICAgICA2OTggICAgICAgICAgNjk5IFxuOS4yMDI2NDBlLTA1IDUuNzA5ODU2ZS0wNCA1LjA4MjcxNWUtMDQgXG4gICAgICAgICA3MDAgICAgICAgICAgNzAxICAgICAgICAgIDcwMiBcbjEuODAyNDU4ZS0wMyA4LjAxNzgxOWUtMDMgMi4yMTEzNzZlLTAyIFxuICAgICAgICAgNzAzICAgICAgICAgIDcwNCAgICAgICAgICA3MDUgXG4xLjU2OTQ0NWUtMDIgNi41NzkwNzdlLTAzIDguOTE2NDg5ZS0wMyBcbiAgICAgICAgIDcwNiAgICAgICAgICA3MDcgICAgICAgICAgNzA4IFxuNC42MTU4NTdlLTA0IDYuMzkwNTg3ZS0wMiA1LjE3ODE2N2UtMDQgXG4gICAgICAgICA3MDkgICAgICAgICAgNzEwICAgICAgICAgIDcxMSBcbjEuNjMxMDg1ZS0wMiA1LjI5MTY2NGUtMDQgMy4zNjg3ODRlLTA0IFxuICAgICAgICAgNzEyICAgICAgICAgIDcxMyAgICAgICAgICA3MTQgXG40LjM4Mzg1MGUtMDMgMS42Mjc5NjllLTA0IDEuMDY5NDA0ZS0wMSBcbiAgICAgICAgIDcxNSAgICAgICAgICA3MTYgICAgICAgICAgNzE3IFxuNS4yMDEzOTFlLTAzIDYuMTczNTE2ZS0wMiA3Ljk5NzIyMWUtMDMgXG4gICAgICAgICA3MTggICAgICAgICAgNzE5ICAgICAgICAgIDcyMCBcbjEuMzM3NzkxZS0wMiA0LjcxNDg1MmUtMDQgMS4yMTUxMjVlLTAyIFxuICAgICAgICAgNzIxICAgICAgICAgIDcyMiAgICAgICAgICA3MjMgXG4yLjMwNjY0MmUtMDQgMi42MDIxMTFlLTA0IDUuMzgxMzU2ZS0wMyBcbiAgICAgICAgIDcyNCAgICAgICAgICA3MjUgICAgICAgICAgNzI2IFxuOS45MTM4OTRlLTA0IDQuNDE0NzEwZS0wMiAyLjYyNTY2M2UtMDMgXG4gICAgICAgICA3MjcgICAgICAgICAgNzI4ICAgICAgICAgIDcyOSBcbjcuMDI4NDg1ZS0wMyAyLjM2Njg3N2UtMDUgNC42NTkwNDJlLTAzIFxuICAgICAgICAgNzMwICAgICAgICAgIDczMSAgICAgICAgICA3MzIgXG4xLjA3OTU0M2UtMDQgMi40NzIyMTZlLTA0IDEuMTY3NjE2ZS0wNCBcbiAgICAgICAgIDczMyAgICAgICAgICA3MzQgICAgICAgICAgNzM1IFxuNC4wMjk3NjNlLTAzIDkuMzYzMzE5ZS0wNCA1LjkyMDYyOWUtMDEgXG4gICAgICAgICA3MzYgICAgICAgICAgNzM3ICAgICAgICAgIDczOCBcbjMuMTMxMDQ5ZS0wMiA5LjAyNDA1OWUtMDQgNC4yMzU2NTBlLTA0IFxuICAgICAgICAgNzM5ICAgICAgICAgIDc0MCAgICAgICAgICA3NDEgXG4xLjgyODE3NWUtMDIgNC42NTUwNThlLTAzIDguNDc1OTkwZS0wMiBcbiAgICAgICAgIDc0MiAgICAgICAgICA3NDMgICAgICAgICAgNzQ0IFxuNi45MDg1NzhlLTA0IDIuMDQ0NjY3ZS0wMiAxLjkxNzA0MWUtMDIgXG4gICAgICAgICA3NDUgICAgICAgICAgNzQ2ICAgICAgICAgIDc0NyBcbjEuODcyNzg4ZS0wMiA3LjUwNjMxOWUtMDQgMi4xMzQ5MzRlLTAzIFxuICAgICAgICAgNzQ4ICAgICAgICAgIDc0OSAgICAgICAgICA3NTAgXG4yLjQ0MDY5MmUtMDMgMS40ODAyODRlLTAyIDEuNjY3NzQ2ZS0wMiBcbiAgICAgICAgIDc1MSAgICAgICAgICA3NTIgICAgICAgICAgNzUzIFxuMS43MzQ4MDNlLTAyIDIuNzEzNzYyZS0wNSAyLjU3NDc0NGUtMDMgXG4gICAgICAgICA3NTQgICAgICAgICAgNzU1ICAgICAgICAgIDc1NiBcbjIuMTIwNDU4ZS0wNCA5LjIyNDQ3MGUtMDIgMS4zNzcwNDFlLTAyIFxuICAgICAgICAgNzU3ICAgICAgICAgIDc1OCAgICAgICAgICA3NTkgXG41LjMxNjk2OWUtMDMgNS44NjM4NDFlLTA0IDcuOTI3NDQ2ZS0wNCBcbiAgICAgICAgIDc2MCAgICAgICAgICA3NjEgICAgICAgICAgNzYyIFxuMS45NjU3NjllLTA0IDcuNTkwMjk2ZS0wMyA0LjExNTE3MmUtMDEgXG4gICAgICAgICA3NjMgICAgICAgICAgNzY0ICAgICAgICAgIDc2NSBcbjEuODU3ODA0ZS0wMyA2LjEyMjAwOGUtMDQgMi4zNzYwNDdlLTA0IFxuICAgICAgICAgNzY2ICAgICAgICAgIDc2NyAgICAgICAgICA3NjggXG40LjAwMTI3OWUtMDQgNi42OTkzNjFlLTAzIDYuNzY1MDUyZS0wMyBcbiAgICAgICAgIDc2OSAgICAgICAgICA3NzAgICAgICAgICAgNzcxIFxuNC40NjMxODllLTAzIDYuODg0NTY2ZS0wMiAxLjQ3MTQ4NmUtMDIgXG4gICAgICAgICA3NzIgICAgICAgICAgNzczICAgICAgICAgIDc3NCBcbjQuODIzMTg0ZS0wNCAyLjY2NTE2NmUtMDEgNS4wMzAyNDNlLTA0IFxuICAgICAgICAgNzc1ICAgICAgICAgIDc3NiAgICAgICAgICA3NzcgXG4xLjEyMjU2NWUtMDEgMi4zOTI4MzVlLTAzIDEuMDY0NDIyZS0wMiBcbiAgICAgICAgIDc3OCAgICAgICAgICA3NzkgICAgICAgICAgNzgwIFxuMy4wNzEzNjVlLTAyIDQuMTU1NzQzZS0wMyA2LjM5MDI4OGUtMDMgXG4gICAgICAgICA3ODEgICAgICAgICAgNzgyICAgICAgICAgIDc4MyBcbjIuNTY4ODYxZS0wNCA2LjI0NzU3MmUtMDMgMy41Nzg1NDBlLTA1IFxuICAgICAgICAgNzg0ICAgICAgICAgIDc4NSAgICAgICAgICA3ODYgXG43LjU3MTc2OGUtMDMgMy4wOTcyODZlLTA1IDIuMzQzMTAwZS0wMSBcbiAgICAgICAgIDc4NyAgICAgICAgICA3ODggICAgICAgICAgNzg5IFxuMS40MDMxOTVlLTAxIDEuNTM2NTQ3ZS0wMiA2Ljc2NjU4NWUtMDQgXG4gICAgICAgICA3OTAgICAgICAgICAgNzkxICAgICAgICAgIDc5MiBcbjcuNzMzOTUyZS0wMyAxLjg1ODQwM2UtMDMgMi45NzYzNzhlLTAzIFxuICAgICAgICAgNzkzICAgICAgICAgIDc5NCAgICAgICAgICA3OTUgXG4yLjA5MjYwOWUtMDIgNS4zMDE3NTllLTAyIDEuNDg5NTg5ZS0wMiBcbiAgICAgICAgIDc5NiAgICAgICAgICA3OTcgICAgICAgICAgNzk4IFxuMS43NDUxNDZlLTA0IDMuNzAyMDY4ZS0wMyAxLjY2Mjk2OGUtMDIgXG4gICAgICAgICA3OTkgICAgICAgICAgODAwICAgICAgICAgIDgwMSBcbjEuODYxNjQyZS0wMyAyLjUwMzI2OWUtMDUgMi4zNjY4NzdlLTA1IFxuICAgICAgICAgODAyICAgICAgICAgIDgwMyAgICAgICAgICA4MDQgXG4zLjY2ODg3OGUtMDQgMS45Nzc2NzRlLTAyIDQuNTI4ODUyZS0wMSBcbiAgICAgICAgIDgwNSAgICAgICAgICA4MDYgICAgICAgICAgODA3IFxuNy45NDgwMjNlLTAzIDIuODE0ODgyZS0wNCAyLjM2Mzg0NWUtMDQgXG4gICAgICAgICA4MDggICAgICAgICAgODA5ICAgICAgICAgIDgxMCBcbjguNDUyMTUxZS0wMyAzLjAzMDk3M2UtMDIgMy4xNzI1MzRlLTAyIFxuICAgICAgICAgODExICAgICAgICAgIDgxMiAgICAgICAgICA4MTMgXG4zLjU2NTg4NWUtMDUgMy40MDUyNzllLTA1IDMuMjI3ODQ3ZS0wNSBcbiAgICAgICAgIDgxNCAgICAgICAgICA4MTUgICAgICAgICAgODE2IFxuNy44MzU3NDllLTAzIDkuODQ1NTc3ZS0wNSAxLjI1ODkwNGUtMDIgXG4gICAgICAgICA4MTcgICAgICAgICAgODE4ICAgICAgICAgIDgxOSBcbjIuMzY2ODc3ZS0wNSAyLjk0NTgyOWUtMDMgMy42OTM3OThlLTAzIFxuICAgICAgICAgODIwICAgICAgICAgIDgyMSAgICAgICAgICA4MjIgXG4zLjk4OTE2MGUtMDUgMS40ODAwMjVlLTA0IDcuMDI3NDE3ZS0wNSBcbiAgICAgICAgIDgyMyAgICAgICAgICA4MjQgICAgICAgICAgODI1IFxuNy4zNDkyODZlLTA0IDUuMDYyMTAyZS0wNSAxLjc5NTU0NmUtMDMgXG4gICAgICAgICA4MjYgICAgICAgICAgODI3ICAgICAgICAgIDgyOCBcbjYuODExMjQ3ZS0wMyA3LjU0ODMwM2UtMDMgMi4zNjY4NzdlLTA1IFxuICAgICAgICAgODI5ICAgICAgICAgIDgzMCAgICAgICAgICA4MzEgXG4xLjE2OTAyNGUtMDIgMS44NzYwMzhlLTAzIDguNDQ2NDM1ZS0wMiBcbiAgICAgICAgIDgzMiAgICAgICAgICA4MzMgICAgICAgICAgODM0IFxuMi42MDM5MjRlLTA0IDEuOTI5OTc0ZS0wMyA0LjIzNzAyM2UtMDEgXG4gICAgICAgICA4MzUgICAgICAgICAgODM2ICAgICAgICAgIDgzNyBcbjYuMjgwMzgxZS0wMiAxLjQyMTYzOGUtMDIgNS44MjM4ODllLTA1IFxuICAgICAgICAgODM4ICAgICAgICAgIDgzOSAgICAgICAgICA4NDAgXG4yLjM2Njg3N2UtMDUgMy4yODc5NThlLTAyIDIuNjc2OTg5ZS0wMiBcbiAgICAgICAgIDg0MSAgICAgICAgICA4NDIgICAgICAgICAgODQzIFxuNS43ODA0NjllLTAzIDkuMzUwODA2ZS0wNSAzLjcwMzY1M2UtMDQgXG4gICAgICAgICA4NDQgICAgICAgICAgODQ1ICAgICAgICAgIDg0NiBcbjUuMzc4MzIxZS0wNCA3LjQzOTQxMWUtMDMgNi42MDYxNjFlLTA1IFxuICAgICAgICAgODQ3ICAgICAgICAgIDg0OCAgICAgICAgICA4NDkgXG4xLjc0OTExMGUtMDMgMi4wMDQ1MjBlLTA0IDIuNDI4Mzg5ZS0wMyBcbiAgICAgICAgIDg1MCAgICAgICAgICA4NTEgICAgICAgICAgODUyIFxuNS4wMzU2MzVlLTA0IDIuMDU4MzEzZS0wMiAyLjI5MTYwNWUtMDQgXG4gICAgICAgICA4NTMgICAgICAgICAgODU0ICAgICAgICAgIDg1NSBcbjEuMDEzMjIzZS0wMyAyLjg1NzI1OGUtMDMgMi4zMjgwNjNlLTA0IFxuICAgICAgICAgODU2ICAgICAgICAgIDg1NyAgICAgICAgICA4NTggXG45LjA4MDI4NWUtMDIgOS41ODY4NTZlLTA1IDguNjAzMDcyZS0wMiBcbiAgICAgICAgIDg1OSAgICAgICAgICA4NjAgICAgICAgICAgODYxIFxuMy4zMzc1MThlLTAzIDYuMjQwMzY4ZS0wNCA1LjgzMDA2NGUtMDUgXG4gICAgICAgICA4NjIgICAgICAgICAgODYzICAgICAgICAgIDg2NCBcbjIuMDE2MjkwZS0wNCAzLjUyMTQ5NGUtMDIgNS4zMzk2MDdlLTAxIFxuICAgICAgICAgODY1ICAgICAgICAgIDg2NiAgICAgICAgICA4NjcgXG4xLjQ3NzA5M2UtMDIgMS4wMDU4NTRlLTAyIDEuOTk2MzgyZS0wMiBcbiAgICAgICAgIDg2OCAgICAgICAgICA4NjkgICAgICAgICAgODcwIFxuOC41NDE5NzFlLTAyIDEuODc4NTI4ZS0wMiAyLjQzNjIxOWUtMDMgXG4gICAgICAgICA4NzEgICAgICAgICAgODcyICAgICAgICAgIDg3MyBcbjUuODk2NDY5ZS0wMyAxLjE5MjM0MWUtMDQgMy40MDExODRlLTA0IFxuICAgICAgICAgODc0ICAgICAgICAgIDg3NSAgICAgICAgICA4NzYgXG4xLjY4MTEyMWUtMDMgMy42MDM1MTJlLTAyIDEuOTQyMTg3ZS0wMyBcbiAgICAgICAgIDg3NyAgICAgICAgICA4NzggICAgICAgICAgODc5IFxuNC45MTk5NTNlLTA0IDQuMTgzMzkxZS0wNCAyLjA5MDQzOWUtMDIgXG4gICAgICAgICA4ODAgICAgICAgICAgODgxICAgICAgICAgIDg4MiBcbjEuMzc1MTQ0ZS0wNCA0LjYzODYzNGUtMDMgMS4wNTYyNDJlLTA0IFxuICAgICAgICAgODgzICAgICAgICAgIDg4NCAgICAgICAgICA4ODUgXG4zLjg2MTE0N2UtMDMgMy41OTA3MTNlLTA1IDIuNzEwNTQ2ZS0wMiBcbiAgICAgICAgIDg4NiAgICAgICAgICA4ODcgICAgICAgICAgODg4IFxuNy4xODgwMDhlLTAyIDIuMDA4OTY1ZS0wMyAxLjQzOTk2NWUtMDMgXG4gICAgICAgICA4ODkgICAgICAgICAgODkwICAgICAgICAgIDg5MSBcbjEuNDM1MzIwZS0wNCAyLjU0ODA1N2UtMDMgNC4zNTQxNTRlLTA1IFxuICAgICAgICAgODkyICAgICAgICAgIDg5MyAgICAgICAgICA4OTQgXG40LjY1MzQ3MGUtMDQgMi4zNjY4NzdlLTA1IDEuNzIwNTg1ZS0wMiBcbiAgICAgICAgIDg5NSAgICAgICAgICA4OTYgICAgICAgICAgODk3IFxuMy4yNDIwNjJlLTA1IDEuNzcxNDgwZS0wMyAxLjk1MTE0N2UtMDQgXG4gICAgICAgICA4OTggICAgICAgICAgODk5ICAgICAgICAgIDkwMCBcbjEuMDMyOTYxZS0wMiAyLjA5OTY5NmUtMDQgMi4zNjY4NzdlLTA1IFxuICAgICAgICAgOTAxICAgICAgICAgIDkwMiAgICAgICAgICA5MDMgXG4zLjc5OTc4N2UtMDMgNi40OTc1MzRlLTA0IDIuMjUwOTI4ZS0wMyBcbiAgICAgICAgIDkwNCAgICAgICAgICA5MDUgICAgICAgICAgOTA2IFxuMi4zODc5MzllLTA1IDMuMjE5NjIwZS0wMyAyLjA1NzE4MWUtMDIgXG4gICAgICAgICA5MDcgICAgICAgICAgOTA4ICAgICAgICAgIDkwOSBcbjIuMjA2NTQxZS0wNCA3LjY0MTU5MWUtMDMgOS4xOTAwODhlLTAzIFxuICAgICAgICAgOTEwICAgICAgICAgIDkxMSAgICAgICAgICA5MTIgXG4xLjc1OTI5N2UtMDEgOC45ODc0NzFlLTA1IDYuNDkwODUyZS0wNCBcbiAgICAgICAgIDkxMyAgICAgICAgICA5MTQgICAgICAgICAgOTE1IFxuNi42Mzk5OTBlLTA1IDEuNDYzMjE5ZS0wNCAzLjU0MTQwMmUtMDMgXG4gICAgICAgICA5MTYgICAgICAgICAgOTE3ICAgICAgICAgIDkxOCBcbjIuMDM2Mjg1ZS0wNCA2LjQ0MDU2M2UtMDIgMi4xNDQ1NTdlLTAzIFxuICAgICAgICAgOTE5ICAgICAgICAgIDkyMCAgICAgICAgICA5MjEgXG4xLjI5MzA5MGUtMDEgMi4zMTczMjdlLTAyIDQuMzQ4NTk4ZS0wMSBcbiAgICAgICAgIDkyMiAgICAgICAgICA5MjMgICAgICAgICAgOTI0IFxuMS40MTEyNTFlLTAzIDEuNTYyMTMyZS0wNCA0LjQ4MzE4N2UtMDQgXG4gICAgICAgICA5MjUgICAgICAgICAgOTI2ICAgICAgICAgIDkyNyBcbjEuNzgwNTE4ZS0wMiA1LjI4MjIxOGUtMDQgMy42MDYwODFlLTA0IFxuICAgICAgICAgOTI4ICAgICAgICAgIDkyOSAgICAgICAgICA5MzAgXG4zLjM3MzMwOWUtMDMgMi41NDIyMzNlLTAxIDEuNDI1ODI0ZS0wMiBcbiAgICAgICAgIDkzMSAgICAgICAgICA5MzIgICAgICAgICAgOTMzIFxuNy42MDYwNTBlLTA0IDguNzU2ODk3ZS0wMyAyLjE2MDIwMWUtMDIgXG4gICAgICAgICA5MzQgICAgICAgICAgOTM1ICAgICAgICAgIDkzNiBcbjcuMjQ3MTc4ZS0wMSAyLjg2MjU5M2UtMDIgOS4zMzMxODJlLTAzIFxuICAgICAgICAgOTM3ICAgICAgICAgIDkzOCAgICAgICAgICA5MzkgXG4yLjIwMTk2OGUtMDMgMS4wMTg0NTRlLTAzIDIuOTA2NzQwZS0wNSBcbiAgICAgICAgIDk0MCAgICAgICAgICA5NDEgICAgICAgICAgOTQyIFxuMi45NTE1NzBlLTAzIDMuNDA1NDAwZS0wMyA0LjE4ODkwM2UtMDMgXG4gICAgICAgICA5NDMgICAgICAgICAgOTQ0ICAgICAgICAgIDk0NSBcbjQuNTU4NjU0ZS0wMyAxLjEzNjE5N2UtMDQgNy4wNjQ1NTBlLTAyIFxuICAgICAgICAgOTQ2ICAgICAgICAgIDk0NyAgICAgICAgICA5NDggXG4xLjM5NTc2NGUtMDQgMi4zMDcyNzZlLTA0IDEuMDIwMTA0ZS0wMiBcbiAgICAgICAgIDk0OSAgICAgICAgICA5NTAgICAgICAgICAgOTUxIFxuMi4zNzI2ODVlLTA1IDcuMTQxOTIxZS0wNCAxLjE5MTA3MmUtMDQgXG4gICAgICAgICA5NTIgICAgICAgICAgOTUzICAgICAgICAgIDk1NCBcbjcuODcwNjIyZS0wNCAxLjA0NTU0MWUtMDIgMS45MzQ5NzllLTAyIFxuICAgICAgICAgOTU1ICAgICAgICAgIDk1NiAgICAgICAgICA5NTcgXG4xLjU2Mzc4MmUtMDIgNS40Mjg2OThlLTA0IDcuMzc0NDQxZS0wNCBcbiAgICAgICAgIDk1OCAgICAgICAgICA5NTkgICAgICAgICAgOTYwIFxuMi4zMTI0NTdlLTAzIDIuNzYyMDUxZS0wMyA0LjI2ODQ5OWUtMDMgXG4gICAgICAgICA5NjEgICAgICAgICAgOTYyICAgICAgICAgIDk2MyBcbjEuMDg5NjQzZS0wMSA1LjYxMDAwMWUtMDQgMS4yNDQ3MDVlLTAyIFxuICAgICAgICAgOTY0ICAgICAgICAgIDk2NSAgICAgICAgICA5NjYgXG4xLjI3OTIxMmUtMDIgMi4zNjY4NzdlLTA1IDIuNTgzNjcyZS0wNCBcbiAgICAgICAgIDk2NyAgICAgICAgICA5NjggICAgICAgICAgOTY5IFxuNi42MzUyNDNlLTAzIDIuOTY3NDExZS0wMiAxLjA1NDk2MWUtMDMgXG4gICAgICAgICA5NzAgICAgICAgICAgOTcxICAgICAgICAgIDk3MiBcbjUuNTY5NTUxZS0wNCAyLjM2Njg3N2UtMDUgOS40MjU0MzJlLTA1IFxuICAgICAgICAgOTczICAgICAgICAgIDk3NCAgICAgICAgICA5NzUgXG4yLjI2MTk1OGUtMDIgNy40MjQwMDhlLTA1IDIuNjY3MzIzZS0wMSBcbiAgICAgICAgIDk3NiAgICAgICAgICA5NzcgICAgICAgICAgOTc4IFxuMi42MjYwNjJlLTAyIDIuNzE0NDU5ZS0wMyAxLjI1Nzg3MWUtMDIgXG4gICAgICAgICA5NzkgICAgICAgICAgOTgwICAgICAgICAgIDk4MSBcbjIuMjc0OTc0ZS0wMiA3LjMxNjAwMWUtMDQgNi42OTgxMThlLTAzIFxuICAgICAgICAgOTgyICAgICAgICAgIDk4MyAgICAgICAgICA5ODQgXG41LjM3MDg3NWUtMDEgMS40ODA2MzZlLTAzIDQuNDcwNjEwZS0wMyBcbiAgICAgICAgIDk4NSAgICAgICAgICA5ODYgICAgICAgICAgOTg3IFxuMS42NTk1NTVlLTAzIDIuNTU2NDkzZS0wNCAxLjg5ODc1M2UtMDMgXG4gICAgICAgICA5ODggICAgICAgICAgOTg5ICAgICAgICAgIDk5MCBcbjguODk4NDE4ZS0wNSA5LjAyNjE1NmUtMDQgNy44MjU4NjZlLTAzIFxuICAgICAgICAgOTkxICAgICAgICAgIDk5MiAgICAgICAgICA5OTMgXG4xLjM5MTI2MmUtMDMgMi4zNjY4NzdlLTA1IDUuMjExNTkzZS0wMyBcbiAgICAgICAgIDk5NCAgICAgICAgICA5OTUgICAgICAgICAgOTk2IFxuMS4xNzIyOTJlLTAxIDUuMDEzNzE1ZS0wNSAxLjMyMzE4NmUtMDMgXG4gICAgICAgICA5OTcgICAgICAgICAgOTk4ICAgICAgICAgIDk5OSBcbjEuMjI0MzE1ZS0wMyA1LjkxNzI0MmUtMDMgNS4xOTkxMDhlLTA0IFxuICAgICAgICAxMDAwIFxuNi4yOTI1NTBlLTAxIFxuIFsgcmVhY2hlZCBnZXRPcHRpb24oXCJtYXgucHJpbnRcIikgLS0gb21pdHRlZCA5MDAwIGVudHJpZXMgXVxuIn0= -->
+<pre><code>           1            2            3 
+1.305680e-03 2.112595e-03 8.594741e-03 
+           4            5            6 
+4.344368e-04 1.776957e-03 3.704153e-03 
+           7            8            9 
+2.211431e-03 2.016174e-03 1.383298e-02 
+          10           11           12 
+2.366877e-05 2.366877e-05 1.908764e-02 
+          13           14           15 
+8.714594e-05 6.651020e-04 1.065293e-02 
+          16           17           18 
+1.142095e-04 2.366877e-05 4.303716e-04 
+          19           20           21 
+3.423946e-04 9.664192e-03 8.335325e-05 
+          22           23           24 
+4.478742e-03 7.808425e-03 8.072159e-04 
+          25           26           27 
+1.659623e-03 2.599820e-03 8.117318e-04 
+          28           29           30 
+6.591765e-02 6.986764e-04 1.104237e-02 
+          31           32           33 
+3.595214e-04 2.792921e-04 5.898884e-04 
+          34           35           36 
+3.584338e-03 5.618879e-02 8.283252e-02 
+          37           38           39 
+1.062686e-03 1.634701e-04 1.403078e-03 
+          40           41           42 
+8.581383e-04 2.855888e-03 2.358677e-03 
+          43           44           45 
+1.314334e-02 7.959230e-05 2.047492e-01 
+          46           47           48 
+2.240265e-04 2.103485e-02 1.989941e-02 
+          49           50           51 
+2.156383e-03 2.635374e-03 5.247619e-04 
+          52           53           54 
+2.669110e-02 8.539875e-02 3.401646e-03 
+          55           56           57 
+2.366877e-05 2.838780e-02 2.565108e-02 
+          58           59           60 
+9.959573e-02 3.476034e-02 3.541539e-04 
+          61           62           63 
+1.597253e-03 1.051613e-03 2.366877e-05 
+          64           65           66 
+7.520669e-02 5.417999e-03 2.960210e-02 
+          67           68           69 
+7.337271e-03 2.366877e-05 2.761786e-03 
+          70           71           72 
+1.055511e-03 6.330590e-04 2.510453e-04 
+          73           74           75 
+4.912634e-02 1.219934e-01 2.629368e-03 
+          76           77           78 
+1.480911e-03 1.673592e-03 1.297436e-03 
+          79           80           81 
+3.614406e-05 6.971465e-05 4.345564e-03 
+          82           83           84 
+2.544292e-04 2.995826e-04 5.495487e-04 
+          85           86           87 
+1.497986e-04 3.913267e-04 5.916759e-03 
+          88           89           90 
+5.782641e-05 3.976344e-03 3.207725e-03 
+          91           92           93 
+3.480833e-02 5.075076e-02 1.295458e-02 
+          94           95           96 
+1.792588e-04 2.801932e-04 2.145736e-03 
+          97           98           99 
+7.143902e-04 7.465157e-03 9.046406e-05 
+         100          101          102 
+6.600062e-05 5.563138e-02 1.952853e-04 
+         103          104          105 
+1.371178e-02 3.030987e-03 6.880870e-02 
+         106          107          108 
+2.350092e-01 1.666106e-03 4.575576e-03 
+         109          110          111 
+1.778930e-02 7.836346e-03 4.519746e-05 
+         112          113          114 
+6.303061e-04 2.366877e-05 4.651097e-04 
+         115          116          117 
+1.101891e-02 2.034552e-03 1.053527e-04 
+         118          119          120 
+1.073641e-02 2.777009e-03 1.506408e-02 
+         121          122          123 
+6.779638e-04 1.059709e-04 2.806070e-04 
+         124          125          126 
+2.238948e-03 2.517567e-04 2.366877e-05 
+         127          128          129 
+1.103057e-01 3.883867e-03 4.315504e-02 
+         130          131          132 
+4.401233e-03 2.804306e-02 5.811483e-04 
+         133          134          135 
+1.530087e-04 2.255210e-04 1.866681e-02 
+         136          137          138 
+6.355137e-04 7.766875e-02 4.229332e-03 
+         139          140          141 
+2.366877e-05 5.636211e-03 1.447478e-03 
+         142          143          144 
+1.411391e-04 5.598107e-04 2.685383e-04 
+         145          146          147 
+1.606233e-02 3.993884e-05 6.264645e-03 
+         148          149          150 
+2.341756e-02 1.518325e-02 1.320144e-03 
+         151          152          153 
+1.622481e-04 2.367857e-04 4.440425e-04 
+         154          155          156 
+3.997164e-05 6.529157e-02 1.645440e-04 
+         157          158          159 
+1.354708e-03 3.026355e-02 1.296728e-02 
+         160          161          162 
+1.130071e-03 4.037228e-02 2.813644e-05 
+         163          164          165 
+5.393131e-03 1.713526e-04 8.319778e-04 
+         166          167          168 
+2.366877e-05 2.737606e-04 2.957937e-03 
+         169          170          171 
+1.500178e-04 9.241572e-04 2.074641e-03 
+         172          173          174 
+2.346255e-03 4.814851e-03 8.142972e-01 
+         175          176          177 
+2.336955e-02 2.117018e-02 2.366877e-05 
+         178          179          180 
+3.876444e-03 4.708071e-02 2.261609e-04 
+         181          182          183 
+3.537433e-05 1.825819e-03 1.814802e-03 
+         184          185          186 
+1.833478e-03 3.296609e-04 3.125845e-03 
+         187          188          189 
+2.689382e-02 1.187660e-03 2.780562e-02 
+         190          191          192 
+4.741746e-05 1.716748e-03 1.095021e-03 
+         193          194          195 
+6.659514e-04 3.235916e-01 3.328710e-03 
+         196          197          198 
+4.783273e-03 9.470417e-04 6.079506e-05 
+         199          200          201 
+7.590765e-02 8.013754e-04 1.148431e-03 
+         202          203          204 
+2.906077e-01 3.641988e-03 2.506941e-02 
+         205          206          207 
+4.347420e-05 2.605139e-01 4.352207e-01 
+         208          209          210 
+2.748748e-05 1.431107e-03 4.484985e-01 
+         211          212          213 
+2.075984e-03 3.688124e-04 2.573614e-03 
+         214          215          216 
+3.219332e-04 2.072746e-02 7.180238e-04 
+         217          218          219 
+7.936198e-05 3.001116e-02 1.408518e-01 
+         220          221          222 
+9.696954e-05 1.328491e-02 1.647678e-03 
+         223          224          225 
+9.907030e-03 1.750115e-03 2.722943e-04 
+         226          227          228 
+3.781957e-04 2.769842e-01 2.530707e-03 
+         229          230          231 
+5.287266e-02 1.208854e-03 4.095751e-02 
+         232          233          234 
+3.564235e-04 3.910334e-02 5.473728e-04 
+         235          236          237 
+4.525309e-03 4.745205e-03 4.940201e-04 
+         238          239          240 
+1.520373e-04 1.167269e-03 5.127426e-03 
+         241          242          243 
+1.820264e-04 1.189592e-01 2.366877e-05 
+         244          245          246 
+5.377193e-01 4.816956e-04 2.322815e-02 
+         247          248          249 
+1.617359e-02 1.037592e-03 2.470399e-03 
+         250          251          252 
+4.563455e-03 8.547160e-05 1.149441e-02 
+         253          254          255 
+3.479316e-04 1.611958e-03 5.199035e-04 
+         256          257          258 
+9.517796e-03 3.512471e-05 3.686454e-01 
+         259          260          261 
+2.917009e-03 4.980371e-04 3.172533e-03 
+         262          263          264 
+3.048962e-04 5.245441e-04 9.655995e-02 
+         265          266          267 
+5.462970e-03 6.079734e-04 1.206647e-03 
+         268          269          270 
+1.014769e-01 2.157558e-02 8.632727e-05 
+         271          272          273 
+4.320643e-04 6.142000e-04 1.142416e-03 
+         274          275          276 
+2.912640e-04 3.149147e-04 8.424302e-02 
+         277          278          279 
+4.083608e-02 3.490996e-03 9.756598e-03 
+         280          281          282 
+1.802456e-04 9.592870e-04 7.098800e-03 
+         283          284          285 
+2.366877e-05 4.295537e-04 2.115947e-03 
+         286          287          288 
+1.059047e-01 5.337663e-04 8.131294e-02 
+         289          290          291 
+2.711188e-03 2.349086e-02 6.595651e-03 
+         292          293          294 
+1.130387e-03 9.019109e-03 3.523232e-03 
+         295          296          297 
+5.644469e-03 1.655729e-04 1.748462e-03 
+         298          299          300 
+2.293624e-01 3.758544e-04 6.906421e-03 
+         301          302          303 
+2.366877e-05 9.252657e-03 7.445874e-03 
+         304          305          306 
+7.849890e-03 5.134338e-03 2.499290e-03 
+         307          308          309 
+1.739468e-03 2.164190e-04 7.296327e-05 
+         310          311          312 
+6.156652e-01 1.452540e-03 2.371822e-03 
+         313          314          315 
+1.976806e-04 2.057889e-03 3.321017e-01 
+         316          317          318 
+2.366877e-05 3.396865e-02 6.941122e-02 
+         319          320          321 
+1.713207e-02 5.436723e-03 2.833985e-03 
+         322          323          324 
+1.715822e-02 5.763287e-02 2.366877e-05 
+         325          326          327 
+1.708257e-04 1.020081e-04 6.694807e-03 
+         328          329          330 
+1.302249e-03 7.267615e-03 8.394106e-05 
+         331          332          333 
+1.785139e-04 1.365661e-03 2.616888e-05 
+         334          335          336 
+2.331626e-02 2.896766e-04 3.237568e-05 
+         337          338          339 
+1.266174e-03 6.860413e-04 1.904587e-02 
+         340          341          342 
+1.927010e-02 1.416951e-02 1.655361e-01 
+         343          344          345 
+4.238077e-03 1.457901e-03 1.813921e-04 
+         346          347          348 
+5.745849e-01 1.666045e-03 2.113400e-03 
+         349          350          351 
+8.013831e-03 1.066392e-01 2.880022e-04 
+         352          353          354 
+2.312657e-02 7.664965e-02 7.578422e-03 
+         355          356          357 
+5.339893e-03 1.221166e-03 1.063323e-03 
+         358          359          360 
+3.409681e-02 9.596470e-04 7.875805e-05 
+         361          362          363 
+1.884040e-02 2.549500e-05 4.397900e-04 
+         364          365          366 
+5.881528e-05 3.850796e-02 4.269460e-05 
+         367          368          369 
+4.308739e-03 2.581479e-04 6.418921e-03 
+         370          371          372 
+9.025634e-04 1.496940e-03 1.162732e-04 
+         373          374          375 
+7.032352e-05 4.040544e-04 1.095460e-03 
+         376          377          378 
+3.746707e-04 6.756984e-02 1.218867e-03 
+         379          380          381 
+7.078392e-03 9.572666e-04 1.829411e-04 
+         382          383          384 
+3.863996e-05 2.534089e-02 6.434625e-04 
+         385          386          387 
+3.420300e-03 8.045601e-03 1.894441e-01 
+         388          389          390 
+3.042820e-03 1.848199e-04 2.738876e-02 
+         391          392          393 
+2.005381e-02 3.921368e-04 1.681804e-03 
+         394          395          396 
+1.324014e-02 2.981144e-02 1.916830e-01 
+         397          398          399 
+2.114661e-04 1.382232e-03 8.219955e-05 
+         400          401          402 
+1.875467e-02 7.976756e-04 3.033897e-03 
+         403          404          405 
+2.396838e-05 2.378150e-04 1.033790e-01 
+         406          407          408 
+9.981992e-03 2.141864e-01 1.314657e-04 
+         409          410          411 
+2.701551e-04 1.300588e-03 1.096833e-04 
+         412          413          414 
+1.532548e-03 7.167014e-04 4.359889e-01 
+         415          416          417 
+2.366877e-05 3.415229e-02 8.703874e-03 
+         418          419          420 
+7.096000e-04 1.054442e-02 2.731830e-03 
+         421          422          423 
+3.241293e-03 4.473073e-03 4.319164e-03 
+         424          425          426 
+1.029206e-04 4.167126e-02 7.342093e-04 
+         427          428          429 
+2.551780e-05 1.779013e-03 3.876206e-02 
+         430          431          432 
+3.319866e-04 2.366877e-05 1.923102e-02 
+         433          434          435 
+1.574344e-02 3.288097e-04 8.009050e-05 
+         436          437          438 
+5.691341e-04 4.051269e-02 5.095823e-03 
+         439          440          441 
+1.569993e-02 1.099035e-02 1.101406e-02 
+         442          443          444 
+1.688463e-03 3.292230e-02 2.949587e-03 
+         445          446          447 
+2.468374e-02 2.366877e-05 2.366877e-05 
+         448          449          450 
+1.778487e-04 1.441606e-03 3.050852e-01 
+         451          452          453 
+4.896360e-01 5.361616e-03 2.619125e-03 
+         454          455          456 
+9.989314e-03 1.136030e-03 5.022032e-04 
+         457          458          459 
+8.592356e-03 1.144916e-02 8.425109e-04 
+         460          461          462 
+5.090516e-03 7.554168e-03 4.551134e-02 
+         463          464          465 
+9.684897e-03 9.368723e-03 6.595646e-04 
+         466          467          468 
+6.922163e-03 1.385834e-01 2.221327e-03 
+         469          470          471 
+1.501174e-02 2.557870e-02 2.775557e-02 
+         472          473          474 
+1.190936e-02 2.360618e-03 1.902865e-04 
+         475          476          477 
+1.195422e-02 2.366877e-05 7.933008e-02 
+         478          479          480 
+2.093763e-01 1.144730e-03 8.818141e-05 
+         481          482          483 
+1.563932e-02 3.304652e-03 9.369048e-02 
+         484          485          486 
+1.694720e-03 4.827032e-02 2.366877e-05 
+         487          488          489 
+3.338886e-05 5.608244e-01 3.996226e-04 
+         490          491          492 
+1.258244e-03 5.485669e-05 1.186597e-04 
+         493          494          495 
+2.366877e-05 8.223581e-04 8.951012e-02 
+         496          497          498 
+1.607856e-03 3.537647e-04 2.366877e-05 
+         499          500          501 
+2.366877e-05 3.890052e-04 4.765168e-03 
+         502          503          504 
+4.069993e-01 2.176221e-04 6.172105e-04 
+         505          506          507 
+2.366877e-05 1.400479e-03 1.048800e-02 
+         508          509          510 
+1.644564e-03 7.326256e-04 3.698263e-04 
+         511          512          513 
+9.331323e-03 1.098464e-01 1.891994e-03 
+         514          515          516 
+2.330971e-04 4.564231e-04 1.548969e-02 
+         517          518          519 
+2.342661e-03 4.203331e-05 5.264700e-04 
+         520          521          522 
+1.971012e-03 6.738210e-03 1.451022e-03 
+         523          524          525 
+3.414274e-05 2.853785e-04 1.906339e-03 
+         526          527          528 
+5.067577e-01 6.301224e-02 1.552551e-03 
+         529          530          531 
+3.816798e-02 1.922509e-04 1.373598e-01 
+         532          533          534 
+5.329393e-05 2.366877e-05 1.331355e-03 
+         535          536          537 
+9.036646e-03 1.719398e-03 5.571331e-03 
+         538          539          540 
+1.623306e-03 1.017357e-03 2.697590e-04 
+         541          542          543 
+2.298255e-01 2.366877e-05 9.521729e-03 
+         544          545          546 
+3.645337e-04 1.300499e-02 6.950865e-02 
+         547          548          549 
+5.296862e-04 3.756250e-03 6.216078e-05 
+         550          551          552 
+6.592337e-03 6.300336e-04 1.464339e-03 
+         553          554          555 
+1.828549e-03 4.389576e-05 1.370839e-03 
+         556          557          558 
+1.359481e-02 1.834636e-02 3.609503e-02 
+         559          560          561 
+6.010391e-04 1.251491e-03 9.992019e-04 
+         562          563          564 
+2.092131e-03 7.255809e-03 9.072592e-04 
+         565          566          567 
+7.443142e-02 1.516120e-04 2.537765e-02 
+         568          569          570 
+4.434502e-05 2.366877e-05 9.003353e-02 
+         571          572          573 
+3.292951e-03 1.825747e-03 2.366877e-05 
+         574          575          576 
+2.533608e-02 2.615750e-02 1.328776e-03 
+         577          578          579 
+2.781703e-01 2.632865e-02 9.636098e-02 
+         580          581          582 
+1.581778e-04 7.030458e-05 2.864033e-01 
+         583          584          585 
+7.957118e-04 8.799798e-05 2.026766e-04 
+         586          587          588 
+2.268679e-03 4.440400e-02 8.975167e-05 
+         589          590          591 
+2.080253e-02 8.148653e-03 4.756382e-05 
+         592          593          594 
+1.530557e-03 3.494055e-03 5.102575e-04 
+         595          596          597 
+3.435603e-01 1.052122e-02 1.261394e-03 
+         598          599          600 
+4.936214e-03 1.086176e-03 1.518362e-02 
+         601          602          603 
+1.449299e-04 1.845278e-03 2.189256e-02 
+         604          605          606 
+6.125377e-04 9.058343e-05 7.100675e-03 
+         607          608          609 
+9.896631e-04 8.044472e-03 2.466537e-02 
+         610          611          612 
+4.510034e-03 1.081951e-02 6.450201e-04 
+         613          614          615 
+9.798112e-03 7.266748e-03 3.277310e-02 
+         616          617          618 
+7.658072e-03 1.039120e-03 5.330238e-04 
+         619          620          621 
+1.625382e-03 4.500211e-03 8.135616e-04 
+         622          623          624 
+2.366877e-05 2.625500e-04 2.611064e-02 
+         625          626          627 
+1.629476e-01 3.178204e-03 1.348586e-04 
+         628          629          630 
+7.269737e-04 4.269353e-05 5.462258e-03 
+         631          632          633 
+2.366877e-05 2.366877e-05 6.107150e-04 
+         634          635          636 
+3.880105e-03 1.263454e-04 8.661777e-05 
+         637          638          639 
+1.037182e-02 1.035443e-03 3.295375e-05 
+         640          641          642 
+2.366877e-05 1.061328e-04 9.721591e-02 
+         643          644          645 
+4.366091e-03 5.198760e-04 3.104712e-04 
+         646          647          648 
+5.539417e-03 2.366877e-05 1.539092e-03 
+         649          650          651 
+3.631782e-02 9.237878e-02 4.938141e-05 
+         652          653          654 
+1.724269e-03 2.393254e-03 3.582742e-03 
+         655          656          657 
+3.813130e-03 1.688078e-02 3.102362e-05 
+         658          659          660 
+4.900803e-03 1.751791e-03 3.052762e-04 
+         661          662          663 
+2.366877e-05 1.325459e-03 5.619966e-04 
+         664          665          666 
+6.032848e-04 2.718395e-03 2.636684e-03 
+         667          668          669 
+1.727551e-04 3.169708e-03 3.674515e-03 
+         670          671          672 
+3.522556e-02 2.401318e-04 1.410870e-03 
+         673          674          675 
+1.664447e-03 1.319136e-03 4.728838e-03 
+         676          677          678 
+1.621825e-04 1.770578e-02 7.639470e-03 
+         679          680          681 
+2.884671e-04 3.979223e-03 4.502268e-04 
+         682          683          684 
+8.945695e-05 6.648750e-03 6.643006e-05 
+         685          686          687 
+7.013042e-05 5.924979e-04 5.137925e-01 
+         688          689          690 
+2.260926e-03 6.989948e-05 6.128840e-04 
+         691          692          693 
+2.366877e-05 6.018870e-03 7.651147e-03 
+         694          695          696 
+1.466307e-04 3.574924e-03 5.183793e-04 
+         697          698          699 
+9.202640e-05 5.709856e-04 5.082715e-04 
+         700          701          702 
+1.802458e-03 8.017819e-03 2.211376e-02 
+         703          704          705 
+1.569445e-02 6.579077e-03 8.916489e-03 
+         706          707          708 
+4.615857e-04 6.390587e-02 5.178167e-04 
+         709          710          711 
+1.631085e-02 5.291664e-04 3.368784e-04 
+         712          713          714 
+4.383850e-03 1.627969e-04 1.069404e-01 
+         715          716          717 
+5.201391e-03 6.173516e-02 7.997221e-03 
+         718          719          720 
+1.337791e-02 4.714852e-04 1.215125e-02 
+         721          722          723 
+2.306642e-04 2.602111e-04 5.381356e-03 
+         724          725          726 
+9.913894e-04 4.414710e-02 2.625663e-03 
+         727          728          729 
+7.028485e-03 2.366877e-05 4.659042e-03 
+         730          731          732 
+1.079543e-04 2.472216e-04 1.167616e-04 
+         733          734          735 
+4.029763e-03 9.363319e-04 5.920629e-01 
+         736          737          738 
+3.131049e-02 9.024059e-04 4.235650e-04 
+         739          740          741 
+1.828175e-02 4.655058e-03 8.475990e-02 
+         742          743          744 
+6.908578e-04 2.044667e-02 1.917041e-02 
+         745          746          747 
+1.872788e-02 7.506319e-04 2.134934e-03 
+         748          749          750 
+2.440692e-03 1.480284e-02 1.667746e-02 
+         751          752          753 
+1.734803e-02 2.713762e-05 2.574744e-03 
+         754          755          756 
+2.120458e-04 9.224470e-02 1.377041e-02 
+         757          758          759 
+5.316969e-03 5.863841e-04 7.927446e-04 
+         760          761          762 
+1.965769e-04 7.590296e-03 4.115172e-01 
+         763          764          765 
+1.857804e-03 6.122008e-04 2.376047e-04 
+         766          767          768 
+4.001279e-04 6.699361e-03 6.765052e-03 
+         769          770          771 
+4.463189e-03 6.884566e-02 1.471486e-02 
+         772          773          774 
+4.823184e-04 2.665166e-01 5.030243e-04 
+         775          776          777 
+1.122565e-01 2.392835e-03 1.064422e-02 
+         778          779          780 
+3.071365e-02 4.155743e-03 6.390288e-03 
+         781          782          783 
+2.568861e-04 6.247572e-03 3.578540e-05 
+         784          785          786 
+7.571768e-03 3.097286e-05 2.343100e-01 
+         787          788          789 
+1.403195e-01 1.536547e-02 6.766585e-04 
+         790          791          792 
+7.733952e-03 1.858403e-03 2.976378e-03 
+         793          794          795 
+2.092609e-02 5.301759e-02 1.489589e-02 
+         796          797          798 
+1.745146e-04 3.702068e-03 1.662968e-02 
+         799          800          801 
+1.861642e-03 2.503269e-05 2.366877e-05 
+         802          803          804 
+3.668878e-04 1.977674e-02 4.528852e-01 
+         805          806          807 
+7.948023e-03 2.814882e-04 2.363845e-04 
+         808          809          810 
+8.452151e-03 3.030973e-02 3.172534e-02 
+         811          812          813 
+3.565885e-05 3.405279e-05 3.227847e-05 
+         814          815          816 
+7.835749e-03 9.845577e-05 1.258904e-02 
+         817          818          819 
+2.366877e-05 2.945829e-03 3.693798e-03 
+         820          821          822 
+3.989160e-05 1.480025e-04 7.027417e-05 
+         823          824          825 
+7.349286e-04 5.062102e-05 1.795546e-03 
+         826          827          828 
+6.811247e-03 7.548303e-03 2.366877e-05 
+         829          830          831 
+1.169024e-02 1.876038e-03 8.446435e-02 
+         832          833          834 
+2.603924e-04 1.929974e-03 4.237023e-01 
+         835          836          837 
+6.280381e-02 1.421638e-02 5.823889e-05 
+         838          839          840 
+2.366877e-05 3.287958e-02 2.676989e-02 
+         841          842          843 
+5.780469e-03 9.350806e-05 3.703653e-04 
+         844          845          846 
+5.378321e-04 7.439411e-03 6.606161e-05 
+         847          848          849 
+1.749110e-03 2.004520e-04 2.428389e-03 
+         850          851          852 
+5.035635e-04 2.058313e-02 2.291605e-04 
+         853          854          855 
+1.013223e-03 2.857258e-03 2.328063e-04 
+         856          857          858 
+9.080285e-02 9.586856e-05 8.603072e-02 
+         859          860          861 
+3.337518e-03 6.240368e-04 5.830064e-05 
+         862          863          864 
+2.016290e-04 3.521494e-02 5.339607e-01 
+         865          866          867 
+1.477093e-02 1.005854e-02 1.996382e-02 
+         868          869          870 
+8.541971e-02 1.878528e-02 2.436219e-03 
+         871          872          873 
+5.896469e-03 1.192341e-04 3.401184e-04 
+         874          875          876 
+1.681121e-03 3.603512e-02 1.942187e-03 
+         877          878          879 
+4.919953e-04 4.183391e-04 2.090439e-02 
+         880          881          882 
+1.375144e-04 4.638634e-03 1.056242e-04 
+         883          884          885 
+3.861147e-03 3.590713e-05 2.710546e-02 
+         886          887          888 
+7.188008e-02 2.008965e-03 1.439965e-03 
+         889          890          891 
+1.435320e-04 2.548057e-03 4.354154e-05 
+         892          893          894 
+4.653470e-04 2.366877e-05 1.720585e-02 
+         895          896          897 
+3.242062e-05 1.771480e-03 1.951147e-04 
+         898          899          900 
+1.032961e-02 2.099696e-04 2.366877e-05 
+         901          902          903 
+3.799787e-03 6.497534e-04 2.250928e-03 
+         904          905          906 
+2.387939e-05 3.219620e-03 2.057181e-02 
+         907          908          909 
+2.206541e-04 7.641591e-03 9.190088e-03 
+         910          911          912 
+1.759297e-01 8.987471e-05 6.490852e-04 
+         913          914          915 
+6.639990e-05 1.463219e-04 3.541402e-03 
+         916          917          918 
+2.036285e-04 6.440563e-02 2.144557e-03 
+         919          920          921 
+1.293090e-01 2.317327e-02 4.348598e-01 
+         922          923          924 
+1.411251e-03 1.562132e-04 4.483187e-04 
+         925          926          927 
+1.780518e-02 5.282218e-04 3.606081e-04 
+         928          929          930 
+3.373309e-03 2.542233e-01 1.425824e-02 
+         931          932          933 
+7.606050e-04 8.756897e-03 2.160201e-02 
+         934          935          936 
+7.247178e-01 2.862593e-02 9.333182e-03 
+         937          938          939 
+2.201968e-03 1.018454e-03 2.906740e-05 
+         940          941          942 
+2.951570e-03 3.405400e-03 4.188903e-03 
+         943          944          945 
+4.558654e-03 1.136197e-04 7.064550e-02 
+         946          947          948 
+1.395764e-04 2.307276e-04 1.020104e-02 
+         949          950          951 
+2.372685e-05 7.141921e-04 1.191072e-04 
+         952          953          954 
+7.870622e-04 1.045541e-02 1.934979e-02 
+         955          956          957 
+1.563782e-02 5.428698e-04 7.374441e-04 
+         958          959          960 
+2.312457e-03 2.762051e-03 4.268499e-03 
+         961          962          963 
+1.089643e-01 5.610001e-04 1.244705e-02 
+         964          965          966 
+1.279212e-02 2.366877e-05 2.583672e-04 
+         967          968          969 
+6.635243e-03 2.967411e-02 1.054961e-03 
+         970          971          972 
+5.569551e-04 2.366877e-05 9.425432e-05 
+         973          974          975 
+2.261958e-02 7.424008e-05 2.667323e-01 
+         976          977          978 
+2.626062e-02 2.714459e-03 1.257871e-02 
+         979          980          981 
+2.274974e-02 7.316001e-04 6.698118e-03 
+         982          983          984 
+5.370875e-01 1.480636e-03 4.470610e-03 
+         985          986          987 
+1.659555e-03 2.556493e-04 1.898753e-03 
+         988          989          990 
+8.898418e-05 9.026156e-04 7.825866e-03 
+         991          992          993 
+1.391262e-03 2.366877e-05 5.211593e-03 
+         994          995          996 
+1.172292e-01 5.013715e-05 1.323186e-03 
+         997          998          999 
+1.224315e-03 5.917242e-03 5.199108e-04 
+        1000 
+6.292550e-01 
+ [ reached getOption(&quot;max.print&quot;) -- omitted 9000 entries ]</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>next, we need to convert probabilities to classes by setting a threshold.</li>
+<li>use <code>rep()</code> to create a vector of 10,000 “No” values:</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2xtLnByZWQgPSByZXAoXCJOb1wiLCAxMDAwMClcbmBgYCJ9 -->
+<pre class="r"><code>glm.pred = rep(&quot;No&quot;, 10000)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>then we change values to “Yes” when <span class="math inline">\(\hat{P}(default = Yes|balance) &gt; 0.5\)</span>:</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2xtLnByZWRbZ2xtLnByb2JzID4gMC41XSA9IFwiWWVzXCJcbmBgYCJ9 -->
+<pre class="r"><code>glm.pred[glm.probs &gt; 0.5] = &quot;Yes&quot;</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>we can use the <code>table()</code> function to view predicted vs. true classes:</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFibGUoZ2xtLnByZWQsIGRlZmF1bHQpXG5gYGAifQ== -->
+<pre class="r"><code>table(glm.pred, default)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICBkZWZhdWx0XG5nbG0ucHJlZCAgIE5vICBZZXNcbiAgICAgTm8gIDk2MjUgIDIzM1xuICAgICBZZXMgICA0MiAgMTAwXG4ifQ== -->
+<pre><code>        default
+glm.pred   No  Yes
+     No  9625  233
+     Yes   42  100</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>we can calculate accuracy create either of the following:</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjYWxjdWxhdGUgaXQgbWFudWFseVxuKDk2MjUgKyAxMDApIC8gMTAwMDBcbmBgYCJ9 -->
+<pre class="r"><code># calculate it manualy
+(9625 + 100) / 10000</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuOTcyNVxuIn0= -->
+<pre><code>[1] 0.9725</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjYWxjdWxhdGUgaXQgdXNpbmcgdGhlIG1lYW4gZnVuY3Rpb25cbm1lYW4oZ2xtLnByZWQgPT0gZGVmYXVsdClcbmBgYCJ9 -->
+<pre class="r"><code># calculate it using the mean function
+mean(glm.pred == default)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuOTcyNVxuIn0= -->
+<pre><code>[1] 0.9725</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>this means 97.24% of our results are accurate.</li>
+<li>it does not mean the test accuracy is this correct.</li>
+</ul>
+</div>
+<div id="need-to-seperate-training-and-test-data-to-asses-test-accuracy." class="section level2">
+<h2>Need to seperate training and test data to asses test accuracy.</h2>
+</div>
+<div id="re-fitting-a-logistic-model-to-default-training-data-in-r" class="section level2">
+<h2>Re-fitting a logistic model to <code>default</code> training data in R</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJhaW4gPSBzZXEoMSw5MDAwKVxudGVzdCA9IHNlcSg5MDAxLCAxMDAwMClcbmBgYCJ9 -->
+<pre class="r"><code>train = seq(1,9000)
+test = seq(9001, 10000)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>to fit a logistic regression model only to the training data, we can use the <code>subset</code> argument in <code>glm()</code></li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2xtLmZpdCA9IGdsbShkZWZhdWx0IH4gYmFsYW5jZSwgZmFtaWx5ID0gYmlub21pYWwsIHN1YnNldCA9IHRyYWluKVxuc3VtbWFyeShnbG0uZml0KVxuYGBgIn0= -->
+<pre class="r"><code>glm.fit = glm(default ~ balance, family = binomial, subset = train)
+summary(glm.fit)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxuZ2xtKGZvcm11bGEgPSBkZWZhdWx0IH4gYmFsYW5jZSwgZmFtaWx5ID0gYmlub21pYWwsIHN1YnNldCA9IHRyYWluKVxuXG5EZXZpYW5jZSBSZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCAgXG4tMi4yODk3ICAtMC4xNDIyICAtMC4wNTU3ICAtMC4wMjA4ICAgMy43MTc1ICBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgICBFc3RpbWF0ZSBTdGQuIEVycm9yIHogdmFsdWUgUHIoPnx6fClcbihJbnRlcmNlcHQpIC0xMC44MTc3NDEgICAwLjM4OTU4NCAgLTI3Ljc3ICAgPDJlLTE2XG5iYWxhbmNlICAgICAgIDAuMDA1NTk2ICAgMC4wMDAyMzcgICAyMy42MSAgIDwyZS0xNlxuICAgICAgICAgICAgICAgXG4oSW50ZXJjZXB0KSAqKipcbmJhbGFuY2UgICAgICoqKlxuLS0tXG5TaWduaWYuIGNvZGVzOiAgXG4wIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuKERpc3BlcnNpb24gcGFyYW1ldGVyIGZvciBiaW5vbWlhbCBmYW1pbHkgdGFrZW4gdG8gYmUgMSlcblxuICAgIE51bGwgZGV2aWFuY2U6IDI2MTAuNCAgb24gODk5OSAgZGVncmVlcyBvZiBmcmVlZG9tXG5SZXNpZHVhbCBkZXZpYW5jZTogMTQwMi4xICBvbiA4OTk4ICBkZWdyZWVzIG9mIGZyZWVkb21cbkFJQzogMTQwNi4xXG5cbk51bWJlciBvZiBGaXNoZXIgU2NvcmluZyBpdGVyYXRpb25zOiA4XG4ifQ== -->
+<pre><code>
+Call:
+glm(formula = default ~ balance, family = binomial, subset = train)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.2897  -0.1422  -0.0557  -0.0208   3.7175  
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)
+(Intercept) -10.817741   0.389584  -27.77   &lt;2e-16
+balance       0.005596   0.000237   23.61   &lt;2e-16
+               
+(Intercept) ***
+balance     ***
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 2610.4  on 8999  degrees of freedom
+Residual deviance: 1402.1  on 8998  degrees of freedom
+AIC: 1406.1
+
+Number of Fisher Scoring iterations: 8</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="obataining-confidence-intervals-for-beta_0-and-beta_1-in-r" class="section level2">
+<h2>Obataining confidence intervals for <span class="math inline">\({\beta}_0\)</span> and <span class="math inline">\({\beta}_1\)</span> in R</h2>
+<ul>
+<li>we can obtain 95% confidence intervals for <span class="math inline">\({\beta}_0\)</span> and <span class="math inline">\({\beta}_1\)</span>:</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29uZmludChnbG0uZml0KVxuYGBgIn0= -->
+<pre class="r"><code>confint(glm.fit)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FpdGluZyBmb3IgcHJvZmlsaW5nIHRvIGJlIGRvbmUuLi5cbiJ9 -->
+<pre><code>Waiting for profiling to be done...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAyLjUgJSAgICAgICAgOTcuNSAlXG4oSW50ZXJjZXB0KSAtMTEuNjA5MDY5ODM1IC0xMC4wODA2ODEzMzNcbmJhbGFuY2UgICAgICAgMC4wMDUxNDQ5MjQgICAwLjAwNjA3NDY1NVxuIn0= -->
+<pre><code>                    2.5 %        97.5 %
+(Intercept) -11.609069835 -10.080681333
+balance       0.005144924   0.006074655</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="making-predictions-about-test-data-in-r" class="section level2">
+<h2>Making Predictions about test data in R</h2>
+<ul>
+<li>we can now predict the probabilities of <code>default</code> for all 1000 values of <code>balance</code> in our test data:</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2xtLnByb2JzID0gcHJlZGljdChnbG0uZml0LCBEZWZhdWx0W3Rlc3QsIF0sIHR5cGUgPSBcInJlc3BvbnNlXCIpXG5gYGAifQ== -->
+<pre class="r"><code>glm.probs = predict(glm.fit, Default[test, ], type = &quot;response&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="review-getting-class-labels-from-logistic-regression-in-r" class="section level2">
+<h2>Review: Getting class labels from logistic regression in R</h2>
+<ul>
+<li>Recall that we need to convert probabilities to classes.</li>
+<li>For example,if <span class="math inline">\(\hat{P}(default=Yes|balance) &gt;0.5\)</span>,then set default=“Yes”.</li>
+<li>Again, we first use <code>rep()</code> to create a vector of 1000 “No” values:</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2xtLnByZWQgPC0gcmVwKFwiTm9cIiwgMTAwMClcbmBgYCJ9 -->
+<pre class="r"><code>glm.pred &lt;- rep(&quot;No&quot;, 1000)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>Then we change values to “Yes” when <span class="math inline">\(\hat{P}(default=Yes|balance) &gt;0.5\)</span>:</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2xtLnByZWRbZ2xtLnByb2JzID4gMC41XSA9IFwiWWVzXCJcbmBgYCJ9 -->
+<pre class="r"><code>glm.pred[glm.probs &gt; 0.5] = &quot;Yes&quot;</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="assessing-test-accuracy-in-predicting-default-from-balance" class="section level2">
+<h2>Assessing test accuracy in predicting default from balance</h2>
+<ul>
+<li>We can again use <code>table()</code> to view predicted vs. true classes:</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFibGUoZ2xtLnByZWQsIGRlZmF1bHRbdGVzdF0pXG5gYGAifQ== -->
+<pre class="r"><code>table(glm.pred, default[test])</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICBcbmdsbS5wcmVkICBObyBZZXNcbiAgICAgTm8gIDk2MCAgMjdcbiAgICAgWWVzICAgNCAgIDlcbiJ9 -->
+<pre><code>        
+glm.pred  No Yes
+     No  960  27
+     Yes   4   9</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBhbHNvIGNhbGN1bGF0ZSB0aGUgYWNjdXJhY3lcbig5NjArOSkgLyAxMDAwXG5gYGAifQ== -->
+<pre class="r"><code># also calculate the accuracy
+(960+9) / 1000</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuOTY5XG4ifQ== -->
+<pre><code>[1] 0.969</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWVhbihnbG0ucHJlZCA9PSBkZWZhdWx0W3Rlc3RdKVxuYGBgIn0= -->
+<pre class="r"><code>mean(glm.pred == default[test])</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuOTY5XG4ifQ== -->
+<pre><code>[1] 0.969</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 </div>
-</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ2xhc3NpZmljYXRpb24iCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMgQ2xhc3NpZmljYXRpb24gMgoKYGBge3J9CmxpYnJhcnkoSVNMUikKYXR0YWNoKERlZmF1bHQpCnN1bW1hcnkoRGVmYXVsdCkKYGBgCgojIyBQZXJmb3JtaW5nIEtOTiBjbGFzc2lmaWNhdGlvbiBpbiBSCgojIyMjIHRvIHBlcmZyb20gS05OIGNsYXNzaWZpY2F0aW5vLCB3ZSB1c2UgYGtubigpYCBpbiB0aGUgYGNsYXNzYCBwYWNrYWdlLgoKYGBge3J9Cmluc3RhbGwucGFja2FnZXMoImNsYXNzIikKbGlicmFyeShjbGFzcykKYGBgCi0gUiB3aWxsIHJhbmRvbWlseSBicmVhayB0aGUgbmVhcmVzdCBuZWlnaGJvcnMgdGllLgotIGVuYWJsZSByZXByb2R1Y2liaWxpdHk6IHNldCBhIHNlZWQgYmVmb3JlIHJ1bm5pbmcgYGtubigpYAoKYGBge3J9CnNldC5zZWVkKDEpCmBgYAoKIyMga25uKClyZXF1aXJlcyBmb3VyIGlucHV0czoKMSkgTWF0cml4IG9mIGZlYXR1cmUgbWVhc3VyZW1lbnRzIGZvciB0cmFpbmluZyBkYXRhCjIpIE1hdHJpeCBvZiBmZWF0dXJlIG1lYXN1cmVtZW50cyBmb3IgdGVzdCBkYXRhCjMpIFZlY3RvciBvZiBjbGFzcyBsYWJlbHMgZm9yIHRyYWluaW5nIGRhdGEKNCkgVmFsdWUgZm9yIPCdkL4sIHRoZSBudW1iZXIgb2YgbmVhcmVzdCBuZWlnaGJvcnMgdG8gdXNlCgojIyMgSW5wdXQgMTogTWF0cml4IG9mIGZlYXR1cmUgbWVhc3VyZW1lbnRzIGZvciB0cmFpbmluZyBkYXRhCiAKLSBXZSB3aWxsIHVzZSBLTk4gdG8gbWFrZSBwcmVkaWN0aW9ucyBhYm91dCBkZWZhdWx0IGZyb20gc3R1ZGVudCwgYmFsYW5jZSwgYW5kIGluY29tZS4KLSBSZWNhbGwgdGhhdCB3ZSBoYXZlIDEwLDAwMCBvYnNlcnZhdGlvbnMgb24gZm91ciB2YXJpYWJsZXM6IGRlZmF1bHQsIHN0dWRlbnQsIGJhbGFuY2UsIGFuZCBpbmNvbWUuCi0gV2UgbmVlZCB0byBzcGxpdCB0aGlzIGRhdGFzZXQgaW50byBhIHRyYWluaW5nIGRhdGFzZXQgYW5kIHRlc3QgZGF0YXNldC4KLSBMZXTigJlzIHVzZSB0aGUgZmlyc3QgOSwwMDAgb2JzZXJ2YXRpb25zIChyb3dzKSBhcyBvdXIgdHJhaW5pbmcgZGF0YXNldDoKYGBge3J9CnRyYWluID0gc2VxKDEsOTAwMCkKdHJhaW4ueCA9IGNiaW5kKHN0dWRlbnQsIGJhbGFuY2UsIGluY29tZSlbdHJhaW4sXQp0ZXN0ID0gc2VxKDkwMDEsIDEwMDAwKQp0ZXN0LnggPSBjYmluZChzdHVkZW50LCBiYWxhbmNlLCBpbmNvbWUpW3Rlc3QsXQp0cmFpbi55ID0gZGVmYXVsdFt0cmFpbl0Ka25uLnByZWQgPSBrbm4odHJhaW4ueCwgdGVzdC54LCB0cmFpbi55LCBrPTEpCnN1bW1hcnkoa25uLnByZWQpICNzdW1tYXJ5Cmtubi5wcmVkICNmdWxsIG91dHB1dApgYGAKCiMjIEFzc2Vzc2luZyB0ZXN0IGFjY3VyYWN5IG9mIEtOTiBpbiBwcmVkaWN0aW5nIGRlZmF1bHQgaW4gUgoKLSBLTk4gY2xhc3NpZmljYXRpb24gd2l0aCBLPTEKCmBgYHtyfQprbm4ucHJlZCA9IGtubih0cmFpbi54LCB0ZXN0LngsIHRyYWluLnksIGs9MSkKdGVzdC55ID0gZGVmYXVsdFt0ZXN0XQpgYGAKCiMjIyMgY3JlYXRpbmcgYSB0YWJsZSAKCmBgYHtyfQp0YWJsZShrbm4ucHJlZCwgdGVzdC55KQpgYGAKCiMjIEFzc2Vzc2luZyB0ZXN0IGFjY3VyYWN5IG9mIEtOTiBpbiBwcmVkaWN0aW5nIGRlZmF1bHQgaW4gUgoKLSBUZXN0IGFjY3VyYWN5IHJhdGUgaXMganVzdCB0aGUgdG90YWwgbnVtYmVyIG9mIGNvcnJlY3QgcHJlZGljdGlvbnMgJCh5XzAgKyB5XzAoaGF0KSkgJCAgRGl2aWRlZCBieSB0aGUgdG90YWwgbnVtYmVyIG9mIHByZWRpY3Rpb25zOgoKYGBge3J9CiMgdGVzdCBlcnJvciByYXRlCig5NDMgKyAxMCkgLyAxMDAwCgojIGNhbiBhbHNvIHVzZSB0aGUgbWVhbigpIGZ1bmN0aW9uCm1lYW4oa25uLnByZWQgPT0gdGVzdC55KQpgYGAKCiMjIyMgZmluaXNoZWQgd2l0aCBzdHVmZiBmb3IgSFcgMwoKIyMgU2ltcGxlIExvZ2lzdGljIFJlZ3Jlc3Npb24KLSBTaW1wbGUgbG9naXN0aWMgcmVncmVzc2lvbiBtb2RlbHMgdGhlIHByb2JhYmlsaXR5IHRoYXQg8J2RjCBiZWxvbmdzIHRvIGEgcGFydGljdWxhciBjbGFzcyDwnZGXIGdpdmVuIGEgc2luZ2xlIGZlYXR1cmUg8J2RiyB3aXRoIHRoZSBsb2dpc3RpYyBmdW5jdGlvbgotIHNlZSBzbGlkZSAxMDYgaW4gbGVjdHVyZSA4LCBjbGFzc2lmaWNhdGlvbiwgdG8gc2VlIHRoZSBmb3JtdWxhIAoKIyMjIyBlbmRzIGxlY3R1cmUKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ2xhc3NpZmljYXRpb24iCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMgQ2xhc3NpZmljYXRpb24gMgoKYGBge3J9CmxpYnJhcnkoSVNMUikKYXR0YWNoKERlZmF1bHQpCnN1bW1hcnkoRGVmYXVsdCkKYGBgCgojIyBQZXJmb3JtaW5nIEtOTiBjbGFzc2lmaWNhdGlvbiBpbiBSCgojIyMjIHRvIHBlcmZyb20gS05OIGNsYXNzaWZpY2F0aW5vLCB3ZSB1c2UgYGtubigpYCBpbiB0aGUgYGNsYXNzYCBwYWNrYWdlLgoKYGBge3J9Cmluc3RhbGwucGFja2FnZXMoImNsYXNzIikKbGlicmFyeShjbGFzcykKYGBgCi0gUiB3aWxsIHJhbmRvbWlseSBicmVhayB0aGUgbmVhcmVzdCBuZWlnaGJvcnMgdGllLgotIGVuYWJsZSByZXByb2R1Y2liaWxpdHk6IHNldCBhIHNlZWQgYmVmb3JlIHJ1bm5pbmcgYGtubigpYAoKYGBge3J9CnNldC5zZWVkKDEpCmBgYAoKIyMga25uKClyZXF1aXJlcyBmb3VyIGlucHV0czoKMSkgTWF0cml4IG9mIGZlYXR1cmUgbWVhc3VyZW1lbnRzIGZvciB0cmFpbmluZyBkYXRhCjIpIE1hdHJpeCBvZiBmZWF0dXJlIG1lYXN1cmVtZW50cyBmb3IgdGVzdCBkYXRhCjMpIFZlY3RvciBvZiBjbGFzcyBsYWJlbHMgZm9yIHRyYWluaW5nIGRhdGEKNCkgVmFsdWUgZm9yIPCdkL4sIHRoZSBudW1iZXIgb2YgbmVhcmVzdCBuZWlnaGJvcnMgdG8gdXNlCgojIyMgSW5wdXQgMTogTWF0cml4IG9mIGZlYXR1cmUgbWVhc3VyZW1lbnRzIGZvciB0cmFpbmluZyBkYXRhCiAKLSBXZSB3aWxsIHVzZSBLTk4gdG8gbWFrZSBwcmVkaWN0aW9ucyBhYm91dCBkZWZhdWx0IGZyb20gc3R1ZGVudCwgYmFsYW5jZSwgYW5kIGluY29tZS4KLSBSZWNhbGwgdGhhdCB3ZSBoYXZlIDEwLDAwMCBvYnNlcnZhdGlvbnMgb24gZm91ciB2YXJpYWJsZXM6IGRlZmF1bHQsIHN0dWRlbnQsIGJhbGFuY2UsIGFuZCBpbmNvbWUuCi0gV2UgbmVlZCB0byBzcGxpdCB0aGlzIGRhdGFzZXQgaW50byBhIHRyYWluaW5nIGRhdGFzZXQgYW5kIHRlc3QgZGF0YXNldC4KLSBMZXTigJlzIHVzZSB0aGUgZmlyc3QgOSwwMDAgb2JzZXJ2YXRpb25zIChyb3dzKSBhcyBvdXIgdHJhaW5pbmcgZGF0YXNldDoKYGBge3J9CnRyYWluID0gc2VxKDEsOTAwMCkKdHJhaW4ueCA9IGNiaW5kKHN0dWRlbnQsIGJhbGFuY2UsIGluY29tZSlbdHJhaW4sXQp0ZXN0ID0gc2VxKDkwMDEsIDEwMDAwKQp0ZXN0LnggPSBjYmluZChzdHVkZW50LCBiYWxhbmNlLCBpbmNvbWUpW3Rlc3QsXQp0cmFpbi55ID0gZGVmYXVsdFt0cmFpbl0Ka25uLnByZWQgPSBrbm4odHJhaW4ueCwgdGVzdC54LCB0cmFpbi55LCBrPTEpCnN1bW1hcnkoa25uLnByZWQpICNzdW1tYXJ5Cmtubi5wcmVkICNmdWxsIG91dHB1dApgYGAKCiMjIEFzc2Vzc2luZyB0ZXN0IGFjY3VyYWN5IG9mIEtOTiBpbiBwcmVkaWN0aW5nIGRlZmF1bHQgaW4gUgoKLSBLTk4gY2xhc3NpZmljYXRpb24gd2l0aCBLPTEKCmBgYHtyfQprbm4ucHJlZCA9IGtubih0cmFpbi54LCB0ZXN0LngsIHRyYWluLnksIGs9MSkKdGVzdC55ID0gZGVmYXVsdFt0ZXN0XQpgYGAKCiMjIyMgY3JlYXRpbmcgYSB0YWJsZSAKCmBgYHtyfQp0YWJsZShrbm4ucHJlZCwgdGVzdC55KQpgYGAKCiMjIEFzc2Vzc2luZyB0ZXN0IGFjY3VyYWN5IG9mIEtOTiBpbiBwcmVkaWN0aW5nIGRlZmF1bHQgaW4gUgoKLSBUZXN0IGFjY3VyYWN5IHJhdGUgaXMganVzdCB0aGUgdG90YWwgbnVtYmVyIG9mIGNvcnJlY3QgcHJlZGljdGlvbnMgJCh5XzAgKyB5XzAoaGF0KSkgJCAgRGl2aWRlZCBieSB0aGUgdG90YWwgbnVtYmVyIG9mIHByZWRpY3Rpb25zOgoKYGBge3J9CiMgdGVzdCBlcnJvciByYXRlCig5NDMgKyAxMCkgLyAxMDAwCgojIGNhbiBhbHNvIHVzZSB0aGUgbWVhbigpIGZ1bmN0aW9uCm1lYW4oa25uLnByZWQgPT0gdGVzdC55KQpgYGAKCiMjIyMgZmluaXNoZWQgd2l0aCBzdHVmZiBmb3IgSFcgMwoKIyMgU2ltcGxlIExvZ2lzdGljIFJlZ3Jlc3Npb24KLSBTaW1wbGUgbG9naXN0aWMgcmVncmVzc2lvbiBtb2RlbHMgdGhlIHByb2JhYmlsaXR5IHRoYXQg8J2RjCBiZWxvbmdzIHRvIGEgcGFydGljdWxhciBjbGFzcyDwnZGXIGdpdmVuIGEgc2luZ2xlIGZlYXR1cmUg8J2RiyB3aXRoIHRoZSBsb2dpc3RpYyBmdW5jdGlvbgotIHNlZSBzbGlkZSAxMDYgaW4gbGVjdHVyZSA4LCBjbGFzc2lmaWNhdGlvbiwgdG8gc2VlIHRoZSBmb3JtdWxhIAoKIyBHZW5lcmFsaXplZCBMaW5lYXIgTW9kZWxzCgojIyBUaGUgYGdsbSgpYCBmdW5jdGlvbgoKLSBUaGUgYGdsbSgpYCBmdW5jdGlvbiBmaXRzIGdlbmVyYWxpemVkIGxpbmVhciBtb2RlbHMsIGEgY2xhc3Mgb2YgbW9kZWxzIHRoYXQgaW5jbHVkZXMgbG9naXN0aWMgcmVncmVzc2lvbi4gCi0gc3ludGF4OiBgZ2xtKGZvcm11bGEsIGRhdGEsIGZhbWlseSwgLi4uKWAKLSBzdXBwb3J0cyBgYXR0YWNoKClgCi0gYGZhbWlseWAgdGVsbHMgYGdsbSgpYCB3aGljaCBtb2RlbCB0byB1c2UsIGllOiBgZmFtaWx5ID0gYmlub21pYWxgIAoKYGBge3J9CmdsbS5maXQgPSBnbG0oZm9ybXVsYSA9IGRlZmF1bHQgfiBiYWxhbmNlLCBmYW1pbHkgPSBiaW5vbWlhbCkKc3VtbWFyeShnbG0uZml0KQpgYGAKCi0gRXN0aW1hdGUgaXMgYmV0YS4gVGhlIGludGVyY2VwdCBpcyBCZXRhX25vdF9oYXQgYW5kIHRoZSBiYWxhbmNlIChvciB0aGUgZmlyc3QgZmVhdHVyZSkgaXMgQmV0YV9vbmVfaGF0Ci0tIGluIHRoaXMgY2FzZSBCZXRhX25vdF9oYXQgPSAtMTAuNjUgYW5kIEJldGFfb25lX2hhdCA9IDAuMDA1NQotIFN0ZC4gRXJyb3IgaXMgYWdhaW4gdGhlIGF2ZXJhZ2UgZGlzdGFuY2UgYmV0d2VlbiBCZXRhX2hhdCBhbmQgQmV0YS4gVGhlcmUgaXMgYSBzbWFsbCBkaWZmZXJlbmNlIGJldHdlZW4gQmV0YV9oYXQgYW5kIEJldGEgbWVhbmluZyBvdXIgZXN0aW1hdGlvbiBpcyBwcmV0dHkgZ29vZC4gCi0geiB2YWx1ZSBpcyBvdXIgdGVzdCBzdGF0aXN0aWMgZm9yIGdtbCgpLiB0ZXN0IHN0YXRpc3RpYyB6IHRvIGV2YWx1YXRlIEhfbm90OiBCZXRhX2kgPSAwLgotLSB3aWxsIHRlbGwgdXMgaG93IGZhciBhd2F5IG91ciBlc3RpbWF0ZSBpcyBmcm9tIHdoYXQgd2UgZXhwZWN0IGZyb20gdGhlIG51bGwgaHlwb3RoZXNpcy4gCi0gUCB2YWx1ZSBmb3IgSF9ub3Q6IEJfaSA9IDAsIHdhbnQgc21hbGwgdG8gcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgCi0gTnVsbCBkZXZpYW5jZSBhbmQgdGhlIFJlc2lkdWFsIGRldmlhbmNlIG1lYXN1cmUgdGhlIGZpdCBvZiB0aGUgbW9kZWwuIGFyZSB0aGUgcHJlZGljdGVkIHZzIHRoZSBvYnNlcnZhdGlvbiB3aXRob3V0IG51bGwgYW5kIHdpdGggQl8xIChyZXNpZHVhbCkuCi0gKipEZXZpYW5jZSoqIGlzIGFuYWxvZ291cyB0byBSU0UgaW4gbGluZWFyIHJlZ3Jlc3Npb24gLSBpdCBtZWFzdXJlcyBsYWNrIG9mIGZpdCBvZiBtb2RlbCAocHJlZGljdGlvbnMpIHRvIGRhdGEgKG9ic2VydmF0aW9ucykKLSAqKk51bGwgZGV2aWFuY2UqKiBpcyBsYWNrIG9mIGZpdCBvZiB0aGUgbnVsbCBtb2RlbCAoQl9ub3Qgb25seSkKLSAqKlJlc2lkdWFsIERldmlhbmNlKiogaXMgbGFjayBvZiBmaXQgb2YgdGhlIGFsdGVybmF0aXZlIG1vZGVsIChCX25vdCBhbmQgQl8xKQotIGluIHRoZSBhYm92ZSBleGFtcGxlIHRoZSBudWxsIGRldmlhbmNlID0gMjkyMC42IGFuZCByZXNpZHVhbCBkZXZpYW5jZSA9IDE1OTYuNQotICoqQWthaWtlIEluZm9ybWF0aW9uIENyaXRlcmlvbioqIChBSUMpIGlzIGFuYWxvZ291cyB0byB0aGUgYWRqdXN0ZWQgUl4yIGluIGxpbmVhciByZWdyZXNzaW9uIC0gaXQgbWVhc3VyZXMgZ29vZG5lc3Mgb2YgZml0IGFkanVzdGVkIGZvciBtb2RlbCBjb21wbGV4aXR5LgotIEFJQyByZXdhcmRzIGdvb2RuZXNzIG9mIGZpdCAobGlrZWxpaG9vZCB0byBwYXJhbWV0ZXJzKSwgYnV0IHBlbmFsaXplZCBhcyBmdW5jdGlvbiBvZiBudW1iZXIgb2YgZXN0aW1hdGVkIHBhcmFtZXRlcnMgaW4gdGhlIG1vZGVsLiAKLSBUaGUgc21hbGxlciB0aGUgQUlDLCB0aGUgYmV0dGVyIHRoZSBtb2RlbCBmaXRzIHRoZSBkYXRhLiAKLSBCdXQgaW4gY29udHJhc3QgdG8gUl4yLCB0aGUgdmFsdWUgb2YgQUlDIGl0c2VsZiBpcyBub3QgbWVhbmluZ2Z1bCwgb25seSBpdHMgY29tcGFyaXNvbiB0byB0aG9zZSBvZiBvdGhlciBtb2RlbHMuIEl0IGlzIGEgbWVhc3VyZSBvZiBmaXQgbGlrZSB0aGUgbnVsbCBhbmQgcmVzaWR1YWwgZGV2aWFuY2UuIAotIGZyb20gdGhlIGFib3ZlIGV4YW1wbGUsIEFJQyA9IDE2MDAuNQotIE51bWJlciBvZiBGaXNoZXIgU2NvcmluZyBJdGVyYXRpb25zLCBsZXNzIHRoYW4gMjAgaXMgZ29vZC4KCiMjIE9idGFpbmluZyBjb25maWRlbmNlIGludGVydmFscyBmb3IgQl8wIGFuZCBCXzEgaW4gUgotIGNhbiB1cyB0aGUgYGNvbmZpdCgpYCBmdW5jdGlvbiB0byBvYnRhaW4gY29uZmlkZW5jZSBpbnRlcnZhbHMgZm9yIHBhcmFtZXRlcnMgb2Ygb3V0IGxvZ2lzdGljIHJlZ3Jlc3Npb24gZnVuY3Rpb24uCgpgYGB7cn0KY29uZmludChnbG0uZml0KQpgYGAKCiMjIE1ha2luZyBwcmVkaWN0aW5zIGFib3V0IGBkZWZhdWx0YCBhbmQgYGJhbGFuY2VgIGluIFIKLSBBcyBpbiBsaW5lYXIgcmVncmVzc2lvbiwgd2UgY2FuIHVzZSB0aGUgYHByZWRpY3QoKWAgZnVuY3Rpb24gdG8gbWFrZSBwcmVkaWN0aW9ucyBmcm9tIG91ciBsb2dpc3RpY3MgcmVncmVzc2lvbiBmdW5jdGlvbi4gCi0gdGhlIG9ubHkgZGlmZmVyZW5jZSBpcyB0aGF0IHdlIG5lZWQgdG8gc2V0IHRoZSBhcmd1bWVudCBgdHlwZSA9ICJyZXNwb25zZSJgIHRvIG91dHB1dCBhIHByb2JhYmlsaXR5IHJhdGhlciB0aGFuIHRoZSAqbG9naXQqLgotIHRvIHByZWRpY3QgdGhlIHByb2JhYmlsaXR5IG9mIGBkZWZhdWx0YCBnaXZlbiBhIGBiYWxhbmNlYCBvZiAxMDAwIGRvbGxhcnMgb3IgMjAwMCBkb2xsYXJzOiAKCmBgYHtyfQpwcmVkaWN0KGdsbS5maXQsIGRhdGEuZnJhbWUoYmFsYW5jZSA9IGMoMTAwMCwgMjAwMCkpLCB0eXBlID0gInJlc3BvbnNlIikKIyB0aGlzIHdpbGwgYXZvaWQgdGhlIHJvdW5kaW5nIGVycm9ycwpgYGAKCiMjIEdldHRpbmcgY2xhc3MgbGFiZWxzIGZyb20gbG9naXN0aWMgcmVncmVzc2lvbiBpbiBSCi0gZmlyc3QsIG5lZWQgdG8gb2J0YWluIGVhY2ggcHJvYmFiaWxpdHkgJFxoYXR7UH0oZGVmYXVsdCA9IFllc3xiYWxhbmNlKSQKLSB0byBkbyB0aGlzLCB3ZSBuZWVkIHRoZSBgcHJlZGljdCgpYCBmdW5jdGlvbjoKYGBge3J9CmdsbS5wcm9icyA9IHByZWRpY3QoZ2xtLmZpdCwgdHlwZSA9ICJyZXNwb25zZSIpCiMgZ2xtLnByb2JzCmBgYAotIG5leHQsIHdlIG5lZWQgdG8gY29udmVydCBwcm9iYWJpbGl0aWVzIHRvIGNsYXNzZXMgYnkgc2V0dGluZyBhIHRocmVzaG9sZC4KLSB1c2UgYHJlcCgpYCB0byBjcmVhdGUgYSB2ZWN0b3Igb2YgMTAsMDAwICJObyIgdmFsdWVzOgpgYGB7cn0KZ2xtLnByZWQgPSByZXAoIk5vIiwgMTAwMDApCmBgYAotIHRoZW4gd2UgY2hhbmdlIHZhbHVlcyB0byAiWWVzIiB3aGVuICRcaGF0e1B9KGRlZmF1bHQgPSBZZXN8YmFsYW5jZSkgPiAwLjUkOgpgYGB7cn0KZ2xtLnByZWRbZ2xtLnByb2JzID4gMC41XSA9ICJZZXMiCmBgYAotIHdlIGNhbiB1c2UgdGhlIGB0YWJsZSgpYCBmdW5jdGlvbiB0byB2aWV3IHByZWRpY3RlZCB2cy4gdHJ1ZSBjbGFzc2VzOiAKYGBge3J9CnRhYmxlKGdsbS5wcmVkLCBkZWZhdWx0KQpgYGAKLSB3ZSBjYW4gY2FsY3VsYXRlIGFjY3VyYWN5IGNyZWF0ZSBlaXRoZXIgb2YgdGhlIGZvbGxvd2luZzogCmBgYHtyfQojIGNhbGN1bGF0ZSBpdCBtYW51YWx5Cig5NjI1ICsgMTAwKSAvIDEwMDAwCgojIGNhbGN1bGF0ZSBpdCB1c2luZyB0aGUgbWVhbiBmdW5jdGlvbgptZWFuKGdsbS5wcmVkID09IGRlZmF1bHQpCmBgYAotIHRoaXMgbWVhbnMgOTcuMjQlIG9mIG91ciByZXN1bHRzIGFyZSBhY2N1cmF0ZS4gCi0gaXQgZG9lcyBub3QgbWVhbiB0aGUgdGVzdCBhY2N1cmFjeSBpcyB0aGlzIGNvcnJlY3QuIAoKIyMgTmVlZCB0byBzZXBlcmF0ZSB0cmFpbmluZyBhbmQgdGVzdCBkYXRhIHRvIGFzc2VzIHRlc3QgYWNjdXJhY3kuIAoKIyMgUmUtZml0dGluZyBhIGxvZ2lzdGljIG1vZGVsIHRvIGBkZWZhdWx0YCB0cmFpbmluZyBkYXRhIGluIFIKCmBgYHtyfQp0cmFpbiA9IHNlcSgxLDkwMDApCnRlc3QgPSBzZXEoOTAwMSwgMTAwMDApCmBgYAotIHRvIGZpdCBhIGxvZ2lzdGljIHJlZ3Jlc3Npb24gbW9kZWwgb25seSB0byB0aGUgdHJhaW5pbmcgZGF0YSwgd2UgY2FuIHVzZSB0aGUgYHN1YnNldGAgYXJndW1lbnQgaW4gYGdsbSgpYApgYGB7cn0KZ2xtLmZpdCA9IGdsbShkZWZhdWx0IH4gYmFsYW5jZSwgZmFtaWx5ID0gYmlub21pYWwsIHN1YnNldCA9IHRyYWluKQpzdW1tYXJ5KGdsbS5maXQpCmBgYAoKIyMgT2JhdGFpbmluZyBjb25maWRlbmNlIGludGVydmFscyBmb3IgJHtcYmV0YX1fMCQgYW5kICR7XGJldGF9XzEkIGluIFIKCi0gd2UgY2FuIG9idGFpbiA5NSUgY29uZmlkZW5jZSBpbnRlcnZhbHMgZm9yICR7XGJldGF9XzAkIGFuZCAke1xiZXRhfV8xJDoKYGBge3J9CmNvbmZpbnQoZ2xtLmZpdCkKYGBgCgojIyBNYWtpbmcgUHJlZGljdGlvbnMgYWJvdXQgdGVzdCBkYXRhIGluIFIKLSB3ZSBjYW4gbm93IHByZWRpY3QgdGhlIHByb2JhYmlsaXRpZXMgb2YgYGRlZmF1bHRgIGZvciBhbGwgMTAwMCB2YWx1ZXMgb2YgYGJhbGFuY2VgIGluIG91ciB0ZXN0IGRhdGE6IApgYGB7cn0KZ2xtLnByb2JzID0gcHJlZGljdChnbG0uZml0LCBEZWZhdWx0W3Rlc3QsIF0sIHR5cGUgPSAicmVzcG9uc2UiKQpgYGAKCiMjIFJldmlldzogR2V0dGluZyBjbGFzcyBsYWJlbHMgZnJvbSBsb2dpc3RpYyByZWdyZXNzaW9uIGluIFIKLSBSZWNhbGwgdGhhdCB3ZSBuZWVkIHRvIGNvbnZlcnQgcHJvYmFiaWxpdGllcyB0byBjbGFzc2VzLgotIEZvciBleGFtcGxlLGlmICRcaGF0e1B9KGRlZmF1bHQ9WWVzfGJhbGFuY2UpID4wLjUkLHRoZW4gc2V0IGRlZmF1bHQ9IlllcyIuCi0gQWdhaW4sIHdlIGZpcnN0IHVzZSBgcmVwKClgIHRvIGNyZWF0ZSBhIHZlY3RvciBvZiAxMDAwIOKAnE5v4oCdIHZhbHVlczoKYGBge3J9CmdsbS5wcmVkIDwtIHJlcCgiTm8iLCAxMDAwKQpgYGAKLSBUaGVuIHdlIGNoYW5nZSB2YWx1ZXMgdG8g4oCcWWVz4oCdIHdoZW4gJFxoYXR7UH0oZGVmYXVsdD1ZZXN8YmFsYW5jZSkgPjAuNSQ6CmBgYHtyfQpnbG0ucHJlZFtnbG0ucHJvYnMgPiAwLjVdID0gIlllcyIKYGBgCgojIyBBc3Nlc3NpbmcgdGVzdCBhY2N1cmFjeSBpbiBwcmVkaWN0aW5nIGRlZmF1bHQgZnJvbSBiYWxhbmNlCi0gV2UgY2FuIGFnYWluIHVzZSBgdGFibGUoKWAgdG8gdmlldyBwcmVkaWN0ZWQgdnMuIHRydWUgY2xhc3NlczogCmBgYHtyfQp0YWJsZShnbG0ucHJlZCwgZGVmYXVsdFt0ZXN0XSkKIyBhbHNvIGNhbGN1bGF0ZSB0aGUgdGVzdCBhY2N1cmFjeSByYXRlCig5NjArOSkgLyAxMDAwCm1lYW4oZ2xtLnByZWQgPT0gZGVmYXVsdFt0ZXN0IF0pCmBgYAoKCgo=</div>
 
 
 

@@ -82,5 +82,133 @@ mean(knn.pred == test.y)
 - Simple logistic regression models the probability that 𝑌 belongs to a particular class 𝑗 given a single feature 𝑋 with the logistic function
 - see slide 106 in lecture 8, classification, to see the formula 
 
-#### ends lecture
+# Generalized Linear Models
+
+## The `glm()` function
+
+- The `glm()` function fits generalized linear models, a class of models that includes logistic regression. 
+- syntax: `glm(formula, data, family, ...)`
+- supports `attach()`
+- `family` tells `glm()` which model to use, ie: `family = binomial` 
+
+```{r}
+glm.fit = glm(formula = default ~ balance, family = binomial)
+summary(glm.fit)
+```
+
+- Estimate is beta. The intercept is Beta_not_hat and the balance (or the first feature) is Beta_one_hat
+-- in this case Beta_not_hat = -10.65 and Beta_one_hat = 0.0055
+- Std. Error is again the average distance between Beta_hat and Beta. There is a small difference between Beta_hat and Beta meaning our estimation is pretty good. 
+- z value is our test statistic for gml(). test statistic z to evaluate H_not: Beta_i = 0.
+-- will tell us how far away our estimate is from what we expect from the null hypothesis. 
+- P value for H_not: B_i = 0, want small to reject the null hypothesis 
+- Null deviance and the Residual deviance measure the fit of the model. are the predicted vs the observation without null and with B_1 (residual).
+- **Deviance** is analogous to RSE in linear regression - it measures lack of fit of model (predictions) to data (observations)
+- **Null deviance** is lack of fit of the null model (B_not only)
+- **Residual Deviance** is lack of fit of the alternative model (B_not and B_1)
+- in the above example the null deviance = 2920.6 and residual deviance = 1596.5
+- **Akaike Information Criterion** (AIC) is analogous to the adjusted R^2 in linear regression - it measures goodness of fit adjusted for model complexity.
+- AIC rewards goodness of fit (likelihood to parameters), but penalized as function of number of estimated parameters in the model. 
+- The smaller the AIC, the better the model fits the data. 
+- But in contrast to R^2, the value of AIC itself is not meaningful, only its comparison to those of other models. It is a measure of fit like the null and residual deviance. 
+- from the above example, AIC = 1600.5
+- Number of Fisher Scoring Iterations, less than 20 is good.
+
+## Obtaining confidence intervals for B_0 and B_1 in R
+- can us the `confit()` function to obtain confidence intervals for parameters of out logistic regression function.
+
+```{r}
+confint(glm.fit)
+```
+
+## Making predictins about `default` and `balance` in R
+- As in linear regression, we can use the `predict()` function to make predictions from our logistics regression function. 
+- the only difference is that we need to set the argument `type = "response"` to output a probability rather than the *logit*.
+- to predict the probability of `default` given a `balance` of 1000 dollars or 2000 dollars: 
+
+```{r}
+predict(glm.fit, data.frame(balance = c(1000, 2000)), type = "response")
+# this will avoid the rounding errors
+```
+
+## Getting class labels from logistic regression in R
+- first, need to obtain each probability $\hat{P}(default = Yes|balance)$
+- to do this, we need the `predict()` function:
+```{r}
+glm.probs = predict(glm.fit, type = "response")
+# glm.probs
+```
+- next, we need to convert probabilities to classes by setting a threshold.
+- use `rep()` to create a vector of 10,000 "No" values:
+```{r}
+glm.pred = rep("No", 10000)
+```
+- then we change values to "Yes" when $\hat{P}(default = Yes|balance) > 0.5$:
+```{r}
+glm.pred[glm.probs > 0.5] = "Yes"
+```
+- we can use the `table()` function to view predicted vs. true classes: 
+```{r}
+table(glm.pred, default)
+```
+- we can calculate accuracy create either of the following: 
+```{r}
+# calculate it manualy
+(9625 + 100) / 10000
+
+# calculate it using the mean function
+mean(glm.pred == default)
+```
+- this means 97.24% of our results are accurate. 
+- it does not mean the test accuracy is this correct. 
+
+## Need to seperate training and test data to asses test accuracy. 
+
+## Re-fitting a logistic model to `default` training data in R
+
+```{r}
+train = seq(1,9000)
+test = seq(9001, 10000)
+```
+- to fit a logistic regression model only to the training data, we can use the `subset` argument in `glm()`
+```{r}
+glm.fit = glm(default ~ balance, family = binomial, subset = train)
+summary(glm.fit)
+```
+
+## Obataining confidence intervals for ${\beta}_0$ and ${\beta}_1$ in R
+
+- we can obtain 95% confidence intervals for ${\beta}_0$ and ${\beta}_1$:
+```{r}
+confint(glm.fit)
+```
+
+## Making Predictions about test data in R
+- we can now predict the probabilities of `default` for all 1000 values of `balance` in our test data: 
+```{r}
+glm.probs = predict(glm.fit, Default[test, ], type = "response")
+```
+
+## Review: Getting class labels from logistic regression in R
+- Recall that we need to convert probabilities to classes.
+- For example,if $\hat{P}(default=Yes|balance) >0.5$,then set default="Yes".
+- Again, we first use `rep()` to create a vector of 1000 “No” values:
+```{r}
+glm.pred <- rep("No", 1000)
+```
+- Then we change values to “Yes” when $\hat{P}(default=Yes|balance) >0.5$:
+```{r}
+glm.pred[glm.probs > 0.5] = "Yes"
+```
+
+## Assessing test accuracy in predicting default from balance
+- We can again use `table()` to view predicted vs. true classes: 
+```{r}
+table(glm.pred, default[test])
+# also calculate the test accuracy rate
+(960+9) / 1000
+mean(glm.pred == default[test ])
+```
+
+
 
