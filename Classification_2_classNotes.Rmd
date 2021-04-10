@@ -210,5 +210,14 @@ table(glm.pred, default[test])
 mean(glm.pred == default[test ])
 ```
 
+## Fitting multiple **Logistic Model** to `Default` training in R
+
+```{r}
+# student is a categorical feature, will convert o dummy variable studentYes
+glm.fitM = glm(default ~ student + balance + income, family = binomial, subset = train)
+summary(glm.fitM)
+
+```
+
 
 
