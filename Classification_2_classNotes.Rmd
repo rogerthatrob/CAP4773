@@ -220,4 +220,3 @@ summary(glm.fitM)
 ```
 
 
-
