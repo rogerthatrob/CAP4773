@@ -1,0 +1,33 @@
+---
+title: "Cross Validation"
+output: html_notebook
+---
+
+# Cross Validation
+
+## Syntac for `cv.glm()`
+
+- the function `cv.glm()` calculates estimated k-fold cross-validation prediction error for generalized liner models:
+- `cv.glm(data, glmfit, cost, k)`
+- `data`: matrix or data from containing the full dataset
+- `glmfit`: object containing results of `glm()` fitted to `data`
+- `cost`: function specifying cost function (default is MSE)
+- `K`: number of folds to split data into (default is n)
+- thus, we don't need to set `cost` at all, or `K` if we want to use LOOCV.
+
+#### still using `Advertising` dataset for linear regression
+```{r}
+library(ISLR)
+library(Advertising)
+```
+
+## Perfroming LOOCV with linear regression
+- we just used `glm()` to fit linear regression model to predict `sales` from `TV`, `radio`, and `newspaper`:
+```{r}
+glm.fit = gml(sales ~ TV + radio + newspaper)
+```
+
+
+
+
+
