@@ -13,21 +13,61 @@ output: html_notebook
 - `glmfit`: object containing results of `glm()` fitted to `data`
 - `cost`: function specifying cost function (default is MSE)
 - `K`: number of folds to split data into (default is n)
-- thus, we don't need to set `cost` at all, or `K` if we want to use LOOCV.
+- thus, we don't need to set `cost` at all, or `K` if we want to use LOOCV (leave-one-out Cross validation).
 
 #### still using `Advertising` dataset for linear regression
 ```{r}
 library(ISLR)
-library(Advertising)
+library(boot)
+library(tidyverse)
+attach(Advertising)
 ```
 
 ## Perfroming LOOCV with linear regression
 - we just used `glm()` to fit linear regression model to predict `sales` from `TV`, `radio`, and `newspaper`:
 ```{r}
-glm.fit = gml(sales ~ TV + radio + newspaper)
+glm.fit = glm(sales ~ TV + radio + newspaper)
+
+# to perform LOOCV, we just type:
+cv.err = cv.glm(Advertising, glm.fit)
+
+# then to view cross-validation test error and training error:
+cv.err$delta
+
+# standard deviation
+sd(sales)
 ```
 
+- perform k-fold C with k=5
+- when K=5, we have 100 observations, we split it up into 5 folds with 20 observations in each. Then we go through those folds one at time and each time we are using a different fold for testing. It randomly splits the data in one of the five folds. 
+```{r}
+set.seed(1)
+cv.err = cv.glm(Advertising, glm.fit, K=5)
 
+cv.err$delta
+```
+- LOOCV (leave-one-out crass validation) is very resource intensive and that is why it's not used very much
+```{r}
+set.seed(2)
+cv.err = cv.glm(Advertising, glm.fit, K=10)
 
+cv.err$delta
+```
 
+## Review: Performance of three classifiers
+- Because we used the same training and test sets for all three classifiers, we were able to directly compare their performance:
+- KNN (𝐾 = 10*) test accuracy rate = 0.967, test error rate = 0.033 
+- Logistic regression test accuracy rate = 0.967, test error rate = 0.033 
+- LDA test accuracy rate = 0.970, test error rate = 0.03
+- Thus, in this specific scenario, LDA appeared to be the most accurate. 
+-- But with CV, we get a lower test error rate for logistic regression!
 
+## Summary of concepts covered in Lecture 9
+- Evaluating performance of statistical learning methods is critical. 
+-- MSE for regression and proportion of errors for classification
+- Training error (and fit) are important to assess, but not good enough. 
+-- Need to evaluate test error!
+- When there is no test data, we use cross-validation: LOOCV or 𝑘-fold CV. 
+-- Gives us mean MSE or mean proportion of errors
+- LOOCV is superior to 𝑘-fold CV, BUT can be computationally expensive! 
+-- Typically use 𝑘-fold CV with 𝑘 = 5 or 𝑘 = 10.

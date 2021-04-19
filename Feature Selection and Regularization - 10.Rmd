@@ -1,0 +1,8 @@
+---
+title: "Feature Selection and Regularization"
+output: html_notebook
+---
+
+# Performing feature selection in R
+ - stopped at 1:16:00
+ 

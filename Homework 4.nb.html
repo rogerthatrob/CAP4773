@@ -237,9 +237,586 @@ summary {
 
 
 <!-- rnb-text-begin -->
+<div id="section" class="section level1">
+<h1>1)</h1>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShJU0xSKVxuc3VtbWFyeShDb2xsZWdlKVxuYGBgIn0= -->
+<pre class="r"><code>library(ISLR)
+summary(College)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFByaXZhdGUgICAgICAgIEFwcHMgICAgICAgICAgIEFjY2VwdCAgICAgICAgICBFbnJvbGwgICAgICAgVG9wMTBwZXJjICAgIFxuIE5vIDoyMTIgICBNaW4uICAgOiAgIDgxICAgTWluLiAgIDogICA3MiAgIE1pbi4gICA6ICAzNSAgIE1pbi4gICA6IDEuMDAgIFxuIFllczo1NjUgICAxc3QgUXUuOiAgNzc2ICAgMXN0IFF1LjogIDYwNCAgIDFzdCBRdS46IDI0MiAgIDFzdCBRdS46MTUuMDAgIFxuICAgICAgICAgICBNZWRpYW4gOiAxNTU4ICAgTWVkaWFuIDogMTExMCAgIE1lZGlhbiA6IDQzNCAgIE1lZGlhbiA6MjMuMDAgIFxuICAgICAgICAgICBNZWFuICAgOiAzMDAyICAgTWVhbiAgIDogMjAxOSAgIE1lYW4gICA6IDc4MCAgIE1lYW4gICA6MjcuNTYgIFxuICAgICAgICAgICAzcmQgUXUuOiAzNjI0ICAgM3JkIFF1LjogMjQyNCAgIDNyZCBRdS46IDkwMiAgIDNyZCBRdS46MzUuMDAgIFxuICAgICAgICAgICBNYXguICAgOjQ4MDk0ICAgTWF4LiAgIDoyNjMzMCAgIE1heC4gICA6NjM5MiAgIE1heC4gICA6OTYuMDAgIFxuICAgVG9wMjVwZXJjICAgICAgRi5VbmRlcmdyYWQgICAgIFAuVW5kZXJncmFkICAgICAgICAgT3V0c3RhdGUgICAgXG4gTWluLiAgIDogIDkuMCAgIE1pbi4gICA6ICAxMzkgICBNaW4uICAgOiAgICAxLjAgICBNaW4uICAgOiAyMzQwICBcbiAxc3QgUXUuOiA0MS4wICAgMXN0IFF1LjogIDk5MiAgIDFzdCBRdS46ICAgOTUuMCAgIDFzdCBRdS46IDczMjAgIFxuIE1lZGlhbiA6IDU0LjAgICBNZWRpYW4gOiAxNzA3ICAgTWVkaWFuIDogIDM1My4wICAgTWVkaWFuIDogOTk5MCAgXG4gTWVhbiAgIDogNTUuOCAgIE1lYW4gICA6IDM3MDAgICBNZWFuICAgOiAgODU1LjMgICBNZWFuICAgOjEwNDQxICBcbiAzcmQgUXUuOiA2OS4wICAgM3JkIFF1LjogNDAwNSAgIDNyZCBRdS46ICA5NjcuMCAgIDNyZCBRdS46MTI5MjUgIFxuIE1heC4gICA6MTAwLjAgICBNYXguICAgOjMxNjQzICAgTWF4LiAgIDoyMTgzNi4wICAgTWF4LiAgIDoyMTcwMCAgXG4gICBSb29tLkJvYXJkICAgICAgIEJvb2tzICAgICAgICAgICBQZXJzb25hbCAgICAgICAgIFBoRCAgICAgICAgXG4gTWluLiAgIDoxNzgwICAgTWluLiAgIDogIDk2LjAgICBNaW4uICAgOiAyNTAgICBNaW4uICAgOiAgOC4wMCAgXG4gMXN0IFF1LjozNTk3ICAgMXN0IFF1LjogNDcwLjAgICAxc3QgUXUuOiA4NTAgICAxc3QgUXUuOiA2Mi4wMCAgXG4gTWVkaWFuIDo0MjAwICAgTWVkaWFuIDogNTAwLjAgICBNZWRpYW4gOjEyMDAgICBNZWRpYW4gOiA3NS4wMCAgXG4gTWVhbiAgIDo0MzU4ICAgTWVhbiAgIDogNTQ5LjQgICBNZWFuICAgOjEzNDEgICBNZWFuICAgOiA3Mi42NiAgXG4gM3JkIFF1Ljo1MDUwICAgM3JkIFF1LjogNjAwLjAgICAzcmQgUXUuOjE3MDAgICAzcmQgUXUuOiA4NS4wMCAgXG4gTWF4LiAgIDo4MTI0ICAgTWF4LiAgIDoyMzQwLjAgICBNYXguICAgOjY4MDAgICBNYXguICAgOjEwMy4wMCAgXG4gICAgVGVybWluYWwgICAgICAgUy5GLlJhdGlvICAgICAgcGVyYy5hbHVtbmkgICAgICAgIEV4cGVuZCAgICAgXG4gTWluLiAgIDogMjQuMCAgIE1pbi4gICA6IDIuNTAgICBNaW4uICAgOiAwLjAwICAgTWluLiAgIDogMzE4NiAgXG4gMXN0IFF1LjogNzEuMCAgIDFzdCBRdS46MTEuNTAgICAxc3QgUXUuOjEzLjAwICAgMXN0IFF1LjogNjc1MSAgXG4gTWVkaWFuIDogODIuMCAgIE1lZGlhbiA6MTMuNjAgICBNZWRpYW4gOjIxLjAwICAgTWVkaWFuIDogODM3NyAgXG4gTWVhbiAgIDogNzkuNyAgIE1lYW4gICA6MTQuMDkgICBNZWFuICAgOjIyLjc0ICAgTWVhbiAgIDogOTY2MCAgXG4gM3JkIFF1LjogOTIuMCAgIDNyZCBRdS46MTYuNTAgICAzcmQgUXUuOjMxLjAwICAgM3JkIFF1LjoxMDgzMCAgXG4gTWF4LiAgIDoxMDAuMCAgIE1heC4gICA6MzkuODAgICBNYXguICAgOjY0LjAwICAgTWF4LiAgIDo1NjIzMyAgXG4gICBHcmFkLlJhdGUgICAgIFxuIE1pbi4gICA6IDEwLjAwICBcbiAxc3QgUXUuOiA1My4wMCAgXG4gTWVkaWFuIDogNjUuMDAgIFxuIE1lYW4gICA6IDY1LjQ2ICBcbiAzcmQgUXUuOiA3OC4wMCAgXG4gTWF4LiAgIDoxMTguMDAgIFxuIn0= -->
+<pre><code> Private        Apps           Accept          Enroll       Top10perc    
+ No :212   Min.   :   81   Min.   :   72   Min.   :  35   Min.   : 1.00  
+ Yes:565   1st Qu.:  776   1st Qu.:  604   1st Qu.: 242   1st Qu.:15.00  
+           Median : 1558   Median : 1110   Median : 434   Median :23.00  
+           Mean   : 3002   Mean   : 2019   Mean   : 780   Mean   :27.56  
+           3rd Qu.: 3624   3rd Qu.: 2424   3rd Qu.: 902   3rd Qu.:35.00  
+           Max.   :48094   Max.   :26330   Max.   :6392   Max.   :96.00  
+   Top25perc      F.Undergrad     P.Undergrad         Outstate    
+ Min.   :  9.0   Min.   :  139   Min.   :    1.0   Min.   : 2340  
+ 1st Qu.: 41.0   1st Qu.:  992   1st Qu.:   95.0   1st Qu.: 7320  
+ Median : 54.0   Median : 1707   Median :  353.0   Median : 9990  
+ Mean   : 55.8   Mean   : 3700   Mean   :  855.3   Mean   :10441  
+ 3rd Qu.: 69.0   3rd Qu.: 4005   3rd Qu.:  967.0   3rd Qu.:12925  
+ Max.   :100.0   Max.   :31643   Max.   :21836.0   Max.   :21700  
+   Room.Board       Books           Personal         PhD        
+ Min.   :1780   Min.   :  96.0   Min.   : 250   Min.   :  8.00  
+ 1st Qu.:3597   1st Qu.: 470.0   1st Qu.: 850   1st Qu.: 62.00  
+ Median :4200   Median : 500.0   Median :1200   Median : 75.00  
+ Mean   :4358   Mean   : 549.4   Mean   :1341   Mean   : 72.66  
+ 3rd Qu.:5050   3rd Qu.: 600.0   3rd Qu.:1700   3rd Qu.: 85.00  
+ Max.   :8124   Max.   :2340.0   Max.   :6800   Max.   :103.00  
+    Terminal       S.F.Ratio      perc.alumni        Expend     
+ Min.   : 24.0   Min.   : 2.50   Min.   : 0.00   Min.   : 3186  
+ 1st Qu.: 71.0   1st Qu.:11.50   1st Qu.:13.00   1st Qu.: 6751  
+ Median : 82.0   Median :13.60   Median :21.00   Median : 8377  
+ Mean   : 79.7   Mean   :14.09   Mean   :22.74   Mean   : 9660  
+ 3rd Qu.: 92.0   3rd Qu.:16.50   3rd Qu.:31.00   3rd Qu.:10830  
+ Max.   :100.0   Max.   :39.80   Max.   :64.00   Max.   :56233  
+   Grad.Rate     
+ Min.   : 10.00  
+ 1st Qu.: 53.00  
+ Median : 65.00  
+ Mean   : 65.46  
+ 3rd Qu.: 78.00  
+ Max.   :118.00  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnZ3Bsb3QyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5hdHRhY2goQ29sbGVnZSlcbmBgYCJ9 -->
+<pre class="r"><code>library(ggplot2)
+library(tidyverse)
+attach(College)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSBDb2xsZWdlIChwb3MgPSA0KTpcblxuICAgIEFjY2VwdCwgQXBwcywgQm9va3MsIEVucm9sbCwgRXhwZW5kLCBGLlVuZGVyZ3JhZCwgR3JhZC5SYXRlLFxuICAgIE91dHN0YXRlLCBQLlVuZGVyZ3JhZCwgcGVyYy5hbHVtbmksIFBlcnNvbmFsLCBQaEQsIFByaXZhdGUsXG4gICAgUm9vbS5Cb2FyZCwgUy5GLlJhdGlvLCBUZXJtaW5hbCwgVG9wMTBwZXJjLCBUb3AyNXBlcmNcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSBDb2xsZWdlIChwb3MgPSA1KTpcblxuICAgIEFjY2VwdCwgQXBwcywgQm9va3MsIEVucm9sbCwgRXhwZW5kLCBGLlVuZGVyZ3JhZCwgR3JhZC5SYXRlLFxuICAgIE91dHN0YXRlLCBQLlVuZGVyZ3JhZCwgcGVyYy5hbHVtbmksIFBlcnNvbmFsLCBQaEQsIFByaXZhdGUsXG4gICAgUm9vbS5Cb2FyZCwgUy5GLlJhdGlvLCBUZXJtaW5hbCwgVG9wMTBwZXJjLCBUb3AyNXBlcmNcbiJ9 -->
+<pre><code>The following objects are masked from College (pos = 4):
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSG9tZXdvcmsgNCIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoK</div>
+    Accept, Apps, Books, Enroll, Expend, F.Undergrad, Grad.Rate,
+    Outstate, P.Undergrad, perc.alumni, Personal, PhD, Private,
+    Room.Board, S.F.Ratio, Terminal, Top10perc, Top25perc
+
+The following objects are masked from College (pos = 5):
+
+    Accept, Apps, Books, Enroll, Expend, F.Undergrad, Grad.Rate,
+    Outstate, P.Undergrad, perc.alumni, Personal, PhD, Private,
+    Room.Board, S.F.Ratio, Terminal, Top10perc, Top25perc</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2luc3RhbGwucGFja2FnZXMoXCJsZWFwc1wiKVxubGlicmFyeShsZWFwcylcbmF0dGFjaChBZHZlcnRpc2luZylcbmBgYCJ9 -->
+<pre class="r"><code>#install.packages(&quot;leaps&quot;)
+library(leaps)
+attach(Advertising)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSBBZHZlcnRpc2luZyAocG9zID0gNyk6XG5cbiAgICBuZXdzcGFwZXIsIHJhZGlvLCBzYWxlcywgVFYsIFhcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSBBZHZlcnRpc2luZyAocG9zID0gMTcpOlxuXG4gICAgbmV3c3BhcGVyLCByYWRpbywgc2FsZXMsIFRWLCBYXG4ifQ== -->
+<pre><code>The following objects are masked from Advertising (pos = 7):
+
+    newspaper, radio, sales, TV, X
+
+The following objects are masked from Advertising (pos = 17):
+
+    newspaper, radio, sales, TV, X</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="a---1.c" class="section level3">
+<h3>1.a - 1.c</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmVzdHN1YiA9IHJlZ3N1YnNldHMoeCA9IE91dHN0YXRlIH4gUHJpdmF0ZSArIEFwcHMgKyBBY2NlcHQgKyBFbnJvbGwgKyBUb3AxMHBlcmMgKyBUb3AyNXBlcmMgKyBGLlVuZGVyZ3JhZCArIFAuVW5kZXJncmFkICsgUm9vbS5Cb2FyZCArIEJvb2tzICsgUGVyc29uYWwgKyBQaEQgKyBUZXJtaW5hbCArIFMuRi5SYXRpbyArIHBlcmMuYWx1bW5pICsgRXhwZW5kICsgR3JhZC5SYXRlLCBkYXRhID0gQ29sbGVnZSlcblxuZm9yd2FyZCA9IHJlZ3N1YnNldHMoeCA9IE91dHN0YXRlIH4gUHJpdmF0ZSArIEFwcHMgKyBBY2NlcHQgKyBFbnJvbGwgKyBUb3AxMHBlcmMgKyBUb3AyNXBlcmMgKyBGLlVuZGVyZ3JhZCArIFAuVW5kZXJncmFkICsgUm9vbS5Cb2FyZCArIEJvb2tzICsgUGVyc29uYWwgKyBQaEQgKyBUZXJtaW5hbCArIFMuRi5SYXRpbyArIHBlcmMuYWx1bW5pICsgRXhwZW5kICsgR3JhZC5SYXRlLCBkYXRhID0gQ29sbGVnZSwgbWV0aG9kID0gXCJmb3J3YXJkXCIpXG5cbmJhY2t3YXJkID0gcmVnc3Vic2V0cyh4ID0gT3V0c3RhdGUgfiBQcml2YXRlICsgQXBwcyArIEFjY2VwdCArIEVucm9sbCArIFRvcDEwcGVyYyArIFRvcDI1cGVyYyArIEYuVW5kZXJncmFkICsgUC5VbmRlcmdyYWQgKyBSb29tLkJvYXJkICsgQm9va3MgKyBQZXJzb25hbCArIFBoRCArIFRlcm1pbmFsICsgUy5GLlJhdGlvICsgcGVyYy5hbHVtbmkgKyBFeHBlbmQgKyBHcmFkLlJhdGUsIGRhdGEgPSBDb2xsZWdlLCBtZXRob2QgPSBcImJhY2t3YXJkXCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>bestsub = regsubsets(x = Outstate ~ Private + Apps + Accept + Enroll + Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + Grad.Rate, data = College)
+
+forward = regsubsets(x = Outstate ~ Private + Apps + Accept + Enroll + Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + Grad.Rate, data = College, method = &quot;forward&quot;)
+
+backward = regsubsets(x = Outstate ~ Private + Apps + Accept + Enroll + Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + Grad.Rate, data = College, method = &quot;backward&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI3N1bW1hcnkoYmVzdHN1YilcbmJlc3RzdWIuc3VtID0gc3VtbWFyeShiZXN0c3ViKVxuIyBuYW1lcyhiZXN0c3ViLnN1bSlcblxuYmVzdHN1Yi5zdW0kYWRqcjJcbmBgYCJ9 -->
+<pre class="r"><code>#summary(bestsub)
+bestsub.sum = summary(bestsub)
+# names(bestsub.sum)
+
+bestsub.sum$adjr2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuNDUxOTI0OCAwLjYwNTM0NDkgMC42ODEzNzAzIDAuNzE3NzU0NSAwLjczNTMyMDcgMC43NDYxMTk2IDAuNzQ4MjA4MyAwLjc1MzQxMDdcbiJ9 -->
+<pre><code>[1] 0.4519248 0.6053449 0.6813703 0.7177545 0.7353207 0.7461196 0.7482083 0.7534107</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmVzdHN1Yi5zdW0kY3BcbmBgYCJ9 -->
+<pre class="r"><code>bestsub.sum$cp</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEwMjAuOTYxMjQgIDUxOS4xMTkyNiAgMjcxLjI0ODA5ICAxNTMuMjcwNjcgICA5Ni44Nzc0NyAgIDYyLjY0MDgwICAgNTYuNzg0NDlcbls4XSAgIDQwLjg0NjYxXG4ifQ== -->
+<pre><code>[1] 1020.96124  519.11926  271.24809  153.27067   96.87747   62.64080   56.78449
+[8]   40.84661</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmVzdHN1Yi5zdW0kYmljXG5gYGAifQ== -->
+<pre class="r"><code>bestsub.sum$bic</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICAtNDU0LjkzNDQgIC03MDQuNDQ5MiAgLTg2NS4wNjI4ICAtOTUzLjYyNjEgIC05OTcuOTA2NyAtMTAyNC42MjYwIC0xMDI1LjM5OTRcbls4XSAtMTAzNS45NzcwXG4ifQ== -->
+<pre><code>[1]  -454.9344  -704.4492  -865.0628  -953.6261  -997.9067 -1024.6260 -1025.3994
+[8] -1035.9770</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yd2FyZC5zdW0gPSBzdW1tYXJ5KGZvcndhcmQpXG4jIG5hbWVzKGZvcndhcmQuc3VtKVxuZm9yd2FyZC5zdW0kYWRqcjJcbmBgYCJ9 -->
+<pre class="r"><code>forward.sum = summary(forward)
+# names(forward.sum)
+forward.sum$adjr2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuNDUxOTI0OCAwLjYwNTM0NDkgMC42ODEzNzAzIDAuNzE3NzU0NSAwLjczNTMyMDcgMC43NDUzNTAyIDAuNzQ3NTkwOCAwLjc0OTQzMTJcbiJ9 -->
+<pre><code>[1] 0.4519248 0.6053449 0.6813703 0.7177545 0.7353207 0.7453502 0.7475908 0.7494312</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yd2FyZC5zdW0kY3BcbmBgYCJ9 -->
+<pre class="r"><code>forward.sum$cp</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEwMjAuOTYxMjQgIDUxOS4xMTkyNiAgMjcxLjI0ODA5ICAxNTMuMjcwNjcgICA5Ni44Nzc0NyAgIDY1LjE0MjgyICAgNTguNzkwMTdcbls4XSAgIDUzLjc1NDY1XG4ifQ== -->
+<pre><code>[1] 1020.96124  519.11926  271.24809  153.27067   96.87747   65.14282   58.79017
+[8]   53.75465</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yd2FyZC5zdW0kYmljXG5gYGAifQ== -->
+<pre class="r"><code>forward.sum$bic</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICAtNDU0LjkzNDQgIC03MDQuNDQ5MiAgLTg2NS4wNjI4ICAtOTUzLjYyNjEgIC05OTcuOTA2NyAtMTAyMi4yNzQ5IC0xMDIzLjQ5NjFcbls4XSAtMTAyMy41Mzc3XG4ifQ== -->
+<pre><code>[1]  -454.9344  -704.4492  -865.0628  -953.6261  -997.9067 -1022.2749 -1023.4961
+[8] -1023.5377</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmFja3dhcmQuc3VtID0gc3VtbWFyeShiYWNrd2FyZClcbmJhY2t3YXJkLnN1bSRhZGpyMlxuYGBgIn0= -->
+<pre class="r"><code>backward.sum = summary(backward)
+backward.sum$adjr2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuNDUxOTI0OCAwLjYwNTM0NDkgMC42ODEzNzAzIDAuNzE3NzU0NSAwLjczNDY2NzEgMC43NDYxMTk2IDAuNzQ2NzQ1NSAwLjc1MzQxMDdcbiJ9 -->
+<pre><code>[1] 0.4519248 0.6053449 0.6813703 0.7177545 0.7346671 0.7461196 0.7467455 0.7534107</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmFja3dhcmQuc3VtJGNwXG5gYGAifQ== -->
+<pre class="r"><code>backward.sum$cp</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEwMjAuOTYxMjQgIDUxOS4xMTkyNiAgMjcxLjI0ODA5ICAxNTMuMjcwNjcgICA5OS4wMDU2OCAgIDYyLjY0MDgwICAgNjEuNTM1NTNcbls4XSAgIDQwLjg0NjYxXG4ifQ== -->
+<pre><code>[1] 1020.96124  519.11926  271.24809  153.27067   99.00568   62.64080   61.53553
+[8]   40.84661</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmFja3dhcmQuc3VtJGJpY1xuYGBgIn0= -->
+<pre class="r"><code>backward.sum$bic</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICAtNDU0LjkzNDQgIC03MDQuNDQ5MiAgLTg2NS4wNjI4ICAtOTUzLjYyNjEgIC05OTUuOTkwNCAtMTAyNC42MjYwIC0xMDIwLjg5ODRcbls4XSAtMTAzNS45NzcwXG4ifQ== -->
+<pre><code>[1]  -454.9344  -704.4492  -865.0628  -953.6261  -995.9904 -1024.6260 -1020.8984
+[8] -1035.9770</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShiZXN0c3ViKVxuYGBgIn0= -->
+<pre class="r"><code>summary(bestsub)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiU3Vic2V0IHNlbGVjdGlvbiBvYmplY3RcbkNhbGw6IHJlZ3N1YnNldHMuZm9ybXVsYSh4ID0gT3V0c3RhdGUgfiBQcml2YXRlICsgQXBwcyArIEFjY2VwdCArIEVucm9sbCArIFxuICAgIFRvcDEwcGVyYyArIFRvcDI1cGVyYyArIEYuVW5kZXJncmFkICsgUC5VbmRlcmdyYWQgKyBSb29tLkJvYXJkICsgXG4gICAgQm9va3MgKyBQZXJzb25hbCArIFBoRCArIFRlcm1pbmFsICsgUy5GLlJhdGlvICsgcGVyYy5hbHVtbmkgKyBcbiAgICBFeHBlbmQgKyBHcmFkLlJhdGUsIGRhdGEgPSBDb2xsZWdlKVxuMTcgVmFyaWFibGVzICAoYW5kIGludGVyY2VwdClcbiAgICAgICAgICAgIEZvcmNlZCBpbiBGb3JjZWQgb3V0XG5Qcml2YXRlWWVzICAgICAgRkFMU0UgICAgICBGQUxTRVxuQXBwcyAgICAgICAgICAgIEZBTFNFICAgICAgRkFMU0VcbkFjY2VwdCAgICAgICAgICBGQUxTRSAgICAgIEZBTFNFXG5FbnJvbGwgICAgICAgICAgRkFMU0UgICAgICBGQUxTRVxuVG9wMTBwZXJjICAgICAgIEZBTFNFICAgICAgRkFMU0VcblRvcDI1cGVyYyAgICAgICBGQUxTRSAgICAgIEZBTFNFXG5GLlVuZGVyZ3JhZCAgICAgRkFMU0UgICAgICBGQUxTRVxuUC5VbmRlcmdyYWQgICAgIEZBTFNFICAgICAgRkFMU0VcblJvb20uQm9hcmQgICAgICBGQUxTRSAgICAgIEZBTFNFXG5Cb29rcyAgICAgICAgICAgRkFMU0UgICAgICBGQUxTRVxuUGVyc29uYWwgICAgICAgIEZBTFNFICAgICAgRkFMU0VcblBoRCAgICAgICAgICAgICBGQUxTRSAgICAgIEZBTFNFXG5UZXJtaW5hbCAgICAgICAgRkFMU0UgICAgICBGQUxTRVxuUy5GLlJhdGlvICAgICAgIEZBTFNFICAgICAgRkFMU0VcbnBlcmMuYWx1bW5pICAgICBGQUxTRSAgICAgIEZBTFNFXG5FeHBlbmQgICAgICAgICAgRkFMU0UgICAgICBGQUxTRVxuR3JhZC5SYXRlICAgICAgIEZBTFNFICAgICAgRkFMU0VcbjEgc3Vic2V0cyBvZiBlYWNoIHNpemUgdXAgdG8gOFxuU2VsZWN0aW9uIEFsZ29yaXRobTogZXhoYXVzdGl2ZVxuICAgICAgICAgUHJpdmF0ZVllcyBBcHBzIEFjY2VwdCBFbnJvbGwgVG9wMTBwZXJjIFRvcDI1cGVyYyBGLlVuZGVyZ3JhZCBQLlVuZGVyZ3JhZFxuMSAgKCAxICkgXCIgXCIgICAgICAgIFwiIFwiICBcIiBcIiAgICBcIiBcIiAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICAgIFwiIFwiICAgICAgICBcbjIgICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgXCIgXCIgICAgXCIgXCIgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgICBcIiBcIiAgICAgICAgXG4zICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgIFwiIFwiICAgIFwiIFwiICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgICAgXCIgXCIgICAgICAgIFxuNCAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICBcIiBcIiAgICBcIiBcIiAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICAgIFwiIFwiICAgICAgICBcbjUgICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgXCIgXCIgICAgXCIgXCIgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgICBcIiBcIiAgICAgICAgXG42ICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgIFwiIFwiICAgIFwiIFwiICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgICAgXCIgXCIgICAgICAgIFxuNyAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICBcIiBcIiAgICBcIiBcIiAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICAgIFwiIFwiICAgICAgICBcbjggICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgXCIqXCIgICAgXCIgXCIgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgXCIqXCIgICAgICAgICBcIiBcIiAgICAgICAgXG4gICAgICAgICBSb29tLkJvYXJkIEJvb2tzIFBlcnNvbmFsIFBoRCBUZXJtaW5hbCBTLkYuUmF0aW8gcGVyYy5hbHVtbmkgRXhwZW5kXG4xICAoIDEgKSBcIiBcIiAgICAgICAgXCIgXCIgICBcIiBcIiAgICAgIFwiIFwiIFwiIFwiICAgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgICBcIipcIiAgIFxuMiAgKCAxICkgXCIgXCIgICAgICAgIFwiIFwiICAgXCIgXCIgICAgICBcIiBcIiBcIiBcIiAgICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgICAgXCIqXCIgICBcbjMgICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgIFwiIFwiICAgICAgXCIgXCIgXCIgXCIgICAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICAgIFwiKlwiICAgXG40ICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgICBcIiBcIiAgICAgIFwiIFwiIFwiIFwiICAgICAgXCIgXCIgICAgICAgXCIqXCIgICAgICAgICBcIipcIiAgIFxuNSAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICAgXCIgXCIgICAgICBcIipcIiBcIiBcIiAgICAgIFwiIFwiICAgICAgIFwiKlwiICAgICAgICAgXCIqXCIgICBcbjYgICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgIFwiIFwiICAgICAgXCIgXCIgXCIqXCIgICAgICBcIiBcIiAgICAgICBcIipcIiAgICAgICAgIFwiKlwiICAgXG43ICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgICBcIipcIiAgICAgIFwiIFwiIFwiKlwiICAgICAgXCIgXCIgICAgICAgXCIqXCIgICAgICAgICBcIipcIiAgIFxuOCAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICAgXCIgXCIgICAgICBcIiBcIiBcIipcIiAgICAgIFwiIFwiICAgICAgIFwiKlwiICAgICAgICAgXCIqXCIgICBcbiAgICAgICAgIEdyYWQuUmF0ZVxuMSAgKCAxICkgXCIgXCIgICAgICBcbjIgICggMSApIFwiIFwiICAgICAgXG4zICAoIDEgKSBcIiBcIiAgICAgIFxuNCAgKCAxICkgXCIgXCIgICAgICBcbjUgICggMSApIFwiIFwiICAgICAgXG42ICAoIDEgKSBcIipcIiAgICAgIFxuNyAgKCAxICkgXCIqXCIgICAgICBcbjggICggMSApIFwiKlwiICAgICAgXG4ifQ== -->
+<pre><code>Subset selection object
+Call: regsubsets.formula(x = Outstate ~ Private + Apps + Accept + Enroll + 
+    Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + 
+    Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + 
+    Expend + Grad.Rate, data = College)
+17 Variables  (and intercept)
+            Forced in Forced out
+PrivateYes      FALSE      FALSE
+Apps            FALSE      FALSE
+Accept          FALSE      FALSE
+Enroll          FALSE      FALSE
+Top10perc       FALSE      FALSE
+Top25perc       FALSE      FALSE
+F.Undergrad     FALSE      FALSE
+P.Undergrad     FALSE      FALSE
+Room.Board      FALSE      FALSE
+Books           FALSE      FALSE
+Personal        FALSE      FALSE
+PhD             FALSE      FALSE
+Terminal        FALSE      FALSE
+S.F.Ratio       FALSE      FALSE
+perc.alumni     FALSE      FALSE
+Expend          FALSE      FALSE
+Grad.Rate       FALSE      FALSE
+1 subsets of each size up to 8
+Selection Algorithm: exhaustive
+         PrivateYes Apps Accept Enroll Top10perc Top25perc F.Undergrad P.Undergrad
+1  ( 1 ) &quot; &quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+2  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+3  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+4  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+5  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+6  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+7  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+8  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot;*&quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot;*&quot;         &quot; &quot;        
+         Room.Board Books Personal PhD Terminal S.F.Ratio perc.alumni Expend
+1  ( 1 ) &quot; &quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot; &quot;         &quot;*&quot;   
+2  ( 1 ) &quot; &quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot; &quot;         &quot;*&quot;   
+3  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot; &quot;         &quot;*&quot;   
+4  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+5  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot;*&quot; &quot; &quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+6  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot;*&quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+7  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot;*&quot;      &quot; &quot; &quot;*&quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+8  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot;*&quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+         Grad.Rate
+1  ( 1 ) &quot; &quot;      
+2  ( 1 ) &quot; &quot;      
+3  ( 1 ) &quot; &quot;      
+4  ( 1 ) &quot; &quot;      
+5  ( 1 ) &quot; &quot;      
+6  ( 1 ) &quot;*&quot;      
+7  ( 1 ) &quot;*&quot;      
+8  ( 1 ) &quot;*&quot;      </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmb3J3YXJkKVxuYGBgIn0= -->
+<pre class="r"><code>summary(forward)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiU3Vic2V0IHNlbGVjdGlvbiBvYmplY3RcbkNhbGw6IHJlZ3N1YnNldHMuZm9ybXVsYSh4ID0gT3V0c3RhdGUgfiBQcml2YXRlICsgQXBwcyArIEFjY2VwdCArIEVucm9sbCArIFxuICAgIFRvcDEwcGVyYyArIFRvcDI1cGVyYyArIEYuVW5kZXJncmFkICsgUC5VbmRlcmdyYWQgKyBSb29tLkJvYXJkICsgXG4gICAgQm9va3MgKyBQZXJzb25hbCArIFBoRCArIFRlcm1pbmFsICsgUy5GLlJhdGlvICsgcGVyYy5hbHVtbmkgKyBcbiAgICBFeHBlbmQgKyBHcmFkLlJhdGUsIGRhdGEgPSBDb2xsZWdlLCBtZXRob2QgPSBcImZvcndhcmRcIilcbjE3IFZhcmlhYmxlcyAgKGFuZCBpbnRlcmNlcHQpXG4gICAgICAgICAgICBGb3JjZWQgaW4gRm9yY2VkIG91dFxuUHJpdmF0ZVllcyAgICAgIEZBTFNFICAgICAgRkFMU0VcbkFwcHMgICAgICAgICAgICBGQUxTRSAgICAgIEZBTFNFXG5BY2NlcHQgICAgICAgICAgRkFMU0UgICAgICBGQUxTRVxuRW5yb2xsICAgICAgICAgIEZBTFNFICAgICAgRkFMU0VcblRvcDEwcGVyYyAgICAgICBGQUxTRSAgICAgIEZBTFNFXG5Ub3AyNXBlcmMgICAgICAgRkFMU0UgICAgICBGQUxTRVxuRi5VbmRlcmdyYWQgICAgIEZBTFNFICAgICAgRkFMU0VcblAuVW5kZXJncmFkICAgICBGQUxTRSAgICAgIEZBTFNFXG5Sb29tLkJvYXJkICAgICAgRkFMU0UgICAgICBGQUxTRVxuQm9va3MgICAgICAgICAgIEZBTFNFICAgICAgRkFMU0VcblBlcnNvbmFsICAgICAgICBGQUxTRSAgICAgIEZBTFNFXG5QaEQgICAgICAgICAgICAgRkFMU0UgICAgICBGQUxTRVxuVGVybWluYWwgICAgICAgIEZBTFNFICAgICAgRkFMU0VcblMuRi5SYXRpbyAgICAgICBGQUxTRSAgICAgIEZBTFNFXG5wZXJjLmFsdW1uaSAgICAgRkFMU0UgICAgICBGQUxTRVxuRXhwZW5kICAgICAgICAgIEZBTFNFICAgICAgRkFMU0VcbkdyYWQuUmF0ZSAgICAgICBGQUxTRSAgICAgIEZBTFNFXG4xIHN1YnNldHMgb2YgZWFjaCBzaXplIHVwIHRvIDhcblNlbGVjdGlvbiBBbGdvcml0aG06IGZvcndhcmRcbiAgICAgICAgIFByaXZhdGVZZXMgQXBwcyBBY2NlcHQgRW5yb2xsIFRvcDEwcGVyYyBUb3AyNXBlcmMgRi5VbmRlcmdyYWQgUC5VbmRlcmdyYWRcbjEgICggMSApIFwiIFwiICAgICAgICBcIiBcIiAgXCIgXCIgICAgXCIgXCIgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgICBcIiBcIiAgICAgICAgXG4yICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgIFwiIFwiICAgIFwiIFwiICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgICAgXCIgXCIgICAgICAgIFxuMyAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICBcIiBcIiAgICBcIiBcIiAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICAgIFwiIFwiICAgICAgICBcbjQgICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgXCIgXCIgICAgXCIgXCIgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgICBcIiBcIiAgICAgICAgXG41ICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgIFwiIFwiICAgIFwiIFwiICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgICAgXCIgXCIgICAgICAgIFxuNiAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICBcIiBcIiAgICBcIiBcIiAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICAgIFwiIFwiICAgICAgICBcbjcgICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgXCIgXCIgICAgXCIgXCIgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgICBcIiBcIiAgICAgICAgXG44ICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgIFwiIFwiICAgIFwiIFwiICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgICAgXCIgXCIgICAgICAgIFxuICAgICAgICAgUm9vbS5Cb2FyZCBCb29rcyBQZXJzb25hbCBQaEQgVGVybWluYWwgUy5GLlJhdGlvIHBlcmMuYWx1bW5pIEV4cGVuZFxuMSAgKCAxICkgXCIgXCIgICAgICAgIFwiIFwiICAgXCIgXCIgICAgICBcIiBcIiBcIiBcIiAgICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgICAgXCIqXCIgICBcbjIgICggMSApIFwiIFwiICAgICAgICBcIiBcIiAgIFwiIFwiICAgICAgXCIgXCIgXCIgXCIgICAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICAgIFwiKlwiICAgXG4zICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgICBcIiBcIiAgICAgIFwiIFwiIFwiIFwiICAgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgICBcIipcIiAgIFxuNCAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICAgXCIgXCIgICAgICBcIiBcIiBcIiBcIiAgICAgIFwiIFwiICAgICAgIFwiKlwiICAgICAgICAgXCIqXCIgICBcbjUgICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgIFwiIFwiICAgICAgXCIqXCIgXCIgXCIgICAgICBcIiBcIiAgICAgICBcIipcIiAgICAgICAgIFwiKlwiICAgXG42ICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgICBcIiBcIiAgICAgIFwiKlwiIFwiIFwiICAgICAgXCIgXCIgICAgICAgXCIqXCIgICAgICAgICBcIipcIiAgIFxuNyAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICAgXCIqXCIgICAgICBcIipcIiBcIiBcIiAgICAgIFwiIFwiICAgICAgIFwiKlwiICAgICAgICAgXCIqXCIgICBcbjggICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgIFwiKlwiICAgICAgXCIqXCIgXCIqXCIgICAgICBcIiBcIiAgICAgICBcIipcIiAgICAgICAgIFwiKlwiICAgXG4gICAgICAgICBHcmFkLlJhdGVcbjEgICggMSApIFwiIFwiICAgICAgXG4yICAoIDEgKSBcIiBcIiAgICAgIFxuMyAgKCAxICkgXCIgXCIgICAgICBcbjQgICggMSApIFwiIFwiICAgICAgXG41ICAoIDEgKSBcIiBcIiAgICAgIFxuNiAgKCAxICkgXCIqXCIgICAgICBcbjcgICggMSApIFwiKlwiICAgICAgXG44ICAoIDEgKSBcIipcIiAgICAgIFxuIn0= -->
+<pre><code>Subset selection object
+Call: regsubsets.formula(x = Outstate ~ Private + Apps + Accept + Enroll + 
+    Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + 
+    Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + 
+    Expend + Grad.Rate, data = College, method = &quot;forward&quot;)
+17 Variables  (and intercept)
+            Forced in Forced out
+PrivateYes      FALSE      FALSE
+Apps            FALSE      FALSE
+Accept          FALSE      FALSE
+Enroll          FALSE      FALSE
+Top10perc       FALSE      FALSE
+Top25perc       FALSE      FALSE
+F.Undergrad     FALSE      FALSE
+P.Undergrad     FALSE      FALSE
+Room.Board      FALSE      FALSE
+Books           FALSE      FALSE
+Personal        FALSE      FALSE
+PhD             FALSE      FALSE
+Terminal        FALSE      FALSE
+S.F.Ratio       FALSE      FALSE
+perc.alumni     FALSE      FALSE
+Expend          FALSE      FALSE
+Grad.Rate       FALSE      FALSE
+1 subsets of each size up to 8
+Selection Algorithm: forward
+         PrivateYes Apps Accept Enroll Top10perc Top25perc F.Undergrad P.Undergrad
+1  ( 1 ) &quot; &quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+2  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+3  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+4  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+5  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+6  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+7  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+8  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+         Room.Board Books Personal PhD Terminal S.F.Ratio perc.alumni Expend
+1  ( 1 ) &quot; &quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot; &quot;         &quot;*&quot;   
+2  ( 1 ) &quot; &quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot; &quot;         &quot;*&quot;   
+3  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot; &quot;         &quot;*&quot;   
+4  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+5  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot;*&quot; &quot; &quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+6  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot;*&quot; &quot; &quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+7  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot;*&quot;      &quot;*&quot; &quot; &quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+8  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot;*&quot;      &quot;*&quot; &quot;*&quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+         Grad.Rate
+1  ( 1 ) &quot; &quot;      
+2  ( 1 ) &quot; &quot;      
+3  ( 1 ) &quot; &quot;      
+4  ( 1 ) &quot; &quot;      
+5  ( 1 ) &quot; &quot;      
+6  ( 1 ) &quot;*&quot;      
+7  ( 1 ) &quot;*&quot;      
+8  ( 1 ) &quot;*&quot;      </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShiYWNrd2FyZClcbmBgYCJ9 -->
+<pre class="r"><code>summary(backward)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiU3Vic2V0IHNlbGVjdGlvbiBvYmplY3RcbkNhbGw6IHJlZ3N1YnNldHMuZm9ybXVsYSh4ID0gT3V0c3RhdGUgfiBQcml2YXRlICsgQXBwcyArIEFjY2VwdCArIEVucm9sbCArIFxuICAgIFRvcDEwcGVyYyArIFRvcDI1cGVyYyArIEYuVW5kZXJncmFkICsgUC5VbmRlcmdyYWQgKyBSb29tLkJvYXJkICsgXG4gICAgQm9va3MgKyBQZXJzb25hbCArIFBoRCArIFRlcm1pbmFsICsgUy5GLlJhdGlvICsgcGVyYy5hbHVtbmkgKyBcbiAgICBFeHBlbmQgKyBHcmFkLlJhdGUsIGRhdGEgPSBDb2xsZWdlLCBtZXRob2QgPSBcImJhY2t3YXJkXCIpXG4xNyBWYXJpYWJsZXMgIChhbmQgaW50ZXJjZXB0KVxuICAgICAgICAgICAgRm9yY2VkIGluIEZvcmNlZCBvdXRcblByaXZhdGVZZXMgICAgICBGQUxTRSAgICAgIEZBTFNFXG5BcHBzICAgICAgICAgICAgRkFMU0UgICAgICBGQUxTRVxuQWNjZXB0ICAgICAgICAgIEZBTFNFICAgICAgRkFMU0VcbkVucm9sbCAgICAgICAgICBGQUxTRSAgICAgIEZBTFNFXG5Ub3AxMHBlcmMgICAgICAgRkFMU0UgICAgICBGQUxTRVxuVG9wMjVwZXJjICAgICAgIEZBTFNFICAgICAgRkFMU0VcbkYuVW5kZXJncmFkICAgICBGQUxTRSAgICAgIEZBTFNFXG5QLlVuZGVyZ3JhZCAgICAgRkFMU0UgICAgICBGQUxTRVxuUm9vbS5Cb2FyZCAgICAgIEZBTFNFICAgICAgRkFMU0VcbkJvb2tzICAgICAgICAgICBGQUxTRSAgICAgIEZBTFNFXG5QZXJzb25hbCAgICAgICAgRkFMU0UgICAgICBGQUxTRVxuUGhEICAgICAgICAgICAgIEZBTFNFICAgICAgRkFMU0VcblRlcm1pbmFsICAgICAgICBGQUxTRSAgICAgIEZBTFNFXG5TLkYuUmF0aW8gICAgICAgRkFMU0UgICAgICBGQUxTRVxucGVyYy5hbHVtbmkgICAgIEZBTFNFICAgICAgRkFMU0VcbkV4cGVuZCAgICAgICAgICBGQUxTRSAgICAgIEZBTFNFXG5HcmFkLlJhdGUgICAgICAgRkFMU0UgICAgICBGQUxTRVxuMSBzdWJzZXRzIG9mIGVhY2ggc2l6ZSB1cCB0byA4XG5TZWxlY3Rpb24gQWxnb3JpdGhtOiBiYWNrd2FyZFxuICAgICAgICAgUHJpdmF0ZVllcyBBcHBzIEFjY2VwdCBFbnJvbGwgVG9wMTBwZXJjIFRvcDI1cGVyYyBGLlVuZGVyZ3JhZCBQLlVuZGVyZ3JhZFxuMSAgKCAxICkgXCIgXCIgICAgICAgIFwiIFwiICBcIiBcIiAgICBcIiBcIiAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICAgIFwiIFwiICAgICAgICBcbjIgICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgXCIgXCIgICAgXCIgXCIgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgICBcIiBcIiAgICAgICAgXG4zICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgIFwiIFwiICAgIFwiIFwiICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgICAgXCIgXCIgICAgICAgIFxuNCAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICBcIiBcIiAgICBcIiBcIiAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICAgIFwiIFwiICAgICAgICBcbjUgICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgXCIgXCIgICAgXCIgXCIgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgICBcIiBcIiAgICAgICAgXG42ICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgIFwiIFwiICAgIFwiIFwiICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgICAgXCIgXCIgICAgICAgIFxuNyAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICBcIipcIiAgICBcIiBcIiAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICAgIFwiIFwiICAgICAgICBcbjggICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgXCIqXCIgICAgXCIgXCIgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgXCIqXCIgICAgICAgICBcIiBcIiAgICAgICAgXG4gICAgICAgICBSb29tLkJvYXJkIEJvb2tzIFBlcnNvbmFsIFBoRCBUZXJtaW5hbCBTLkYuUmF0aW8gcGVyYy5hbHVtbmkgRXhwZW5kXG4xICAoIDEgKSBcIiBcIiAgICAgICAgXCIgXCIgICBcIiBcIiAgICAgIFwiIFwiIFwiIFwiICAgICAgXCIgXCIgICAgICAgXCIgXCIgICAgICAgICBcIipcIiAgIFxuMiAgKCAxICkgXCIgXCIgICAgICAgIFwiIFwiICAgXCIgXCIgICAgICBcIiBcIiBcIiBcIiAgICAgIFwiIFwiICAgICAgIFwiIFwiICAgICAgICAgXCIqXCIgICBcbjMgICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgIFwiIFwiICAgICAgXCIgXCIgXCIgXCIgICAgICBcIiBcIiAgICAgICBcIiBcIiAgICAgICAgIFwiKlwiICAgXG40ICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgICBcIiBcIiAgICAgIFwiIFwiIFwiIFwiICAgICAgXCIgXCIgICAgICAgXCIqXCIgICAgICAgICBcIipcIiAgIFxuNSAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICAgXCIgXCIgICAgICBcIiBcIiBcIipcIiAgICAgIFwiIFwiICAgICAgIFwiKlwiICAgICAgICAgXCIqXCIgICBcbjYgICggMSApIFwiKlwiICAgICAgICBcIiBcIiAgIFwiIFwiICAgICAgXCIgXCIgXCIqXCIgICAgICBcIiBcIiAgICAgICBcIipcIiAgICAgICAgIFwiKlwiICAgXG43ICAoIDEgKSBcIipcIiAgICAgICAgXCIgXCIgICBcIiBcIiAgICAgIFwiIFwiIFwiKlwiICAgICAgXCIgXCIgICAgICAgXCIqXCIgICAgICAgICBcIipcIiAgIFxuOCAgKCAxICkgXCIqXCIgICAgICAgIFwiIFwiICAgXCIgXCIgICAgICBcIiBcIiBcIipcIiAgICAgIFwiIFwiICAgICAgIFwiKlwiICAgICAgICAgXCIqXCIgICBcbiAgICAgICAgIEdyYWQuUmF0ZVxuMSAgKCAxICkgXCIgXCIgICAgICBcbjIgICggMSApIFwiIFwiICAgICAgXG4zICAoIDEgKSBcIiBcIiAgICAgIFxuNCAgKCAxICkgXCIgXCIgICAgICBcbjUgICggMSApIFwiIFwiICAgICAgXG42ICAoIDEgKSBcIipcIiAgICAgIFxuNyAgKCAxICkgXCIqXCIgICAgICBcbjggICggMSApIFwiKlwiICAgICAgXG4ifQ== -->
+<pre><code>Subset selection object
+Call: regsubsets.formula(x = Outstate ~ Private + Apps + Accept + Enroll + 
+    Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + 
+    Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + 
+    Expend + Grad.Rate, data = College, method = &quot;backward&quot;)
+17 Variables  (and intercept)
+            Forced in Forced out
+PrivateYes      FALSE      FALSE
+Apps            FALSE      FALSE
+Accept          FALSE      FALSE
+Enroll          FALSE      FALSE
+Top10perc       FALSE      FALSE
+Top25perc       FALSE      FALSE
+F.Undergrad     FALSE      FALSE
+P.Undergrad     FALSE      FALSE
+Room.Board      FALSE      FALSE
+Books           FALSE      FALSE
+Personal        FALSE      FALSE
+PhD             FALSE      FALSE
+Terminal        FALSE      FALSE
+S.F.Ratio       FALSE      FALSE
+perc.alumni     FALSE      FALSE
+Expend          FALSE      FALSE
+Grad.Rate       FALSE      FALSE
+1 subsets of each size up to 8
+Selection Algorithm: backward
+         PrivateYes Apps Accept Enroll Top10perc Top25perc F.Undergrad P.Undergrad
+1  ( 1 ) &quot; &quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+2  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+3  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+4  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+5  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+6  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot; &quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+7  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot;*&quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot; &quot;         &quot; &quot;        
+8  ( 1 ) &quot;*&quot;        &quot; &quot;  &quot;*&quot;    &quot; &quot;    &quot; &quot;       &quot; &quot;       &quot;*&quot;         &quot; &quot;        
+         Room.Board Books Personal PhD Terminal S.F.Ratio perc.alumni Expend
+1  ( 1 ) &quot; &quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot; &quot;         &quot;*&quot;   
+2  ( 1 ) &quot; &quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot; &quot;         &quot;*&quot;   
+3  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot; &quot;         &quot;*&quot;   
+4  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot; &quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+5  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot;*&quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+6  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot;*&quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+7  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot;*&quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+8  ( 1 ) &quot;*&quot;        &quot; &quot;   &quot; &quot;      &quot; &quot; &quot;*&quot;      &quot; &quot;       &quot;*&quot;         &quot;*&quot;   
+         Grad.Rate
+1  ( 1 ) &quot; &quot;      
+2  ( 1 ) &quot; &quot;      
+3  ( 1 ) &quot; &quot;      
+4  ( 1 ) &quot; &quot;      
+5  ( 1 ) &quot; &quot;      
+6  ( 1 ) &quot;*&quot;      
+7  ( 1 ) &quot;*&quot;      
+8  ( 1 ) &quot;*&quot;      </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShFeHBlbmQpXG5gYGAifQ== -->
+<pre class="r"><code>summary(Expend)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgTWluLiAxc3QgUXUuICBNZWRpYW4gICAgTWVhbiAzcmQgUXUuICAgIE1heC4gXG4gICAzMTg2ICAgIDY3NTEgICAgODM3NyAgICA5NjYwICAgMTA4MzAgICA1NjIzMyBcbiJ9 -->
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3186    6751    8377    9660   10830   56233 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="f" class="section level3">
+<h3>1f</h3>
+<ul>
+<li>three estimates for the number of features in the overal ‘best’ model</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29lZihiYWNrd2FyZCwgMylcbmBgYCJ9 -->
+<pre class="r"><code>coef(backward, 3)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIChJbnRlcmNlcHQpICAgUHJpdmF0ZVllcyAgIFJvb20uQm9hcmQgICAgICAgRXhwZW5kIFxuLTE0NS4wMTQwMjk5IDI5OTAuNzMzODUzNiAgICAxLjIxMDA4NzcgICAgMC4zMjQ4MzUzIFxuIn0= -->
+<pre><code> (Intercept)   PrivateYes   Room.Board       Expend 
+-145.0140299 2990.7338536    1.2100877    0.3248353 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29lZihiZXN0c3ViLCAzKVxuYGBgIn0= -->
+<pre class="r"><code>coef(bestsub, 3)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIChJbnRlcmNlcHQpICAgUHJpdmF0ZVllcyAgIFJvb20uQm9hcmQgICAgICAgRXhwZW5kIFxuLTE0NS4wMTQwMjk5IDI5OTAuNzMzODUzNiAgICAxLjIxMDA4NzcgICAgMC4zMjQ4MzUzIFxuIn0= -->
+<pre><code> (Intercept)   PrivateYes   Room.Board       Expend 
+-145.0140299 2990.7338536    1.2100877    0.3248353 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="section-1" class="section level1">
+<h1>2</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0LnNlZWQoMSlcbnRyYWluID0gc2FtcGxlKGMoVFJVRSwgRkFMU0UpLCBucm93KENvbGxlZ2UpLCByZXAgPSBUUlVFKVxudGVzdCA9ICghdHJhaW4pXG5gYGAifQ== -->
+<pre class="r"><code>set.seed(1)
+train = sample(c(TRUE, FALSE), nrow(College), rep = TRUE)
+test = (!train)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>performing regularization in R</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBpbnN0YWxsLnBhY2thZ2VzKFwiZ2xtbmV0XCIpXG5saWJyYXJ5KGdsbW5ldClcbmBgYCJ9 -->
+<pre class="r"><code># install.packages(&quot;glmnet&quot;)
+library(glmnet)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>us <code>glmnet()</code> to create a matrix of features of College</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmVhdHVyZXMgPSBtb2RlbC5tYXRyaXgoT3V0c3RhdGUgfiAuLCBkYXRhID0gQ29sbGVnZSlbLC0xXVxuYGBgIn0= -->
+<pre class="r"><code>features = model.matrix(Outstate ~ ., data = College)[,-1]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>tuning lambda</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0LnNlZWQoMSlcbmN2Lm91dCA9IGN2LmdsbW5ldChmZWF0dXJlc1t0cmFpbixdLCBDb2xsZWdlJE91dHN0YXRlW3RyYWluXSwgYWxwaGEgPSAwKVxuXG4jIGdldCB0aGUgbGFtYmRhIGJ5IHRha2luZyB0aGUgbWluIG9mIENWIGVycm9yXG5iZXN0bGFtID0gY3Yub3V0JGxhbWJkYS5taW5cbmJlc3RsYW1cbmBgYCJ9 -->
+<pre class="r"><code>set.seed(1)
+cv.out = cv.glmnet(features[train,], College$Outstate[train], alpha = 0)
+
+# get the lambda by taking the min of CV error
+bestlam = cv.out$lambda.min
+bestlam</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDY2NS4xNTg3XG4ifQ== -->
+<pre><code>[1] 665.1587</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>preforming ridge regression on College</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmlkZ2UgPSBnbG1uZXQoeCA9IGZlYXR1cmVzW3RyYWluLF0sIHkgPSBDb2xsZWdlJE91dHN0YXRlW3RyYWluXSwgYWxwaGEgPSAwLCBsYW1iZGEgPSBiZXN0bGFtKVxuYGBgIn0= -->
+<pre class="r"><code>ridge = glmnet(x = features[train,], y = College$Outstate[train], alpha = 0, lambda = bestlam)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>calculate the test MSE for the value of lambda yielding the smallest CV error</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmlkZ2UucHJlZCA9IHByZWRpY3QocmlkZ2UsIHMgPSBiZXN0bGFtLCBuZXd4ID0gZmVhdHVyZXNbdGVzdCwgXSlcbnJpZGdlLnByZWRcbm1lYW4oKHJpZGdlLnByZWQgLSBDb2xsZWdlJE91dHN0YXRlW3Rlc3RdKV4yKVxuYGBgIn0= -->
+<pre class="r"><code>ridge.pred = predict(ridge, s = bestlam, newx = features[test, ])
+ridge.pred
+mean((ridge.pred - College$Outstate[test])^2)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>viewing parameter estimates of ridge regression</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29lZihyaWRnZSlcbmBgYCJ9 -->
+<pre class="r"><code>coef(ridge)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiMTggeCAxIHNwYXJzZSBNYXRyaXggb2YgY2xhc3MgXCJkZ0NNYXRyaXhcIlxuICAgICAgICAgICAgICAgICAgICAgICBzMFxuKEludGVyY2VwdCkgLTEuMTc0ODI1ZSswM1xuUHJpdmF0ZVllcyAgIDIuMDk2NDQwZSswM1xuQXBwcyAgICAgICAgLTEuNjM4OTIwZS0wMlxuQWNjZXB0ICAgICAgIDEuMzkxMzQyZS0wMVxuRW5yb2xsICAgICAgLTUuMzMxMzQzZS0wMlxuVG9wMTBwZXJjICAgIDEuNDc4MDM2ZSswMVxuVG9wMjVwZXJjICAgIDkuMzQwMTIwZSswMFxuRi5VbmRlcmdyYWQgLTQuMzIwMDY2ZS0wMlxuUC5VbmRlcmdyYWQgLTUuOTk1MjgwZS0wMlxuUm9vbS5Cb2FyZCAgIDguODIzOTg1ZS0wMVxuQm9va3MgICAgICAgIDIuNzUyNTkzZS0wMVxuUGVyc29uYWwgICAgLTMuNzMxNzU4ZS0wMVxuUGhEICAgICAgICAgIDEuNjM0NDE3ZSswMVxuVGVybWluYWwgICAgIDEuNzA5MDcwZSswMVxuUy5GLlJhdGlvICAgLTUuMDc5MjUxZSswMVxucGVyYy5hbHVtbmkgIDQuMzcyNDU2ZSswMVxuRXhwZW5kICAgICAgIDEuNDgzNDM1ZS0wMVxuR3JhZC5SYXRlICAgIDIuMDY4MTcwZSswMVxuIn0= -->
+<pre><code>18 x 1 sparse Matrix of class &quot;dgCMatrix&quot;
+                       s0
+(Intercept) -1.174825e+03
+PrivateYes   2.096440e+03
+Apps        -1.638920e-02
+Accept       1.391342e-01
+Enroll      -5.331343e-02
+Top10perc    1.478036e+01
+Top25perc    9.340120e+00
+F.Undergrad -4.320066e-02
+P.Undergrad -5.995280e-02
+Room.Board   8.823985e-01
+Books        2.752593e-01
+Personal    -3.731758e-01
+PhD          1.634417e+01
+Terminal     1.709070e+01
+S.F.Ratio   -5.079251e+01
+perc.alumni  4.372456e+01
+Expend       1.483435e-01
+Grad.Rate    2.068170e+01</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="section-2" class="section level1">
+<h1>3</h1>
+<ul>
+<li>need to select the tuning parameter for lasso</li>
+<li>need to perform 10-fold cross-validation with <code>cv.glmnet()</code></li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0LnNlZWQoMSlcbmN2Lm91dCA9IGN2LmdsbW5ldChmZWF0dXJlc1t0cmFpbixdLCBDb2xsZWdlJE91dHN0YXRlW3RyYWluXSwgYWxwaGEgPSAxKVxuXG4jIGdldHRpbmcgdGhlIHZhbHVlIG9mIGxhbWJkYSB5aWVsZGluZyB0aGUgc21hbGxlc3QgQ1YgZXJyb3JcbmJlc3RsYW0gPSBjdi5vdXQkbGFtYmRhLm1pblxuYmVzdGxhbVxuYGBgIn0= -->
+<pre class="r"><code>set.seed(1)
+cv.out = cv.glmnet(features[train,], College$Outstate[train], alpha = 1)
+
+# getting the value of lambda yielding the smallest CV error
+bestlam = cv.out$lambda.min
+bestlam</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDgzLjkzMzUxXG4ifQ== -->
+<pre><code>[1] 83.93351</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>performing lasso on training set</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGFzc28gPSBnbG1uZXQoeCA9IGZlYXR1cmVzW3RyYWluLF0sIHkgPSBDb2xsZWdlJE91dHN0YXRlW3RyYWluXSwgYXBsaGEgPSAxLCBsYW1iZGEgPSBiZXN0bGFtKVxuYGBgIn0= -->
+<pre class="r"><code>lasso = glmnet(x = features[train,], y = College$Outstate[train], aplha = 1, lambda = bestlam)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>calculate the test MSE for the value of lambda yielding the smallest CV error</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGFzc28ucHJlZCA9IHByZWRpY3QobGFzc28sIHMgPSBiZXN0bGFtLCBuZXd4ID0gZmVhdHVyZXNbdGVzdCxdKVxubWVhbigobGFzc28ucHJlZCAtIENvbGxlZ2UkT3V0c3RhdGVbdGVzdF0pXjIpXG5gYGAifQ== -->
+<pre class="r"><code>lasso.pred = predict(lasso, s = bestlam, newx = features[test,])
+mean((lasso.pred - College$Outstate[test])^2)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDQwNzM4MTlcbiJ9 -->
+<pre><code>[1] 4073819</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGFzc28ucHJlZFxuYGBgIn0= -->
+<pre class="r"><code>lasso.pred</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>using <code>coef()</code> to see if any features have been removed</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29lZihsYXNzbylcbmBgYCJ9 -->
+<pre class="r"><code>coef(lasso)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiMTggeCAxIHNwYXJzZSBNYXRyaXggb2YgY2xhc3MgXCJkZ0NNYXRyaXhcIlxuICAgICAgICAgICAgICAgICAgICAgICBzMFxuKEludGVyY2VwdCkgLTIuMzIwMDQxZSswM1xuUHJpdmF0ZVllcyAgIDIuNTM1MTE0ZSswM1xuQXBwcyAgICAgICAgIC4gICAgICAgICAgIFxuQWNjZXB0ICAgICAgIDMuNTU5NjM0ZS0wMlxuRW5yb2xsICAgICAgIC4gICAgICAgICAgIFxuVG9wMTBwZXJjICAgIDYuMzU2Nzg5ZSswMFxuVG9wMjVwZXJjICAgIDkuMzAxNDcyZSswMFxuRi5VbmRlcmdyYWQgIC4gICAgICAgICAgIFxuUC5VbmRlcmdyYWQgLTIuNDI1NTk1ZS0wMlxuUm9vbS5Cb2FyZCAgIDkuNzI5NjIwZS0wMVxuQm9va3MgICAgICAgIC4gICAgICAgICAgIFxuUGVyc29uYWwgICAgLTMuMDk2NjEyZS0wMVxuUGhEICAgICAgICAgIDEuNTAxMzQzZSswMVxuVGVybWluYWwgICAgIDEuNTEwMjUyZSswMVxuUy5GLlJhdGlvICAgLTcuNzI0NTQ5ZSswMFxucGVyYy5hbHVtbmkgIDQuNTI2OTI1ZSswMVxuRXhwZW5kICAgICAgIDEuODQyNTQyZS0wMVxuR3JhZC5SYXRlICAgIDEuOTU2ODE2ZSswMVxuIn0= -->
+<pre><code>18 x 1 sparse Matrix of class &quot;dgCMatrix&quot;
+                       s0
+(Intercept) -2.320041e+03
+PrivateYes   2.535114e+03
+Apps         .           
+Accept       3.559634e-02
+Enroll       .           
+Top10perc    6.356789e+00
+Top25perc    9.301472e+00
+F.Undergrad  .           
+P.Undergrad -2.425595e-02
+Room.Board   9.729620e-01
+Books        .           
+Personal    -3.096612e-01
+PhD          1.501343e+01
+Terminal     1.510252e+01
+S.F.Ratio   -7.724549e+00
+perc.alumni  4.526925e+01
+Expend       1.842542e-01
+Grad.Rate    1.956816e+01</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+</div>
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiSG9tZXdvcmsgNCIKb3V0cHV0OgogIGh0bWxfZG9jdW1lbnQ6CiAgICBkZl9wcmludDogcGFnZWQKICBodG1sX25vdGVib29rOiBkZWZhdWx0CiAgd29yZF9kb2N1bWVudDogZGVmYXVsdAotLS0KCiMgMSkKCmBgYHtyfQpsaWJyYXJ5KElTTFIpCnN1bW1hcnkoQ29sbGVnZSkKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKYXR0YWNoKENvbGxlZ2UpCiNpbnN0YWxsLnBhY2thZ2VzKCJsZWFwcyIpCmxpYnJhcnkobGVhcHMpCiNhdHRhY2goQWR2ZXJ0aXNpbmcpCmBgYAoKIyMjIDEuYSAtIDEuYwoKCmBgYHtyfQpiZXN0c3ViID0gcmVnc3Vic2V0cyh4ID0gT3V0c3RhdGUgfiBQcml2YXRlICsgQXBwcyArIEFjY2VwdCArIEVucm9sbCArIFRvcDEwcGVyYyArIFRvcDI1cGVyYyArIEYuVW5kZXJncmFkICsgUC5VbmRlcmdyYWQgKyBSb29tLkJvYXJkICsgQm9va3MgKyBQZXJzb25hbCArIFBoRCArIFRlcm1pbmFsICsgUy5GLlJhdGlvICsgcGVyYy5hbHVtbmkgKyBFeHBlbmQgKyBHcmFkLlJhdGUsIGRhdGEgPSBDb2xsZWdlKQoKZm9yd2FyZCA9IHJlZ3N1YnNldHMoeCA9IE91dHN0YXRlIH4gUHJpdmF0ZSArIEFwcHMgKyBBY2NlcHQgKyBFbnJvbGwgKyBUb3AxMHBlcmMgKyBUb3AyNXBlcmMgKyBGLlVuZGVyZ3JhZCArIFAuVW5kZXJncmFkICsgUm9vbS5Cb2FyZCArIEJvb2tzICsgUGVyc29uYWwgKyBQaEQgKyBUZXJtaW5hbCArIFMuRi5SYXRpbyArIHBlcmMuYWx1bW5pICsgRXhwZW5kICsgR3JhZC5SYXRlLCBkYXRhID0gQ29sbGVnZSwgbWV0aG9kID0gImZvcndhcmQiKQoKYmFja3dhcmQgPSByZWdzdWJzZXRzKHggPSBPdXRzdGF0ZSB+IFByaXZhdGUgKyBBcHBzICsgQWNjZXB0ICsgRW5yb2xsICsgVG9wMTBwZXJjICsgVG9wMjVwZXJjICsgRi5VbmRlcmdyYWQgKyBQLlVuZGVyZ3JhZCArIFJvb20uQm9hcmQgKyBCb29rcyArIFBlcnNvbmFsICsgUGhEICsgVGVybWluYWwgKyBTLkYuUmF0aW8gKyBwZXJjLmFsdW1uaSArIEV4cGVuZCArIEdyYWQuUmF0ZSwgZGF0YSA9IENvbGxlZ2UsIG1ldGhvZCA9ICJiYWNrd2FyZCIpCgpgYGAKCmBgYHtyfQojc3VtbWFyeShiZXN0c3ViKQpiZXN0c3ViLnN1bSA9IHN1bW1hcnkoYmVzdHN1YikKIyBuYW1lcyhiZXN0c3ViLnN1bSkKCmJlc3RzdWIuc3VtJGFkanIyCmJlc3RzdWIuc3VtJGNwCmJlc3RzdWIuc3VtJGJpYwpgYGAKCmBgYHtyfQpmb3J3YXJkLnN1bSA9IHN1bW1hcnkoZm9yd2FyZCkKIyBuYW1lcyhmb3J3YXJkLnN1bSkKZm9yd2FyZC5zdW0kYWRqcjIKZm9yd2FyZC5zdW0kY3AKZm9yd2FyZC5zdW0kYmljCgpgYGAKCmBgYHtyfQpiYWNrd2FyZC5zdW0gPSBzdW1tYXJ5KGJhY2t3YXJkKQpiYWNrd2FyZC5zdW0kYWRqcjIKYmFja3dhcmQuc3VtJGNwCmJhY2t3YXJkLnN1bSRiaWMKYGBgCgpgYGB7cn0Kc3VtbWFyeShiZXN0c3ViKQpzdW1tYXJ5KGZvcndhcmQpCnN1bW1hcnkoYmFja3dhcmQpCmBgYAoKYGBge3J9CnN1bW1hcnkoRXhwZW5kKQpgYGAKCiMjIyAxZgotIHRocmVlIGVzdGltYXRlcyBmb3IgdGhlIG51bWJlciBvZiBmZWF0dXJlcyBpbiB0aGUgb3ZlcmFsICdiZXN0JyBtb2RlbApgYGB7cn0KY29lZihiYWNrd2FyZCwgMykKY29lZihiZXN0c3ViLCAzKQpgYGAKCgojIDIKCmBgYHtyfQojIGNyZWF0ZSB0aGUgdHJhaW5pbmcgc2V0CnNldC5zZWVkKDEpCnRyYWluID0gc2FtcGxlKGMoVFJVRSwgRkFMU0UpLCBucm93KENvbGxlZ2UpLCByZXAgPSBUUlVFKQoKIyB1cyByZW1haW5pbmcgZGF0YSBhdCB0ZXN0IHNldAp0ZXN0ID0gKCF0cmFpbikKYGBgCgotIHBlcmZvcm1pbmcgcmVndWxhcml6YXRpb24gaW4gUgpgYGB7cn0KIyBpbnN0YWxsLnBhY2thZ2VzKCJnbG1uZXQiKQpsaWJyYXJ5KGdsbW5ldCkKYGBgCgotIHVzIGBnbG1uZXQoKWAgdG8gY3JlYXRlIGEgbWF0cml4IG9mIGZlYXR1cmVzIG9mIENvbGxlZ2UKYGBge3J9CmZlYXR1cmVzID0gbW9kZWwubWF0cml4KE91dHN0YXRlIH4gLiwgZGF0YSA9IENvbGxlZ2UpWywtMV0KYGBgCgotIHR1bmluZyBsYW1iZGEKYGBge3J9CnNldC5zZWVkKDEpCmN2Lm91dCA9IGN2LmdsbW5ldChmZWF0dXJlc1t0cmFpbixdLCBDb2xsZWdlJE91dHN0YXRlW3RyYWluXSwgYWxwaGEgPSAwKQoKIyBnZXQgdGhlIGxhbWJkYSBieSB0YWtpbmcgdGhlIG1pbiBvZiBDViBlcnJvcgpiZXN0bGFtID0gY3Yub3V0JGxhbWJkYS5taW4KYmVzdGxhbQpgYGAKCi0gcHJlZm9ybWluZyByaWRnZSByZWdyZXNzaW9uIG9uIENvbGxlZ2UKYGBge3J9CnJpZGdlID0gZ2xtbmV0KHggPSBmZWF0dXJlc1t0cmFpbixdLCB5ID0gQ29sbGVnZSRPdXRzdGF0ZVt0cmFpbl0sIGFscGhhID0gMCwgbGFtYmRhID0gYmVzdGxhbSkKYGBgCgotIGNhbGN1bGF0ZSB0aGUgdGVzdCBNU0UgZm9yIHRoZSB2YWx1ZSBvZiBsYW1iZGEgeWllbGRpbmcgdGhlIHNtYWxsZXN0IENWIGVycm9yCmBgYHtyfQpyaWRnZS5wcmVkID0gcHJlZGljdChyaWRnZSwgcyA9IGJlc3RsYW0sIG5ld3ggPSBmZWF0dXJlc1t0ZXN0LCBdKQpyaWRnZS5wcmVkCm1lYW4oKHJpZGdlLnByZWQgLSBDb2xsZWdlJE91dHN0YXRlW3Rlc3RdKV4yKQpgYGAKCi0gdmlld2luZyBwYXJhbWV0ZXIgZXN0aW1hdGVzIG9mIHJpZGdlIHJlZ3Jlc3Npb24gCmBgYHtyfQpjb2VmKHJpZGdlKQpgYGAKCiMgMwotIG5lZWQgdG8gc2VsZWN0IHRoZSB0dW5pbmcgcGFyYW1ldGVyIGZvciBsYXNzbwotIG5lZWQgdG8gcGVyZm9ybSAxMC1mb2xkIGNyb3NzLXZhbGlkYXRpb24gd2l0aCBgY3YuZ2xtbmV0KClgCmBgYHtyfQpzZXQuc2VlZCgxKQpjdi5vdXQgPSBjdi5nbG1uZXQoZmVhdHVyZXNbdHJhaW4sXSwgQ29sbGVnZSRPdXRzdGF0ZVt0cmFpbl0sIGFscGhhID0gMSkKCiMgZ2V0dGluZyB0aGUgdmFsdWUgb2YgbGFtYmRhIHlpZWxkaW5nIHRoZSBzbWFsbGVzdCBDViBlcnJvcgpiZXN0bGFtID0gY3Yub3V0JGxhbWJkYS5taW4KYmVzdGxhbQpgYGAKCi0gcGVyZm9ybWluZyBsYXNzbyBvbiB0cmFpbmluZyBzZXQKYGBge3J9Cmxhc3NvID0gZ2xtbmV0KHggPSBmZWF0dXJlc1t0cmFpbixdLCB5ID0gQ29sbGVnZSRPdXRzdGF0ZVt0cmFpbl0sIGFwbGhhID0gMSwgbGFtYmRhID0gYmVzdGxhbSkKYGBgCgotIGNhbGN1bGF0ZSB0aGUgdGVzdCBNU0UgZm9yIHRoZSB2YWx1ZSBvZiBsYW1iZGEgeWllbGRpbmcgdGhlIHNtYWxsZXN0IENWIGVycm9yCmBgYHtyfQpsYXNzby5wcmVkID0gcHJlZGljdChsYXNzbywgcyA9IGJlc3RsYW0sIG5ld3ggPSBmZWF0dXJlc1t0ZXN0LF0pCm1lYW4oKGxhc3NvLnByZWQgLSBDb2xsZWdlJE91dHN0YXRlW3Rlc3RdKV4yKQpgYGAKCmBgYHtyfQpsYXNzby5wcmVkCmBgYAotIHVzaW5nIGBjb2VmKClgIHRvIHNlZSBpZiBhbnkgZmVhdHVyZXMgaGF2ZSBiZWVuIHJlbW92ZWQKYGBge3J9CmNvZWYobGFzc28pCmBgYAoK</div>
 
 
 

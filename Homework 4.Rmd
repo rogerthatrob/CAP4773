@@ -1,5 +1,158 @@
 ---
 title: "Homework 4"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+  word_document: default
 ---
+
+# 1)
+
+```{r}
+library(ISLR)
+summary(College)
+library(ggplot2)
+library(tidyverse)
+attach(College)
+#install.packages("leaps")
+library(leaps)
+#attach(Advertising)
+```
+
+### 1.a - 1.c
+
+
+```{r}
+bestsub = regsubsets(x = Outstate ~ Private + Apps + Accept + Enroll + Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + Grad.Rate, data = College)
+
+forward = regsubsets(x = Outstate ~ Private + Apps + Accept + Enroll + Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + Grad.Rate, data = College, method = "forward")
+
+backward = regsubsets(x = Outstate ~ Private + Apps + Accept + Enroll + Top10perc + Top25perc + F.Undergrad + P.Undergrad + Room.Board + Books + Personal + PhD + Terminal + S.F.Ratio + perc.alumni + Expend + Grad.Rate, data = College, method = "backward")
+
+```
+
+```{r}
+#summary(bestsub)
+bestsub.sum = summary(bestsub)
+# names(bestsub.sum)
+
+bestsub.sum$adjr2
+bestsub.sum$cp
+bestsub.sum$bic
+```
+
+```{r}
+forward.sum = summary(forward)
+# names(forward.sum)
+forward.sum$adjr2
+forward.sum$cp
+forward.sum$bic
+
+```
+
+```{r}
+backward.sum = summary(backward)
+backward.sum$adjr2
+backward.sum$cp
+backward.sum$bic
+```
+
+```{r}
+summary(bestsub)
+summary(forward)
+summary(backward)
+```
+
+```{r}
+summary(Expend)
+```
+
+### 1f
+- three estimates for the number of features in the overal 'best' model
+```{r}
+coef(backward, 3)
+coef(bestsub, 3)
+```
+
+
+# 2
+
+```{r}
+# create the training set
+set.seed(1)
+train = sample(c(TRUE, FALSE), nrow(College), rep = TRUE)
+
+# us remaining data at test set
+test = (!train)
+```
+
+- performing regularization in R
+```{r}
+# install.packages("glmnet")
+library(glmnet)
+```
+
+- us `glmnet()` to create a matrix of features of College
+```{r}
+features = model.matrix(Outstate ~ ., data = College)[,-1]
+```
+
+- tuning lambda
+```{r}
+set.seed(1)
+cv.out = cv.glmnet(features[train,], College$Outstate[train], alpha = 0)
+
+# get the lambda by taking the min of CV error
+bestlam = cv.out$lambda.min
+bestlam
+```
+
+- preforming ridge regression on College
+```{r}
+ridge = glmnet(x = features[train,], y = College$Outstate[train], alpha = 0, lambda = bestlam)
+```
+
+- calculate the test MSE for the value of lambda yielding the smallest CV error
+```{r}
+ridge.pred = predict(ridge, s = bestlam, newx = features[test, ])
+ridge.pred
+mean((ridge.pred - College$Outstate[test])^2)
+```
+
+- viewing parameter estimates of ridge regression 
+```{r}
+coef(ridge)
+```
+
+# 3
+- need to select the tuning parameter for lasso
+- need to perform 10-fold cross-validation with `cv.glmnet()`
+```{r}
+set.seed(1)
+cv.out = cv.glmnet(features[train,], College$Outstate[train], alpha = 1)
+
+# getting the value of lambda yielding the smallest CV error
+bestlam = cv.out$lambda.min
+bestlam
+```
+
+- performing lasso on training set
+```{r}
+lasso = glmnet(x = features[train,], y = College$Outstate[train], aplha = 1, lambda = bestlam)
+```
+
+- calculate the test MSE for the value of lambda yielding the smallest CV error
+```{r}
+lasso.pred = predict(lasso, s = bestlam, newx = features[test,])
+mean((lasso.pred - College$Outstate[test])^2)
+```
+
+```{r}
+lasso.pred
+```
+- using `coef()` to see if any features have been removed
+```{r}
+coef(lasso)
+```
 
