@@ -11,10 +11,11 @@ output:
 
 ```{r}
 library(ISLR)
-summary(College)
+
 library(ggplot2)
 library(tidyverse)
 attach(College)
+summary(College)
 #install.packages("leaps")
 library(leaps)
 #attach(Advertising)
